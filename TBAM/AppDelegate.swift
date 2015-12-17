@@ -7,15 +7,21 @@
 //
 
 import UIKit
+#if TBAM_RELEASE
+import Fabric
+import Crashlytics
+#endif
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate
+{
     var window: UIWindow?
 
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+    {
+        #if TBAM_RELEASE
+        Fabric.with([Crashlytics.self])
+        #endif
         return true
     }
 
@@ -41,6 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    // MARK: - Accessors
+    
+    class func storyboard() -> UIStoryboard
+    {
+        let STORYBOARD_NAME = "Main"
+        return UIStoryboard(name: STORYBOARD_NAME, bundle: NSBundle.mainBundle())
+    }
 }
-
