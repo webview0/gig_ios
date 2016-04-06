@@ -58,9 +58,9 @@ class BHNavUtil
 
 class HomeViewController : CustomViewController
 {
-    @IBOutlet weak var imgHomeBanner: UIImageView!
-    @IBOutlet weak var collectionView: UICollectionView!
-    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var imgHomeBanner: UIImageView?
+    @IBOutlet weak var collectionView: UICollectionView?
+    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
     
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
@@ -94,17 +94,7 @@ class HomeViewController : CustomViewController
         
         self.menu = self.getConfig().getHomeMenu()
 
-        // set nav bar
-        self.title = "Home"
-        let SELECTOR_DONE = Selector("pressedDone:")
-        let btnDone = UIBarButtonItem(title: "Done", style: .Done, target: self, action: SELECTOR_DONE)
-        //        let SELECTOR_DONE = Selector("")
-        //        if (self.respondsToSelector(SELECTOR_DONE)) {
-        //            btnDone.action = SELECTOR_DONE
-        //        }
-        self.navigationItem.leftBarButtonItem = btnDone
-        
-        self.collectionView.backgroundColor = UIColor.clearColor()
+        self.collectionView?.backgroundColor = UIColor.clearColor()
     }
     
     override func viewWillAppear(animated: Bool)
@@ -122,7 +112,7 @@ class HomeViewController : CustomViewController
     func adjustLayouts()
     {
         let height = CGRectGetHeight(self.view.frame) - 20
-        self.constraintImageHeight.constant = height / 2
+        self.constraintImageHeight?.constant = height / 2
     }
 }
 
@@ -133,13 +123,14 @@ extension HomeViewController : UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         if let menuObj = self.menuForIndexPath(indexPath) {
+            var vc :UIViewController? = nil
             if ("submenu://contact" == menuObj.url) {
-                let vc = SubmenuViewController.loadFromStoryboard(menuObj.url)
-                BHNavUtil.push(self, destination: vc, backButton: "Home", animated: true)
+                vc = SubmenuViewController.loadFromStoryboard(menuObj.url)
             } else if ("" != menuObj.url) {
-                let vc = WebViewController.loadFromStoryboard(menuObj.url)
-                BHNavUtil.push(self, destination: vc, backButton: menuObj.title, animated: true)
+                vc = WebViewController.loadFromStoryboard(menuObj.url)
             }
+            vc?.title = menuObj.title
+            BHNavUtil.push(self, destination: vc, backButton: "Home", animated: true)
         }
     }
 }
@@ -167,11 +158,13 @@ extension HomeViewController : UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
+        guard let cv = self.collectionView else { return UICollectionViewCell() }
+
         let CELL_IDENTIFIER = "homeMenuCell"
-        let cell = self.collectionView.dequeueReusableCellWithReuseIdentifier(CELL_IDENTIFIER, forIndexPath: indexPath)
+        let cell = cv.dequeueReusableCellWithReuseIdentifier(CELL_IDENTIFIER, forIndexPath: indexPath)
         if let menuCell = cell as? HomeMenuCollectionViewCell, let menuObj = self.menuForIndexPath(indexPath) {
             if let icon = UIImage(named: menuObj.icon) {
-                menuCell.imgIcon.image = icon
+                menuCell.imgIcon?.image = icon
             }
         }
         return cell
@@ -182,8 +175,10 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        let w = CGRectGetWidth(self.collectionView.frame)
-        let h = CGRectGetHeight(self.collectionView.frame)
+        guard let cv = self.collectionView else { return CGSizeZero }
+        
+        let w = CGRectGetWidth(cv.frame)
+        let h = CGRectGetHeight(cv.frame)
         let buttonWidth  = w / 4 - 20
         let buttonHeight = (h - 20) / 3
         let sz = min(buttonWidth, buttonHeight)

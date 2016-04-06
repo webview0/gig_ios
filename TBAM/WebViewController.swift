@@ -15,7 +15,7 @@ import WebKit
 
 class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
 {
-    private var webViewObj :WKWebView!
+    private var webViewObj :WKWebView?
     
     private var url = ""
     
@@ -46,8 +46,8 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
         super.viewDidLoad()
         
         self.webViewObj = WKWebView()
-        self.webViewObj.UIDelegate = self
-        self.webViewObj.navigationDelegate = self
+        self.webViewObj!.UIDelegate = self
+        self.webViewObj!.navigationDelegate = self
         self.view = self.webViewObj
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -56,8 +56,8 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
         
         if let nsurl = NSURL(string: self.url) {
             //NSLog("Loading page \(self.url)")
-            self.webViewObj.loadRequest(NSURLRequest(URL: nsurl))
-            self.webViewObj.allowsBackForwardNavigationGestures = true
+            self.webViewObj!.loadRequest(NSURLRequest(URL: nsurl))
+            self.webViewObj!.allowsBackForwardNavigationGestures = true
         } else {
             //NSLog("Cannot encode URL")
             // TODO: show error message on page
@@ -72,7 +72,7 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
     
     // MARK: - WebView Delegates
     
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation!)
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }

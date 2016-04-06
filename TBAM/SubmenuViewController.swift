@@ -10,12 +10,12 @@ import UIKit
 
 class SubmenuViewController : CustomViewController, UITableViewDelegate, UITableViewDataSource
 {
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView?
+    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
 
     private var menuname = ""
-    private var submenu :[HomeMenuItem]!
-    private var textColor :UIColor!
+    private var submenu :[HomeMenuItem]?
+    private var textColor :UIColor?
     
     // MARK: - View Controller
     
@@ -44,10 +44,10 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
         super.viewDidLoad()
         
         self.view.backgroundColor = self.getConfig().getBackgroundColor()
-        self.tableView.backgroundColor = self.view.backgroundColor
+        self.tableView?.backgroundColor = self.view.backgroundColor
 
         // hide empty cells at the end of UITableView
-        self.tableView.tableFooterView = UIView(frame: CGRectZero)
+        self.tableView?.tableFooterView = UIView(frame: CGRectZero)
 
         self.submenu = self.getConfig().getSubmenu(self.menuname)
         
@@ -74,7 +74,7 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
     func adjustLayouts()
     {
         let height = CGRectGetHeight(self.view.frame) - 20
-        self.constraintImageHeight.constant = height / 2 - 88
+        self.constraintImageHeight?.constant = height / 2 - 88
     }
     
     // MARK: - Table view data source
@@ -108,7 +108,9 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
         if let dq = tableView.dequeueReusableCellWithIdentifier(CELL_IDENTIFIER) {
             cell = dq
         }
-        if (nil == cell) {
+        if let _ = cell {
+            // no op
+        } else {
             cell = UITableViewCell(style: .Default, reuseIdentifier: CELL_IDENTIFIER)
         }
         if let safecell = cell, let item = self.getItemAtIndexPath(indexPath) {
@@ -136,16 +138,20 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
                 self.openMap()
             } else if ("" != menuObj.url) {
                 let vc = WebViewController.loadFromStoryboard(menuObj.url)
-                BHNavUtil.push(self, destination: vc, backButton: menuObj.title, animated: true)
+                vc?.title = menuObj.title
+                let back = self.title ?? "Back"
+                BHNavUtil.push(self, destination: vc, backButton: back, animated: true)
             }
         }
     }
     
     func getItemAtIndexPath(indexPath :NSIndexPath) -> HomeMenuItem?
     {
-        let row = indexPath.row
-        if (row < self.submenu.count) {
-            return self.submenu[row]
+        if let sub = self.submenu {
+            let row = indexPath.row
+            if (row < sub.count) {
+                return sub[row]
+            }
         }
         return nil
     }

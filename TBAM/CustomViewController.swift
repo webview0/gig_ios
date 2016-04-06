@@ -10,7 +10,7 @@ import UIKit
 
 class CustomViewController : UIViewController
 {
-    internal var config :CustomConfigProtocol!
+    internal var config :CustomConfigProtocol?
 
     internal func getConfig() -> CustomConfigProtocol
     {
@@ -19,7 +19,7 @@ class CustomViewController : UIViewController
         }
         
         self.config = ConfigTBAM()
-        return self.config
+        return self.config!
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle

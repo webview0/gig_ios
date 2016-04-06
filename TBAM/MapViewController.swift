@@ -11,7 +11,7 @@ import MapKit
 
 class MapViewController : CustomViewController
 {
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView?
     
     // MARK: - View Controller
     
@@ -53,8 +53,10 @@ class MapViewController : CustomViewController
     {
         super.viewDidAppear(animated)
         
-        for pin in self.mapView.annotations {
-            self.mapView.selectAnnotation(pin, animated: true)
+        guard let mv = self.mapView else { return }
+        
+        for pin in mv.annotations {
+            mv.selectAnnotation(pin, animated: true)
             break
         }
     }
@@ -89,11 +91,11 @@ class MapViewController : CustomViewController
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = self.getConfig().getTitle()
-        self.mapView.addAnnotation(annotation)
+        self.mapView?.addAnnotation(annotation)
         
         let meters :Double = 100000
         let region = MKCoordinateRegionMakeWithDistance(coordinate, meters, meters)
-        self.mapView.region = region
+        self.mapView?.region = region
     }
     
     // MARK: - Helper Functions

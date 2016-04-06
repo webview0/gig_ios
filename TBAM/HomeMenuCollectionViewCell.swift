@@ -10,5 +10,5 @@ import UIKit
 
 class HomeMenuCollectionViewCell : UICollectionViewCell
 {
-    @IBOutlet weak var imgIcon: UIImageView!    
+    @IBOutlet weak var imgIcon: UIImageView?
 }
