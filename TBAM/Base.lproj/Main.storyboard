@@ -24,8 +24,17 @@
                                     <constraint firstAttribute="height" constant="250" id="cUh-fU-kCl"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-vj-jsW">
+                                <rect key="frame" x="20" y="354" width="560" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="f2P-FJ-YWT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-CP-nYa">
-                                <rect key="frame" x="20" y="342" width="560" height="238"/>
+                                <rect key="frame" x="20" y="395" width="560" height="185"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mcu-Ak-AkQ">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -65,13 +74,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="qxm-vj-jsW" firstAttribute="top" secondItem="fQQ-Hu-4Rw" secondAttribute="bottom" constant="20" id="0pd-R9-1Gy"/>
                             <constraint firstAttribute="trailing" secondItem="fQQ-Hu-4Rw" secondAttribute="trailing" id="24q-pf-UY7"/>
+                            <constraint firstItem="qxm-vj-jsW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5bm-2j-Ymt"/>
                             <constraint firstItem="1Kz-CP-nYa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AEU-dB-3TN"/>
                             <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dux-3s-Zvn"/>
+                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="top" secondItem="qxm-vj-jsW" secondAttribute="bottom" constant="20" id="Kwn-tD-ZVo"/>
                             <constraint firstItem="1Kz-CP-nYa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qr0-WF-lrQ"/>
                             <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="uHe-SI-EWU"/>
+                            <constraint firstItem="qxm-vj-jsW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wTG-P9-k0y"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Kz-CP-nYa" secondAttribute="bottom" constant="20" id="z90-gX-4SU"/>
-                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="top" secondItem="fQQ-Hu-4Rw" secondAttribute="bottom" constant="8" id="zNf-ee-RkY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SE9-gH-3XO"/>
@@ -79,6 +91,7 @@
                         <outlet property="collectionView" destination="1Kz-CP-nYa" id="7mA-qc-X39"/>
                         <outlet property="constraintImageHeight" destination="cUh-fU-kCl" id="OY6-q4-FgA"/>
                         <outlet property="imgHomeBanner" destination="fQQ-Hu-4Rw" id="eOz-9h-mPN"/>
+                        <outlet property="lblAlertMessage" destination="qxm-vj-jsW" id="fYt-Jf-IC8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

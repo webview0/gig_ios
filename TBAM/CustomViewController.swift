@@ -18,7 +18,7 @@ class CustomViewController : UIViewController
             return ptr
         }
         
-        self.config = ConfigTBAM()
+        self.config = ConfigFactory.make()
         return self.config!
     }
     

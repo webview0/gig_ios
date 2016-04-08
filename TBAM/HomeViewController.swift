@@ -59,12 +59,13 @@ class BHNavUtil
 class HomeViewController : CustomViewController
 {
     @IBOutlet weak var imgHomeBanner: UIImageView?
+    @IBOutlet weak var lblAlertMessage: UILabel?
     @IBOutlet weak var collectionView: UICollectionView?
     @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
     
     private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     
-    private var menu :[HomeMenuItem]!
+    private var menu :[HomeMenuItem]?
     
     // MARK: - View Controller
     
@@ -93,6 +94,21 @@ class HomeViewController : CustomViewController
         self.view.backgroundColor = self.getConfig().getBackgroundColor()
         
         self.menu = self.getConfig().getHomeMenu()
+        
+        let message = self.getConfig().getAlertMessage()
+        if ("" == message) {
+            self.lblAlertMessage?.hidden = true
+        } else {
+            self.lblAlertMessage?.hidden = false
+            self.lblAlertMessage?.text = message
+            self.lblAlertMessage?.font = self.getConfig().getTextFont()
+            self.lblAlertMessage?.textColor = self.getConfig().getTextColor()
+        }
+        
+        if let img = UIImage(named: self.getConfig().getHomeImageName()) {
+            self.imgHomeBanner?.contentMode = self.getConfig().getHomeImageAspect()
+            self.imgHomeBanner?.image = img
+        }
 
         self.collectionView?.backgroundColor = UIColor.clearColor()
     }
@@ -139,9 +155,11 @@ extension HomeViewController : UICollectionViewDataSource
 {
     private func menuForIndexPath(indexPath :NSIndexPath) -> HomeMenuItem?
     {
-        let row = indexPath.row
-        if (row < self.menu.count) {
-            return self.menu[row]
+        if let mm = self.menu {
+            let row = indexPath.row
+            if (row < mm.count) {
+                return mm[row]
+            }
         }
         return nil
     }
@@ -153,7 +171,7 @@ extension HomeViewController : UICollectionViewDataSource
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.menu.count
+        return self.menu?.count ?? 0
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
