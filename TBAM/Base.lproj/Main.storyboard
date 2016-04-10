@@ -9,7 +9,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_banner" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-Hu-4Rw">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-Hu-4Rw">
                                 <rect key="frame" x="0.0" y="84" width="600" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="cUh-fU-kCl"/>
@@ -42,7 +42,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeMenuCell" id="v7C-Yp-SbN" customClass="HomeMenuCollectionViewCell" customModule="TBAM" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="homeMenuCell" id="v7C-Yp-SbN" customClass="HomeMenuCollectionViewCell" customModule="Dallas_JCC" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -101,7 +101,7 @@
         <!--Web View Controller-->
         <scene sceneID="spD-Dd-lNt">
             <objects>
-                <viewController storyboardIdentifier="Web" id="bxS-E2-ZpA" customClass="WebViewController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Web" id="bxS-E2-ZpA" customClass="WebViewController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Etk-lJ-Gd3"/>
                         <viewControllerLayoutGuide type="bottom" id="2vX-VU-cfD"/>
@@ -120,7 +120,7 @@
         <!--Submenu View Controller-->
         <scene sceneID="Rfz-eV-Zl7">
             <objects>
-                <viewController storyboardIdentifier="Submenu" id="Kei-Hg-HUD" customClass="SubmenuViewController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Submenu" id="Kei-Hg-HUD" customClass="SubmenuViewController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EHt-pP-HfX"/>
                         <viewControllerLayoutGuide type="bottom" id="0AH-aq-ckJ"/>
@@ -194,7 +194,7 @@
         <!--Map View Controller-->
         <scene sceneID="bdX-Gu-7d9">
             <objects>
-                <viewController storyboardIdentifier="Map" id="qfw-on-RUf" customClass="MapViewController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Map" id="qfw-on-RUf" customClass="MapViewController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fmO-Le-Lsh"/>
                         <viewControllerLayoutGuide type="bottom" id="gAg-m2-cap"/>
@@ -230,7 +230,7 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="HZo-58-zbA">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QpY-JM-K9N" customClass="CustomNavigationController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QpY-JM-K9N" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WM0-cM-wAd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -248,7 +248,7 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="j6N-tS-LXL">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Z7-qz-6Ea" customClass="CustomNavigationController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Z7-qz-6Ea" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Wa-w3-n7p">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -266,7 +266,7 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="paT-AJ-JFZ">
             <objects>
-                <navigationController storyboardIdentifier="SubmenuNav" automaticallyAdjustsScrollViewInsets="NO" id="NnZ-PH-Az8" customClass="CustomNavigationController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SubmenuNav" automaticallyAdjustsScrollViewInsets="NO" id="NnZ-PH-Az8" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSE-DN-JQ5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -284,7 +284,7 @@
         <!--Custom Navigation Controller-->
         <scene sceneID="GFI-kZ-LoZ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9no-uz-Eon" customClass="CustomNavigationController" customModule="TBAM" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9no-uz-Eon" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="her-WV-zIT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

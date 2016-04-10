@@ -36,8 +36,11 @@ class ConfigFactory
 {
     class func make() -> CustomConfigProtocol
     {
+        #if DALLASJCC_DEBUG || DALLASJCC_RELEASE
         return ConfigDallasJCC()
-        //return ConfigTBAM()
+        #else
+        return ConfigTBAM()
+        #endif
     }
 }
 

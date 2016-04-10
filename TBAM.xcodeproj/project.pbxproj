@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
-		C82899131C234C07006D7AF1 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82899111C234C07006D7AF1 /* Fabric.framework */; };
-		C82899141C234C07006D7AF1 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C82899121C234C07006D7AF1 /* Crashlytics.framework */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
+		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
 		C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86E99271C1BC55D00B08843 /* Assets.xcassets */; };
-		C86E992B1C1BC55D00B08843 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99291C1BC55D00B08843 /* LaunchScreen.storyboard */; };
+		C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */; };
 		C86E99361C1BC55D00B08843 /* TBAMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99351C1BC55D00B08843 /* TBAMTests.swift */; };
 		C86E99411C1BC55D00B08843 /* TBAMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99401C1BC55D00B08843 /* TBAMUITests.swift */; };
 		C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E994E1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift */; };
@@ -45,14 +44,13 @@
 
 /* Begin PBXFileReference section */
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
-		C82899111C234C07006D7AF1 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
-		C82899121C234C07006D7AF1 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
 		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99201C1BC55D00B08843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86E99251C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C86E99271C1BC55D00B08843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C86E992A1C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C86E992A1C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-TBAM.storyboard"; sourceTree = "<group>"; };
 		C86E992C1C1BC55D00B08843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C86E99311C1BC55D00B08843 /* TBAMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBAMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99351C1BC55D00B08843 /* TBAMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBAMTests.swift; sourceTree = "<group>"; };
@@ -74,8 +72,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C82899141C234C07006D7AF1 /* Crashlytics.framework in Frameworks */,
-				C82899131C234C07006D7AF1 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,8 +95,6 @@
 		C82899151C234C97006D7AF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C82899121C234C07006D7AF1 /* Crashlytics.framework */,
-				C82899111C234C07006D7AF1 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			path = TBAM;
@@ -141,7 +135,8 @@
 				C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */,
 				C8A95B131C232070007AC9AB /* CustomConfig.swift */,
 				C86E99241C1BC55D00B08843 /* Main.storyboard */,
-				C86E99291C1BC55D00B08843 /* LaunchScreen.storyboard */,
+				C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */,
+				C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */,
 				C86E99271C1BC55D00B08843 /* Assets.xcassets */,
 				C86E992C1C1BC55D00B08843 /* Info.plist */,
 			);
@@ -236,6 +231,7 @@
 				TargetAttributes = {
 					C86E991C1C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9ZWL894D73;
 					};
 					C86E99301C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
@@ -272,9 +268,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C86E992B1C1BC55D00B08843 /* LaunchScreen.storyboard in Resources */,
+				C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */,
 				C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */,
 				C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */,
+				C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == Release ] || [ $CONFIGURATION == Beta ]; then\n    ./Fabric.framework/run d03d04b0395452b04e90774ea53b935cef405eb7 d767ad446fdd8f7e76fe3da72e9a8a5899070cb3606e3274c4617ef467393407\nfi\n";
+			shellScript = "if [ $CONFIGURATION == xxRelease ] || [ $CONFIGURATION == xxBeta ]; then\n    ./Fabric.framework/run d03d04b0395452b04e90774ea53b935cef405eb7 d767ad446fdd8f7e76fe3da72e9a8a5899070cb3606e3274c4617ef467393407\nfi\n";
 		};
 		C82899161C234D25006D7AF1 /* Run Script - Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -321,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == Release ] || [ $CONFIGURATION == Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
+			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -375,6 +372,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C866A3361CB8598B00C47C22 /* Base */,
+			);
+			name = "LaunchScreen-DallasJCC.storyboard";
+			sourceTree = "<group>";
+		};
 		C86E99241C1BC55D00B08843 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -383,18 +388,104 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		C86E99291C1BC55D00B08843 /* LaunchScreen.storyboard */ = {
+		C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				C86E992A1C1BC55D00B08843 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = "LaunchScreen-TBAM.storyboard";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C86E99431C1BC55D00B08843 /* Debug */ = {
+		C866A32D1CB83EB200C47C22 /* DallasJCC_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = DallasJCC_Release;
+		};
+		C866A32E1CB83EB200C47C22 /* DallasJCC_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "DallasJCC-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Dallas JCC";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-DallasJCC";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_RELEASE -D BHAPPANALYZER_ANSWERS";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "Dallas JCC";
+				PROVISIONING_PROFILE = "46d74b8a-4ed3-494d-b134-3cd74a513903";
+			};
+			name = DallasJCC_Release;
+		};
+		C866A32F1CB83EB200C47C22 /* DallasJCC_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = DallasJCC_Release;
+		};
+		C866A3301CB83EB200C47C22 /* DallasJCC_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = DallasJCC_Release;
+		};
+		C866A3311CB83ECC00C47C22 /* DallasJCC_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -437,9 +528,101 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
-			name = Debug;
+			name = DallasJCC_Debug;
 		};
-		C86E99441C1BC55D00B08843 /* Release */ = {
+		C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "DallasJCC-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Dallas JCC Ω";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-DallasJCC";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_DEBUG -D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios.alpha;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "Dallas JCC";
+				PROVISIONING_PROFILE = "";
+			};
+			name = DallasJCC_Debug;
+		};
+		C866A3331CB83ECC00C47C22 /* DallasJCC_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = DallasJCC_Debug;
+		};
+		C866A3341CB83ECC00C47C22 /* DallasJCC_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = DallasJCC_Debug;
+		};
+		C86E99431C1BC55D00B08843 /* TBAM_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = TBAM_Debug;
+		};
+		C86E99441C1BC55D00B08843 /* TBAM_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -475,47 +658,54 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
-			name = Release;
+			name = TBAM_Release;
 		};
-		C86E99461C1BC55D00B08843 /* Debug */ = {
+		C86E99461C1BC55D00B08843 /* TBAM_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "TBAM-AppIcon-alpha";
+				BUNDLE_DISPLAY_NAME = "TBAM Ω";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-TBAM";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TBAM_DEBUG -D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAM.beta;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM.alpha;
+				PRODUCT_NAME = TBAM;
+				PROVISIONING_PROFILE = "";
 			};
-			name = Debug;
+			name = TBAM_Debug;
 		};
-		C86E99471C1BC55D00B08843 /* Release */ = {
+		C86E99471C1BC55D00B08843 /* TBAM_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-beta";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Blue Heron Labs LLC (H7KC2V2CQG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Blue Heron Labs LLC (H7KC2V2CQG)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "TBAM-AppIcon";
+				BUNDLE_DISPLAY_NAME = TBAM;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-TBAM";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TBAM_RELEASE -D BHAPPANALYZER_ANSWERS";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
-				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAM.beta;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3b610eaa-86b0-4f58-88f1-e3e7860923ff";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM;
+				PRODUCT_NAME = TBAM;
+				PROVISIONING_PROFILE = "b15519bb-8380-44ee-9278-fb1fd003b402";
 			};
-			name = Release;
+			name = TBAM_Release;
 		};
-		C86E99491C1BC55D00B08843 /* Debug */ = {
+		C86E99491C1BC55D00B08843 /* TBAM_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -525,9 +715,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
-			name = Debug;
+			name = TBAM_Debug;
 		};
-		C86E994A1C1BC55D00B08843 /* Release */ = {
+		C86E994A1C1BC55D00B08843 /* TBAM_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -537,9 +727,9 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
-			name = Release;
+			name = TBAM_Release;
 		};
-		C86E994C1C1BC55D00B08843 /* Debug */ = {
+		C86E994C1C1BC55D00B08843 /* TBAM_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TBAMUITests/Info.plist;
@@ -549,9 +739,9 @@
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
-			name = Debug;
+			name = TBAM_Debug;
 		};
-		C86E994D1C1BC55D00B08843 /* Release */ = {
+		C86E994D1C1BC55D00B08843 /* TBAM_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = TBAMUITests/Info.plist;
@@ -561,7 +751,7 @@
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
-			name = Release;
+			name = TBAM_Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -569,38 +759,46 @@
 		C86E99181C1BC55D00B08843 /* Build configuration list for PBXProject "TBAM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C86E99431C1BC55D00B08843 /* Debug */,
-				C86E99441C1BC55D00B08843 /* Release */,
+				C86E99431C1BC55D00B08843 /* TBAM_Debug */,
+				C866A3311CB83ECC00C47C22 /* DallasJCC_Debug */,
+				C86E99441C1BC55D00B08843 /* TBAM_Release */,
+				C866A32D1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TBAM_Release;
 		};
 		C86E99451C1BC55D00B08843 /* Build configuration list for PBXNativeTarget "TBAM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C86E99461C1BC55D00B08843 /* Debug */,
-				C86E99471C1BC55D00B08843 /* Release */,
+				C86E99461C1BC55D00B08843 /* TBAM_Debug */,
+				C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */,
+				C86E99471C1BC55D00B08843 /* TBAM_Release */,
+				C866A32E1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TBAM_Release;
 		};
 		C86E99481C1BC55D00B08843 /* Build configuration list for PBXNativeTarget "TBAMTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C86E99491C1BC55D00B08843 /* Debug */,
-				C86E994A1C1BC55D00B08843 /* Release */,
+				C86E99491C1BC55D00B08843 /* TBAM_Debug */,
+				C866A3331CB83ECC00C47C22 /* DallasJCC_Debug */,
+				C86E994A1C1BC55D00B08843 /* TBAM_Release */,
+				C866A32F1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TBAM_Release;
 		};
 		C86E994B1C1BC55D00B08843 /* Build configuration list for PBXNativeTarget "TBAMUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C86E994C1C1BC55D00B08843 /* Debug */,
-				C86E994D1C1BC55D00B08843 /* Release */,
+				C86E994C1C1BC55D00B08843 /* TBAM_Debug */,
+				C866A3341CB83ECC00C47C22 /* DallasJCC_Debug */,
+				C86E994D1C1BC55D00B08843 /* TBAM_Release */,
+				C866A3301CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = TBAM_Release;
 		};
 /* End XCConfigurationList section */
 	};
