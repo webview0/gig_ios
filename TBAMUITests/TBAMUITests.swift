@@ -18,9 +18,35 @@ class TBAMUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
-        XCUIApplication().launch()
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    }
+    
+    func testTakeScreenshots()
+    {
+        let app = XCUIApplication()
+        let collectionViewsQuery = app.collectionViews
+        
+//        snapshot("01_Home")
+//        
+//        collectionViewsQuery.images["menu_about"].tap()
+//        snapshot("02_About")
+//
+//        app.navigationBars["About"].buttons["Home"].tap()
+//        collectionViewsQuery.images["menu_hours"].tap()
+//        snapshot("03_Hours")
+        
+        snapshot("01_Home")
+        
+        collectionViewsQuery.images["mainmenu_calendar400x400c"].tap()
+        snapshot("02_Calendar")
+
+        app.navigationBars["Calendar"].buttons["Home"].tap()
+        collectionViewsQuery.images["mainmenu_memberhood400x400c"].tap()
+        snapshot("03_Memberhood")
     }
     
     override func tearDown() {

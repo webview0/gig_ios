@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				C86E99401C1BC55D00B08843 /* TBAMUITests.swift */,
+				C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */,
 				C86E99421C1BC55D00B08843 /* Info.plist */,
 			);
 			path = TBAMUITests;
@@ -353,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C86E99411C1BC55D00B08843 /* TBAMUITests.swift in Sources */,
+				C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "Dallas JCC";
-				PROVISIONING_PROFILE = "46d74b8a-4ed3-494d-b134-3cd74a513903";
+				PROVISIONING_PROFILE = "031385b7-568f-483e-a8a7-f839b6a941de";
 			};
 			name = DallasJCC_Release;
 		};
@@ -467,6 +471,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TBAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
@@ -559,6 +564,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TBAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
@@ -701,7 +707,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM;
 				PRODUCT_NAME = TBAM;
-				PROVISIONING_PROFILE = "b15519bb-8380-44ee-9278-fb1fd003b402";
+				PROVISIONING_PROFILE = "e971e419-9d13-468d-b097-70a5646c06ab";
 			};
 			name = TBAM_Release;
 		};
@@ -711,6 +717,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TBAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
@@ -723,6 +730,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TBAMTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";

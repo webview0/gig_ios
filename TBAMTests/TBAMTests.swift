@@ -7,7 +7,11 @@
 //
 
 import XCTest
+#if DALLASJCC_TEST
+//@testable import DallasJCC
+#else
 @testable import TBAM
+#endif
 
 class TBAMTests: XCTestCase {
     
