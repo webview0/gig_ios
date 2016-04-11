@@ -230,7 +230,7 @@ class ConfigTBAM : CustomConfigProtocol
         
         menu.append(HomeMenuItem(title: "Schools",      icon: "mainmenu_schools400x400c",     url: URL + "?src=gendocs&ref=school_landing_page"))
         menu.append(HomeMenuItem(title: "Do a Mitzvah", icon: "mainmenu_doamitzvah400x400c",  url: URL + "?src=forms&ref=Do_a_Mitzvah"))
-        menu.append(HomeMenuItem(title: "Donate",       icon: "mainmenu_donate400x400c",      url: URL + "?src=forms&ref=Online_Donation_From_App"))
+        menu.append(HomeMenuItem(title: "Donate",       icon: "mainmenu_donate400x400c",      url: URL + "?src=forms&ref=Online_Donation_From_App", external: true))
         menu.append(HomeMenuItem(title: "Memberhood",   icon: "mainmenu_memberhood400x400c",  url: URL + "?src=gendocs&ref=Memberhood_App"))
         
         return menu

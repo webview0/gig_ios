@@ -143,7 +143,16 @@ extension HomeViewController : UICollectionViewDelegate
             if ("submenu://contact" == menuObj.url) {
                 vc = SubmenuViewController.loadFromStoryboard(menuObj.url)
             } else if ("" != menuObj.url) {
-                vc = WebViewController.loadFromStoryboard(menuObj.url)
+                if (menuObj.external) {
+                    if let u = NSURL(string: menuObj.url) {
+                        UIApplication.sharedApplication().openURL(u)
+                    } else {
+                        //BHLog.error("Cannot encode URL: \(menuObj.url)")
+                    }
+                    return
+                } else {
+                    vc = WebViewController.loadFromStoryboard(menuObj.url)
+                }
             }
             vc?.title = menuObj.title
             BHNavUtil.push(self, destination: vc, backButton: "Home", animated: true)

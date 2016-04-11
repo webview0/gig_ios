@@ -137,10 +137,18 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
             } else if ("map://" == menuObj.url) {
                 self.openMap()
             } else if ("" != menuObj.url) {
-                let vc = WebViewController.loadFromStoryboard(menuObj.url)
-                vc?.title = menuObj.title
-                let back = self.title ?? "Back"
-                BHNavUtil.push(self, destination: vc, backButton: back, animated: true)
+                if (menuObj.external) {
+                    if let u = NSURL(string: menuObj.url) {
+                        UIApplication.sharedApplication().openURL(u)
+                    } else {
+                        //BHLog.error("Cannot encode URL: \(menuObj.url)")
+                    }
+                } else {
+                    let vc = WebViewController.loadFromStoryboard(menuObj.url)
+                    vc?.title = menuObj.title
+                    let back = self.title ?? "Back"
+                    BHNavUtil.push(self, destination: vc, backButton: back, animated: true)
+                }
             }
         }
     }
