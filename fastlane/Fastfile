@@ -15,35 +15,48 @@ fastlane_version "1.81.0"
 
 default_platform :ios
 
+#
+# Common Lanes:
+#   fastlane certs  # first time only
+#   fastlane ios test
+#   fastlane ios beta
+#   fastlane ios appstore
+#
+
+desc "Match development and production certificates and profiles"
+desc "Do this the first time you set up your project"
+lane :certs do
+  match(type: "development", app_identifier: "com.accrisoft.appbuilder.dallasjcc.ios.alpha")
+  match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.dallasjcc.ios")
+  puts "---------------------------------------------------------------------"
+  puts "--- Consider running 'fastlane xcode' to remove the Fix-it button ---"
+  puts "--- if you are running fastlane tools only                        ---"
+  puts "---------------------------------------------------------------------"
+end
+
+
+desc "Remove the Fix-it button from Xcode"
+lane :xcode do
+  install_xcode_plugin(url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip")
+end
+
+
 platform :ios do
   before_all do
     # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
-
-
-  end
-
-  lane :xcode do
-    install_xcode_plugin(
-      url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip"
-    )
   end
 
   desc "Runs all the tests"
   lane :test do
-    scan
+    scan(scheme: "DallasJCC") # Run Tests
   end
 
-  desc "Build tha app"
-  lane :build do
-    gym(scheme: "DallasJCC")
-  end
-  
   desc "Submit a new Beta Build to Apple TestFlight"
-  desc "This will also make sure the profile is up to date"
   lane :beta do
-    # match(type: "appstore") # more information: https://codesigning.guide
+    match(type: "appstore") # more information: https://codesigning.guide
+    # scan(scheme: "DallasJCC") # Run Tests
     gym(scheme: "DallasJCC") # Build your app - more options available
-    pilot
+    # pilot upload --ipa fastlane/build/DallasJCC.ipa  # upload to TestFlight
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -51,10 +64,11 @@ platform :ios do
 
   desc "Deploy a new version to the App Store"
   lane :appstore do
-    # match(type: "appstore")
+    match(type: "appstore")
+    # scan(scheme: "DallasJCC") # Run Tests
     # snapshot
     gym(scheme: "DallasJCC") # Build your app - more options available
-    deliver(force: true)
+    # deliver(force: true)
     # frameit
   end
 

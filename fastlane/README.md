@@ -5,29 +5,32 @@ fastlane documentation
 sudo gem install fastlane
 ```
 # Available Actions
-## iOS
-### ios xcode
+### certs
 ```
-fastlane ios xcode
+fastlane certs
 ```
+Match development and production certificates and profiles
 
+Do this the first time you set up your project
+### xcode
+```
+fastlane xcode
+```
+Remove the Fix-it button from Xcode
+
+----
+
+## iOS
 ### ios test
 ```
 fastlane ios test
 ```
 Runs all the tests
-### ios build
-```
-fastlane ios build
-```
-Build tha app
 ### ios beta
 ```
 fastlane ios beta
 ```
 Submit a new Beta Build to Apple TestFlight
-
-This will also make sure the profile is up to date
 ### ios appstore
 ```
 fastlane ios appstore

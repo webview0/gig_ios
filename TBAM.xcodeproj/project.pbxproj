@@ -461,7 +461,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "Dallas JCC";
-				PROVISIONING_PROFILE = "031385b7-568f-483e-a8a7-f839b6a941de";
+				PROVISIONING_PROFILE = "b7cb6142-8adb-48c5-827f-d0a4c82b81c0";
 			};
 			name = DallasJCC_Release;
 		};
@@ -554,7 +554,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios.alpha;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "Dallas JCC";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "a6761484-b245-4a30-aa14-1a15356028e4";
 			};
 			name = DallasJCC_Debug;
 		};

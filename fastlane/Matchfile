@@ -1,0 +1,11 @@
+git_url "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/certificates_asoft"
+
+type "development" # The default type, can be: appstore, adhoc or development
+
+# app_identifier "com.accrisoft.appbuilder.dallasjcc.ios"
+# app_identifier "com.accrisoft.TBAM"
+username "developer@blueheronlabs.net"  # Apple Developer Portal username
+team_id  "9ZWL894D73"                   # Developer Portal Team ID -- Accrisoft
+
+# For all available options run `match --help`
+# Remove the # in the beginning of the line to enable the other options
