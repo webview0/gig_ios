@@ -13,7 +13,7 @@ import WebKit
 // TODO: add pull-to-refresh
 // TODO: add custom local caching
 
-class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
+class WebViewController : CustomViewController, WKUIDelegate, WKNavigationDelegate
 {
     private var webViewObj :WKWebView?
     
@@ -48,7 +48,9 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
         self.webViewObj = WKWebView()
         self.webViewObj!.UIDelegate = self
         self.webViewObj!.navigationDelegate = self
-        self.view = self.webViewObj
+        self.webViewObj!.backgroundColor = self.getConfig().getBackgroundColor()
+        self.webViewObj!.scrollView.backgroundColor = self.getConfig().getBackgroundColor()  // have to set the scrollview background color
+        self.view = self.webViewObj!
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
@@ -67,7 +69,12 @@ class WebViewController : UIViewController, WKUIDelegate, WKNavigationDelegate
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
+        
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : self.getConfig().getTextColor() ]
+        self.navigationController?.navigationBar.barTintColor        = self.getConfig().getBackgroundColor()
+        self.navigationController?.navigationBar.tintColor           = self.getConfig().getTextColor()
+        self.navigationController?.navigationBar.translucent         = false
     }
     
     // MARK: - WebView Delegates

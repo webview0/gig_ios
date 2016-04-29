@@ -14,12 +14,15 @@ import UIKit
 protocol CustomConfigProtocol
 {
     func getBackgroundColor()         -> UIColor
-    func getPreferredStatusBarStyle() -> UIStatusBarStyle
+    func getStatusBarStyle()          -> UIStatusBarStyle
+    func getNavigationBarStyle()      -> UIBarStyle
     func getHomeImageName()           -> String
     func getHomeImageAspect()         -> UIViewContentMode
     func getTextFont()                -> UIFont
     func getTextColor()               -> UIColor
-    func getAlertMessage()            -> String
+    func getAlertURL()                -> String
+    func getHomeMenuNumRows()         -> Int
+    func getHomeMenuNumColumns()      -> Int
     func getHomeMenu()                -> [HomeMenuItem]
     func getSubmenu(name :String)     -> [HomeMenuItem]
     func getTitle()                   -> String
@@ -52,14 +55,20 @@ class ConfigDallasJCC : CustomConfigProtocol
         return UIColor.blackColor()
     }
     
-    func getPreferredStatusBarStyle() -> UIStatusBarStyle
+    func getStatusBarStyle() -> UIStatusBarStyle
     {
         return .LightContent
     }
     
+    func getNavigationBarStyle() -> UIBarStyle
+    {
+        return .Black
+    }
+    
     func getHomeImageName() -> String
     {
-        return "home_banner_dallasjcc"
+        return "home_banner_demo"
+        //return "home_banner_dallasjcc"
     }
     
     func getHomeImageAspect() -> UIViewContentMode
@@ -74,18 +83,30 @@ class ConfigDallasJCC : CustomConfigProtocol
     
     func getTextColor() -> UIColor
     {
-        return UIColor(red:0.98, green:0.33, blue:0.31, alpha:1.00)  // red-orange
+        return UIColor.whiteColor()
+        //return UIColor(red:0.98, green:0.33, blue:0.31, alpha:1.00)  // red-orange
     }
     
-    func getAlertMessage() -> String
+    func getAlertURL() -> String
     {
-        return "Open 6am - 9pm today"
+        return "http://www.jccdallas.org/index.php?src=directory&view=appWidget&srctype=lister&direct=y"
     }
     
+    func getHomeMenuNumRows() -> Int
+    {
+        return 2
+    }
+    
+    func getHomeMenuNumColumns() -> Int
+    {
+        return 4
+    }
+
     func getHomeMenu() -> [HomeMenuItem]
     {
         var menu :[HomeMenuItem] = []
-        menu.reserveCapacity(8)
+        let num = self.getHomeMenuNumRows() * self.getHomeMenuNumColumns()
+        menu.reserveCapacity(num)
         
         // site http://www.jccdallas.org/
         // ssl  https://asoft10307.accrisoft.com/jccdallas/
@@ -178,9 +199,14 @@ class ConfigTBAM : CustomConfigProtocol
         return UIColor(red:0, green:0.22, blue:0.36, alpha:1)  // dark blue
     }
     
-    func getPreferredStatusBarStyle() -> UIStatusBarStyle
+    func getStatusBarStyle() -> UIStatusBarStyle
     {
         return .LightContent
+    }
+    
+    func getNavigationBarStyle() -> UIBarStyle
+    {
+        return .Black
     }
     
     func getHomeImageName() -> String
@@ -203,15 +229,26 @@ class ConfigTBAM : CustomConfigProtocol
         return UIColor.whiteColor()
     }
     
-    func getAlertMessage() -> String
+    func getAlertURL() -> String
     {
         return ""
+    }
+
+    func getHomeMenuNumRows() -> Int
+    {
+        return 3
+    }
+    
+    func getHomeMenuNumColumns() -> Int
+    {
+        return 4
     }
 
     func getHomeMenu() -> [HomeMenuItem]
     {
         var menu :[HomeMenuItem] = []
-        menu.reserveCapacity(12)
+        let num = self.getHomeMenuNumRows() * self.getHomeMenuNumColumns()
+        menu.reserveCapacity(num)
         
         // site http://www.tbam.org/
         // ssl  https://asoft4124.accrisoft.com/betham/

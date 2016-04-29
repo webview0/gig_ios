@@ -22,6 +22,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         //#if TBAM_RELEASE
         //Fabric.with([Crashlytics.self])
         //#endif
+        
+        let config = ConfigFactory.make()
+        UINavigationBar.appearance().barStyle = config.getNavigationBarStyle()
+        
         return true
     }
 

@@ -11,6 +11,11 @@ import UIKit
 
 public struct BHDevice
 {
+    public static func isIPad() -> Bool
+    {
+        return !BHDevice.isIPhone()
+    }
+
     public static func isIPhone() -> Bool
     {
         return (UIDevice.currentDevice().userInterfaceIdiom == .Phone)

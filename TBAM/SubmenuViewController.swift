@@ -52,10 +52,10 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
         self.submenu = self.getConfig().getSubmenu(self.menuname)
         
         // set text color same as status bar text color
-        if (self.getConfig().getPreferredStatusBarStyle() == .LightContent) {
-            self.textColor = UIColor.whiteColor()
+        if (self.getConfig().getNavigationBarStyle() == .Black) {
+            self.textColor = UIColor.lightTextColor()
         } else {
-            self.textColor = UIColor.blackColor()
+            self.textColor = UIColor.darkTextColor()
         }
     }
     

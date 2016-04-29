@@ -24,6 +24,6 @@ class CustomViewController : UIViewController
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
-        return self.getConfig().getPreferredStatusBarStyle()
+        return self.getConfig().getStatusBarStyle()
     }
 }

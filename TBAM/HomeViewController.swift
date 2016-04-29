@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 
 class BHNavUtil
@@ -17,35 +18,6 @@ class BHNavUtil
         
         originalViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: backButton, style: .Plain, target: nil, action: nil)
         originalViewController.navigationController?.pushViewController(vc, animated: animated)
-        return true
-    }
-    
-    class func pop(viewController :UIViewController, animated :Bool) -> Bool
-    {
-        guard let navController = viewController.navigationController else { return false }
-        
-        navController.popViewControllerAnimated(animated)
-        return true
-    }
-    
-    class func present(originalViewController :UIViewController, destination :UIViewController?, animated :Bool) -> Bool
-    {
-        guard let vc = destination else { return false }
-        
-        originalViewController.presentViewController(vc, animated: animated, completion: nil)
-        return true
-    }
-    
-    class func dismiss(viewController :UIViewController, animated :Bool)
-    {
-        viewController.dismissViewControllerAnimated(animated, completion: nil)
-    }
-    
-    class func replace(originalViewController :UIViewController, destination :UIViewController?) -> Bool
-    {
-        guard let vc = destination else { return false }
-        
-        originalViewController.view.window?.rootViewController = vc
         return true
     }
 }
@@ -59,12 +31,14 @@ class BHNavUtil
 class HomeViewController : CustomViewController
 {
     @IBOutlet weak var imgHomeBanner: UIImageView?
-    @IBOutlet weak var lblAlertMessage: UILabel?
+    @IBOutlet weak var webAlertView: UIView?
     @IBOutlet weak var collectionView: UICollectionView?
-    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
-    
-    private let sectionInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    
+//    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
+    @IBOutlet weak var constraintMenuMarginLeading: NSLayoutConstraint?
+    @IBOutlet weak var constraintMenuMarginTrailing: NSLayoutConstraint?
+    @IBOutlet weak var constraintMenuHeight: NSLayoutConstraint?
+
+    private var webViewObj :WKWebView?
     private var menu :[HomeMenuItem]?
     
     // MARK: - View Controller
@@ -81,12 +55,6 @@ class HomeViewController : CustomViewController
         return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? UINavigationController
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        self.navigationItem.title = ""
-        self.navigationItem.backBarButtonItem?.title = "Done"
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -95,14 +63,27 @@ class HomeViewController : CustomViewController
         
         self.menu = self.getConfig().getHomeMenu()
         
-        let message = self.getConfig().getAlertMessage()
-        if ("" == message) {
-            self.lblAlertMessage?.hidden = true
+        let alertURL = self.getConfig().getAlertURL()
+        if ("" != alertURL) {
+            self.webAlertView?.hidden = false
+            self.webViewObj = WKWebView()
+            self.webViewObj!.UIDelegate = self
+            self.webViewObj!.navigationDelegate = self
+            self.webViewObj!.allowsBackForwardNavigationGestures = false
+            self.webViewObj!.scrollView.scrollEnabled = false
+            self.webViewObj!.scrollView.contentInset = UIEdgeInsetsZero
+            
+            self.webViewObj!.backgroundColor            = UIColor.clearColor()
+            self.webViewObj!.scrollView.backgroundColor = UIColor.clearColor()  // have to set the scrollview background color
+            self.webAlertView?.backgroundColor          = UIColor.clearColor()
+            self.webAlertView?.addSubview(self.webViewObj!)
+            
+            let dict = [ "child" : self.webViewObj! ]
+            self.webViewObj!.translatesAutoresizingMaskIntoConstraints = false
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[child]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[child]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
         } else {
-            self.lblAlertMessage?.hidden = false
-            self.lblAlertMessage?.text = message
-            self.lblAlertMessage?.font = self.getConfig().getTextFont()
-            self.lblAlertMessage?.textColor = self.getConfig().getTextColor()
+            self.webAlertView?.hidden = true
         }
         
         if let img = UIImage(named: self.getConfig().getHomeImageName()) {
@@ -117,22 +98,110 @@ class HomeViewController : CustomViewController
     {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.fetchAlertContent()
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        self.adjustSubviews()
+        self.collectionView?.reloadData()
     }
     
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        self.adjustLayouts()
+        self.adjustSubviews()
     }
     
-    func adjustLayouts()
+    override func updateViewConstraints()
     {
-        let height = CGRectGetHeight(self.view.frame) - 20
-        self.constraintImageHeight?.constant = height / 2
+        super.updateViewConstraints()
+        self.adjustSubviews()
+    }
+    
+    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    {
+        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        self.adjustSubviews()
+        self.fetchAlertContent()
+        self.collectionView?.reloadData()
+    }
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        self.adjustSubviews()
+        self.collectionView?.reloadData()
+    }
+    
+    func adjustSubviews()
+    {
+        let width = CGRectGetWidth(self.view.frame)
+        //let height = CGRectGetHeight(self.view.frame)
+
+        let numRows    = CGFloat(self.getConfig().getHomeMenuNumRows())
+        let numColumns = CGFloat(self.getConfig().getHomeMenuNumColumns())
+
+        let sz = self.getButtonSize()
+        self.constraintMenuHeight?.constant = sz * numRows
+        
+        let padding = max(0, (width - sz * numColumns) / 2)
+        self.constraintMenuMarginLeading?.constant  = padding
+        self.constraintMenuMarginTrailing?.constant = padding
+    }
+    
+    func getButtonSize() -> CGFloat
+    {
+        //guard let cv = self.collectionView else { return 0 }
+
+        let numRows    = CGFloat(max(1, self.getConfig().getHomeMenuNumRows()))
+        let numColumns = CGFloat(max(1, self.getConfig().getHomeMenuNumColumns()))
+
+        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))
+        //let containerHeight = CGRectGetHeight(cv.frame)
+
+        let buttonWidth  = containerWidth / numColumns
+        let buttonHeight = containerWidth / numRows
+        return min(buttonWidth, buttonHeight)
+    }
+    
+    func fetchAlertContent()
+    {
+        let alertURL = self.getConfig().getAlertURL()
+        if ("" != alertURL) {
+            if let nsurl = NSURL(string: alertURL), let wv = self.webViewObj {
+                //NSLog("Loading alert \(alertURL)")
+                wv.loadRequest(NSURLRequest(URL: nsurl))
+            }
+        }
     }
 }
 
-// MARK: - Delegates
+// MARK: - WebKit Delegates
+
+extension HomeViewController : WKUIDelegate, WKNavigationDelegate
+{
+    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
+    {
+        //NSLog("finished loading alert")
+    }
+    
+    // handle target="_blank"
+    func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
+    {
+        var flag = false
+        if let ptr = navigationAction.targetFrame {
+            flag = ptr.mainFrame
+        }
+        if (!flag) {
+            webView.loadRequest(navigationAction.request)
+        }
+        return nil
+    }
+}
+
+// MARK: - Collection View Delegates
 
 extension HomeViewController : UICollectionViewDelegate
 {
@@ -202,18 +271,12 @@ extension HomeViewController : UICollectionViewDelegateFlowLayout
 {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
     {
-        guard let cv = self.collectionView else { return CGSizeZero }
-        
-        let w = CGRectGetWidth(cv.frame)
-        let h = CGRectGetHeight(cv.frame)
-        let buttonWidth  = w / 4 - 20
-        let buttonHeight = (h - 20) / 3
-        let sz = min(buttonWidth, buttonHeight)
+        let sz = self.getButtonSize()
         return CGSize(width: sz, height: sz)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
     {
-        return sectionInsets
+        return UIEdgeInsetsZero
     }
 }

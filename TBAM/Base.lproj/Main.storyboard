@@ -19,23 +19,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-Hu-4Rw">
-                                <rect key="frame" x="0.0" y="84" width="600" height="250"/>
+                                <rect key="frame" x="0.0" y="108" width="600" height="256"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="cUh-fU-kCl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" identifier="HomeBanner_Height" id="cUh-fU-kCl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxm-vj-jsW">
-                                <rect key="frame" x="20" y="354" width="560" height="21"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-bx-3St">
+                                <rect key="frame" x="0.0" y="372" width="600" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="f2P-FJ-YWT"/>
+                                    <constraint firstAttribute="height" constant="60" identifier="WebAlert_Height" id="2sU-xz-7Su"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-CP-nYa">
-                                <rect key="frame" x="20" y="395" width="560" height="185"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Mcu-Ak-AkQ">
+                            </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-CP-nYa">
+                                <rect key="frame" x="0.0" y="440" width="600" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="jNF-1c-bcn"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Mcu-Ak-AkQ">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -74,24 +74,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="qxm-vj-jsW" firstAttribute="top" secondItem="fQQ-Hu-4Rw" secondAttribute="bottom" constant="20" id="0pd-R9-1Gy"/>
                             <constraint firstAttribute="trailing" secondItem="fQQ-Hu-4Rw" secondAttribute="trailing" id="24q-pf-UY7"/>
-                            <constraint firstItem="qxm-vj-jsW" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="5bm-2j-Ymt"/>
-                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="AEU-dB-3TN"/>
+                            <constraint firstAttribute="trailing" secondItem="MbC-bx-3St" secondAttribute="trailing" id="736-LD-gaE"/>
                             <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Dux-3s-Zvn"/>
-                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="top" secondItem="qxm-vj-jsW" secondAttribute="bottom" constant="20" id="Kwn-tD-ZVo"/>
-                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="qr0-WF-lrQ"/>
-                            <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="uHe-SI-EWU"/>
-                            <constraint firstItem="qxm-vj-jsW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="wTG-P9-k0y"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Kz-CP-nYa" secondAttribute="bottom" constant="20" id="z90-gX-4SU"/>
+                            <constraint firstItem="MbC-bx-3St" firstAttribute="top" secondItem="fQQ-Hu-4Rw" secondAttribute="bottom" constant="8" id="Fcz-Q0-Lcm"/>
+                            <constraint firstItem="MbC-bx-3St" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JRi-F7-H11"/>
+                            <constraint firstAttribute="trailing" secondItem="1Kz-CP-nYa" secondAttribute="trailing" identifier="MenuMargin_Trailing" id="Wrw-rl-sIp"/>
+                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" identifier="MenuMargin_Leading" id="kvu-FP-6ke"/>
+                            <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="uHe-SI-EWU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Kz-CP-nYa" secondAttribute="bottom" identifier="MenuMargin_Bottom" id="z90-gX-4SU"/>
+                            <constraint firstItem="1Kz-CP-nYa" firstAttribute="top" secondItem="MbC-bx-3St" secondAttribute="bottom" constant="8" identifier="MenuMargin_Top" id="z9K-kf-UIt"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SE9-gH-3XO"/>
                     <connections>
                         <outlet property="collectionView" destination="1Kz-CP-nYa" id="7mA-qc-X39"/>
-                        <outlet property="constraintImageHeight" destination="cUh-fU-kCl" id="OY6-q4-FgA"/>
+                        <outlet property="constraintMenuHeight" destination="jNF-1c-bcn" id="5o4-lY-eZl"/>
+                        <outlet property="constraintMenuMarginLeading" destination="kvu-FP-6ke" id="WCW-oz-6FG"/>
+                        <outlet property="constraintMenuMarginTrailing" destination="Wrw-rl-sIp" id="h2O-Ie-EiE"/>
                         <outlet property="imgHomeBanner" destination="fQQ-Hu-4Rw" id="eOz-9h-mPN"/>
-                        <outlet property="lblAlertMessage" destination="qxm-vj-jsW" id="fYt-Jf-IC8"/>
+                        <outlet property="webAlertView" destination="MbC-bx-3St" id="Npd-Em-l0k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
