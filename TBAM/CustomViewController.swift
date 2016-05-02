@@ -10,20 +10,8 @@ import UIKit
 
 class CustomViewController : UIViewController
 {
-    internal var config :CustomConfigProtocol?
-
-    internal func getConfig() -> CustomConfigProtocol
-    {
-        if let ptr = self.config {
-            return ptr
-        }
-        
-        self.config = ConfigFactory.make()
-        return self.config!
-    }
-    
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
-        return self.getConfig().getStatusBarStyle()
+        return CustomConfig.handle.getStatusBarStyle()
     }
 }

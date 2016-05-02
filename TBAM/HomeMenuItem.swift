@@ -10,45 +10,32 @@ import Foundation
 
 class HomeMenuItem
 {
-    var title    = ""
-    var subtext  = ""
-    var icon     = ""
-    var url      = ""
-    var external = false
+    var title   = ""
+    var subtext = ""
+    var icon    = ""
+    var url     = ""
     
     init()
     {
-        self.title    = ""
-        self.subtext  = ""
-        self.icon     = ""
-        self.url      = ""
-        self.external = false
+        self.title   = ""
+        self.subtext = ""
+        self.icon    = ""
+        self.url     = ""
     }
     
     init(title :String, icon :String, url :String)
     {
-        self.title    = title
-        self.subtext  = ""
-        self.icon     = icon
-        self.url      = url
-        self.external = false
-    }
-    
-    init(title :String, icon :String, url :String, external :Bool)
-    {
-        self.title    = title
-        self.subtext  = ""
-        self.icon     = icon
-        self.url      = url
-        self.external = external
+        self.title   = title
+        self.subtext = ""
+        self.icon    = icon
+        self.url     = url
     }
     
     init(title :String, subtext :String, url :String)
     {
-        self.title    = title
-        self.subtext  = subtext
-        self.icon     = ""
-        self.url      = url
-        self.external = false
+        self.title   = title
+        self.subtext = subtext
+        self.icon    = ""
+        self.url     = url
     }
 }

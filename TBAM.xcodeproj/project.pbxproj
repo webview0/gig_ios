@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C805071C1CD7F3760026EFC2 /* LinkRouter.swift */; };
 		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C805071C1CD7F3760026EFC2 /* LinkRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkRouter.swift; sourceTree = "<group>"; };
 		C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
@@ -127,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				C86E99201C1BC55D00B08843 /* AppDelegate.swift */,
+				C8A95B131C232070007AC9AB /* CustomConfig.swift */,
+				C805071C1CD7F3760026EFC2 /* LinkRouter.swift */,
 				C86E99521C1BC86400B08843 /* HomeViewController.swift */,
 				C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */,
 				C86E994E1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift */,
@@ -135,7 +139,6 @@
 				C828990E1C234089006D7AF1 /* MapViewController.swift */,
 				C8A95B171C232C40007AC9AB /* CustomViewController.swift */,
 				C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */,
-				C8A95B131C232070007AC9AB /* CustomConfig.swift */,
 				C86E99241C1BC55D00B08843 /* Main.storyboard */,
 				C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */,
 				C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */,
@@ -336,6 +339,7 @@
 				C8A95B161C2325DA007AC9AB /* SubmenuViewController.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
 				C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */,
+				C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */,
 				C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */,
 				C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */,
 				C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */,

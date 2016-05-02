@@ -38,7 +38,7 @@ class MapViewController : CustomViewController
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.getConfig().getBackgroundColor()
+        self.view.backgroundColor = CustomConfig.handle.getBackgroundColor()
         
         self.loadLocation()
     }
@@ -86,11 +86,11 @@ class MapViewController : CustomViewController
         // use this function to convert the street address to lat-lon coordinates
         //self.lookupAddress(self.getConfig().getPhysicalAddress())
         
-        let coordinate = CLLocationCoordinate2D(latitude: self.getConfig().getLocationLatitude(), longitude: self.getConfig().getLocationLongitude())
+        let coordinate = CLLocationCoordinate2D(latitude: CustomConfig.handle.getLocationLatitude(), longitude: CustomConfig.handle.getLocationLongitude())
         
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
-        annotation.title = self.getConfig().getTitle()
+        annotation.title = CustomConfig.handle.getTitle()
         self.mapView?.addAnnotation(annotation)
         
         let meters :Double = 100000

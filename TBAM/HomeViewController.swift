@@ -9,20 +9,6 @@
 import UIKit
 import WebKit
 
-
-class BHNavUtil
-{
-    class func push(originalViewController :UIViewController, destination :UIViewController?, backButton: String, animated :Bool) -> Bool
-    {
-        guard let vc = destination else { return false }
-        
-        originalViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: backButton, style: .Plain, target: nil, action: nil)
-        originalViewController.navigationController?.pushViewController(vc, animated: animated)
-        return true
-    }
-}
-
-
 //
 // WKWebView tips
 // http://atmarkplant.com/ios-wkwebview-tips/
@@ -59,11 +45,11 @@ class HomeViewController : CustomViewController
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.getConfig().getBackgroundColor()
+        self.view.backgroundColor = CustomConfig.handle.getBackgroundColor()
         
-        self.menu = self.getConfig().getHomeMenu()
+        self.menu = CustomConfig.handle.getHomeMenu()
         
-        let alertURL = self.getConfig().getAlertURL()
+        let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
             self.webAlertView?.hidden = false
             self.webViewObj = WKWebView()
@@ -86,8 +72,8 @@ class HomeViewController : CustomViewController
             self.webAlertView?.hidden = true
         }
         
-        if let img = UIImage(named: self.getConfig().getHomeImageName()) {
-            self.imgHomeBanner?.contentMode = self.getConfig().getHomeImageAspect()
+        if let img = UIImage(named: CustomConfig.handle.getHomeImageName()) {
+            self.imgHomeBanner?.contentMode = CustomConfig.handle.getHomeImageAspect()
             self.imgHomeBanner?.image = img
         }
 
@@ -140,8 +126,8 @@ class HomeViewController : CustomViewController
         let width = CGRectGetWidth(self.view.frame)
         //let height = CGRectGetHeight(self.view.frame)
 
-        let numRows    = CGFloat(self.getConfig().getHomeMenuNumRows())
-        let numColumns = CGFloat(self.getConfig().getHomeMenuNumColumns())
+        let numRows    = CGFloat(CustomConfig.handle.getHomeMenuNumRows())
+        let numColumns = CGFloat(CustomConfig.handle.getHomeMenuNumColumns())
 
         let sz = self.getButtonSize()
         self.constraintMenuHeight?.constant = sz * numRows
@@ -155,8 +141,8 @@ class HomeViewController : CustomViewController
     {
         //guard let cv = self.collectionView else { return 0 }
 
-        let numRows    = CGFloat(max(1, self.getConfig().getHomeMenuNumRows()))
-        let numColumns = CGFloat(max(1, self.getConfig().getHomeMenuNumColumns()))
+        let numRows    = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumRows()))
+        let numColumns = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumColumns()))
 
         let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))
         //let containerHeight = CGRectGetHeight(cv.frame)
@@ -168,7 +154,7 @@ class HomeViewController : CustomViewController
     
     func fetchAlertContent()
     {
-        let alertURL = self.getConfig().getAlertURL()
+        let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
             if let nsurl = NSURL(string: alertURL), let wv = self.webViewObj {
                 //NSLog("Loading alert \(alertURL)")
@@ -184,7 +170,7 @@ extension HomeViewController : WKUIDelegate, WKNavigationDelegate
 {
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
     {
-        //NSLog("finished loading alert")
+        //print("finished loading")
     }
     
     // handle target="_blank"
@@ -207,25 +193,8 @@ extension HomeViewController : UICollectionViewDelegate
 {
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
-        if let menuObj = self.menuForIndexPath(indexPath) {
-            var vc :UIViewController? = nil
-            if ("submenu://contact" == menuObj.url) {
-                vc = SubmenuViewController.loadFromStoryboard(menuObj.url)
-            } else if ("" != menuObj.url) {
-                if (menuObj.external) {
-                    if let u = NSURL(string: menuObj.url) {
-                        UIApplication.sharedApplication().openURL(u)
-                    } else {
-                        //BHLog.error("Cannot encode URL: \(menuObj.url)")
-                    }
-                    return
-                } else {
-                    vc = WebViewController.loadFromStoryboard(menuObj.url)
-                }
-            }
-            vc?.title = menuObj.title
-            BHNavUtil.push(self, destination: vc, backButton: "Home", animated: true)
-        }
+        guard let item = self.menuForIndexPath(indexPath) else { return }
+        LinkRouter.go(self, menu: item)
     }
 }
 

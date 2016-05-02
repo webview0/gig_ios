@@ -43,16 +43,16 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
     {
         super.viewDidLoad()
         
-        self.view.backgroundColor = self.getConfig().getBackgroundColor()
+        self.view.backgroundColor = CustomConfig.handle.getBackgroundColor()
         self.tableView?.backgroundColor = self.view.backgroundColor
 
         // hide empty cells at the end of UITableView
         self.tableView?.tableFooterView = UIView(frame: CGRectZero)
 
-        self.submenu = self.getConfig().getSubmenu(self.menuname)
+        self.submenu = CustomConfig.handle.getSubmenu(self.menuname)
         
         // set text color same as status bar text color
-        if (self.getConfig().getNavigationBarStyle() == .Black) {
+        if (CustomConfig.handle.getNavigationBarStyle() == .Black) {
             self.textColor = UIColor.lightTextColor()
         } else {
             self.textColor = UIColor.darkTextColor()
@@ -129,28 +129,8 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        if let menuObj = self.getItemAtIndexPath(indexPath) {
-            if ("phone://" == menuObj.url) {
-                self.openPhone()
-            } else if ("email://" == menuObj.url) {
-                self.openEmail()
-            } else if ("map://" == menuObj.url) {
-                self.openMap()
-            } else if ("" != menuObj.url) {
-                if (menuObj.external) {
-                    if let u = NSURL(string: menuObj.url) {
-                        UIApplication.sharedApplication().openURL(u)
-                    } else {
-                        //BHLog.error("Cannot encode URL: \(menuObj.url)")
-                    }
-                } else {
-                    let vc = WebViewController.loadFromStoryboard(menuObj.url)
-                    vc?.title = menuObj.title
-                    let back = self.title ?? "Back"
-                    BHNavUtil.push(self, destination: vc, backButton: back, animated: true)
-                }
-            }
-        }
+        guard let item = self.getItemAtIndexPath(indexPath) else { return }
+        LinkRouter.go(self, menu: item)
     }
     
     func getItemAtIndexPath(indexPath :NSIndexPath) -> HomeMenuItem?
@@ -166,32 +146,5 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
     
     // MARK: - Helper Functions
     
-    func openPhone()
-    {
-        let phoneNumber = self.getConfig().getPhoneNumber()
-        let str = "tel://\(phoneNumber)"
-        if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let url = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(url)
-            }
-        }
-    }
-    
-    func openEmail()
-    {
-        let address = self.getConfig().getEmailAddress()
-        let subject = self.getConfig().getEmailSubject()
-        let str = "mailto:?to=\(address)&subject=\(subject)"
-        if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let url = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(url)
-            }
-        }
-    }
-    
-    func openMap()
-    {
-        let vc = MapViewController.loadFromStoryboard()
-        BHNavUtil.push(self, destination: vc, backButton: "Back", animated: true)
-    }
+
 }

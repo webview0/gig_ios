@@ -25,6 +25,7 @@ protocol CustomConfigProtocol
     func getHomeMenuNumColumns()      -> Int
     func getHomeMenu()                -> [HomeMenuItem]
     func getSubmenu(name :String)     -> [HomeMenuItem]
+    func isExternalLink(url :String)  -> Bool
     func getTitle()                   -> String
     func getPhysicalAddress()         -> String
     func getLocationLatitude()        -> Double
@@ -35,16 +36,15 @@ protocol CustomConfigProtocol
 }
 
 
-class ConfigFactory
+class CustomConfig
 {
-    class func make() -> CustomConfigProtocol
-    {
-        //#if DALLASJCC_DEBUG || DALLASJCC_RELEASE
-        return ConfigDallasJCC()
-        //#else
-        //return ConfigTBAM()
-        //#endif
-    }
+    //#if DALLASJCC_DEBUG || DALLASJCC_RELEASE
+    //static let handle = ConfigDallasJCC()
+    //#else
+    static let handle = ConfigTBAM()
+    //#endif
+    
+    private init() { } //This prevents others from using the default '()' initializer for this class.
 }
 
 
@@ -111,15 +111,15 @@ class ConfigDallasJCC : CustomConfigProtocol
         // site http://www.jccdallas.org/
         // ssl  https://asoft10307.accrisoft.com/jccdallas/
         
-        let URL = "https://asoft10307.accrisoft.com/jccdallas/"
-        menu.append(HomeMenuItem(title: "About",   icon: "menu_about",   url: URL + "?src=gendocs&ref=AboutApp&category=Main"))
-        menu.append(HomeMenuItem(title: "Hours",   icon: "menu_hours",   url: URL + "?src=gendocs&ref=HoursApp&category=Main"))
-        menu.append(HomeMenuItem(title: "Events",  icon: "menu_events",  url: URL + "?src=events"))
-        menu.append(HomeMenuItem(title: "News",    icon: "menu_news",    url: URL + "?src=news&srctype=lister"))
-        menu.append(HomeMenuItem(title: "Camps",   icon: "menu_camps",   url: URL + "?src=gendocs&ref=Camps_app&category=Main"))
-        menu.append(HomeMenuItem(title: "Fitness", icon: "menu_fitness", url: URL + "?src=gendocs&ref=Fitnessapp&category=Main"))
-        menu.append(HomeMenuItem(title: "Blog",    icon: "menu_blog",    url: URL + "?src=blog&srctype=blog_latest"))
-        menu.append(HomeMenuItem(title: "Photos",  icon: "menu_photos",  url: URL + "?src=photo"))
+        let URL = "http://www.jccdallas.org"
+        menu.append(HomeMenuItem(title: "About",   icon: "menu_about",   url: URL + "?displaytype=appDisplayType&src=gendocs&ref=AboutApp&category=Main"))
+        menu.append(HomeMenuItem(title: "Hours",   icon: "menu_hours",   url: URL + "?displaytype=appDisplayType&src=gendocs&ref=HoursApp&category=Main"))
+        menu.append(HomeMenuItem(title: "Events",  icon: "menu_events",  url: URL + "?displaytype=appDisplayType&src=events"))
+        menu.append(HomeMenuItem(title: "News",    icon: "menu_news",    url: URL + "?displaytype=appDisplayType&src=news&srctype=lister"))
+        menu.append(HomeMenuItem(title: "Camps",   icon: "menu_camps",   url: URL + "?displaytype=appDisplayType&src=gendocs&ref=Camps_app&category=Main"))
+        menu.append(HomeMenuItem(title: "Fitness", icon: "menu_fitness", url: URL + "?displaytype=appDisplayType&src=gendocs&ref=Fitnessapp&category=Main"))
+        menu.append(HomeMenuItem(title: "Blog",    icon: "menu_blog",    url: URL + "?displaytype=appDisplayType&src=blog&srctype=blog_latest"))
+        menu.append(HomeMenuItem(title: "Photos",  icon: "menu_photos",  url: URL + "?displaytype=appDisplayType&src=photo"))
         
         return menu
     }
@@ -127,6 +127,11 @@ class ConfigDallasJCC : CustomConfigProtocol
     func getSubmenu(name :String) -> [HomeMenuItem]
     {
         return []
+    }
+    
+    func isExternalLink(url :String) -> Bool
+    {
+        return !url.lowercaseString.hasPrefix("http://www.jccdallas.org")
     }
     
     func getTitle() -> String
@@ -253,7 +258,7 @@ class ConfigTBAM : CustomConfigProtocol
         // site http://www.tbam.org/
         // ssl  https://asoft4124.accrisoft.com/betham/
         
-        let URL = "https://asoft4124.accrisoft.com/betham/"
+        let URL = "http://www.tbam.org/"
         
         menu.append(HomeMenuItem(title: "Calendar",     icon: "mainmenu_calendar400x400c",    url: URL + "?src=events&srctype=events_lister_app"))
         menu.append(HomeMenuItem(title: "Contact",      icon: "mainmenu_contact400x400c",     url: "submenu://contact"))
@@ -267,7 +272,7 @@ class ConfigTBAM : CustomConfigProtocol
         
         menu.append(HomeMenuItem(title: "Schools",      icon: "mainmenu_schools400x400c",     url: URL + "?src=gendocs&ref=school_landing_page"))
         menu.append(HomeMenuItem(title: "Do a Mitzvah", icon: "mainmenu_doamitzvah400x400c",  url: URL + "?src=forms&ref=Do_a_Mitzvah"))
-        menu.append(HomeMenuItem(title: "Donate",       icon: "mainmenu_donate400x400c",      url: URL + "?src=forms&ref=Online_Donation_From_App", external: true))
+        menu.append(HomeMenuItem(title: "Donate",       icon: "mainmenu_donate400x400c",      url: "https://asoft4124.accrisoft.com/betham/?src=forms&ref=Online_Donation_From_App"))
         menu.append(HomeMenuItem(title: "Memberhood",   icon: "mainmenu_memberhood400x400c",  url: URL + "?src=gendocs&ref=Memberhood_App"))
         
         return menu
@@ -280,12 +285,17 @@ class ConfigTBAM : CustomConfigProtocol
         
         menu.append(HomeMenuItem(title: "Call Temple Beth Am",  subtext: "Tap to call our Main Office",   url: "phone://"))
         menu.append(HomeMenuItem(title: "Email Temple Beth Am", subtext: "Send an email to our office",   url: "email://"))
-        menu.append(HomeMenuItem(title: "Staff Directory",      subtext: "View our full staff directory", url: "http://asoft4124.accrisoft.com/betham/index.php?src=gendocs&ref=ContactUs_App"))
+        menu.append(HomeMenuItem(title: "Staff Directory",      subtext: "View our full staff directory", url: "http://www.tbam.org/?src=gendocs&ref=ContactUs_App"))
         menu.append(HomeMenuItem(title: "Directions",           subtext: "",                              url: "map://"))
         
         return menu
     }
     
+    func isExternalLink(url :String) -> Bool
+    {
+        return !url.lowercaseString.hasPrefix("http://www.tbam.org")
+    }
+
     func getTitle() -> String
     {
         return "Temple Beth Am"

@@ -13,7 +13,7 @@ import WebKit
 // TODO: add pull-to-refresh
 // TODO: add custom local caching
 
-class WebViewController : CustomViewController, WKUIDelegate, WKNavigationDelegate
+class WebViewController : CustomViewController
 {
     private var webViewObj :WKWebView?
     
@@ -35,12 +35,6 @@ class WebViewController : CustomViewController, WKUIDelegate, WKNavigationDelega
         return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? UINavigationController
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        self.navigationItem.title = "Photos"
-        self.navigationItem.backBarButtonItem?.title = "Done"
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -48,8 +42,8 @@ class WebViewController : CustomViewController, WKUIDelegate, WKNavigationDelega
         self.webViewObj = WKWebView()
         self.webViewObj!.UIDelegate = self
         self.webViewObj!.navigationDelegate = self
-        self.webViewObj!.backgroundColor = self.getConfig().getBackgroundColor()
-        self.webViewObj!.scrollView.backgroundColor = self.getConfig().getBackgroundColor()  // have to set the scrollview background color
+        self.webViewObj!.backgroundColor = CustomConfig.handle.getBackgroundColor()
+        self.webViewObj!.scrollView.backgroundColor = CustomConfig.handle.getBackgroundColor()  // have to set the scrollview background color
         self.view = self.webViewObj!
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -71,17 +65,65 @@ class WebViewController : CustomViewController, WKUIDelegate, WKNavigationDelega
         super.viewWillAppear(animated)
         
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : self.getConfig().getTextColor() ]
-        self.navigationController?.navigationBar.barTintColor        = self.getConfig().getBackgroundColor()
-        self.navigationController?.navigationBar.tintColor           = self.getConfig().getTextColor()
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : CustomConfig.handle.getTextColor() ]
+        self.navigationController?.navigationBar.barTintColor        = CustomConfig.handle.getBackgroundColor()
+        self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
         self.navigationController?.navigationBar.translucent         = false
+        
+        let btn = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(WebViewController.pressedBack))
+        self.navigationItem.leftBarButtonItem = btn
     }
     
-    // MARK: - WebView Delegates
+    // MARK: - Shake Gesture
     
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?)
+    {
+        // goto Home screen if they shake the device
+        if (motion == .MotionShake) {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
+    
+    // MARK: - Actions
+    
+    func pressedBack()
+    {
+        if let wv = self.webViewObj {
+            if (wv.canGoBack) {
+                wv.goBack()
+                return
+            }
+        }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+// MARK: - WebView Delegates
+
+extension WebViewController : WKUIDelegate
+{
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
+}
+
+extension WebViewController : WKNavigationDelegate
+{
+    // called when user taps a link (and also on initial load)
+    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void)
+    {
+        if (navigationAction.navigationType == .LinkActivated) {
+            if let url = navigationAction.request.URL {
+                if (CustomConfig.handle.isExternalLink(url.absoluteString)) {
+                    LinkRouter.openSafari(url)
+                    decisionHandler(WKNavigationActionPolicy.Cancel)
+                    return
+                }
+            }
+        }
+        
+        decisionHandler(WKNavigationActionPolicy.Allow)
     }
     
     // handle target="_blank"

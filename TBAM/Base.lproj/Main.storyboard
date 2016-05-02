@@ -237,6 +237,9 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WM0-cM-wAd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="QpY-JM-K9N" id="CSy-Vw-IFw"/>
+                        </connections>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

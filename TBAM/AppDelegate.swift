@@ -23,8 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         //Fabric.with([Crashlytics.self])
         //#endif
         
-        let config = ConfigFactory.make()
-        UINavigationBar.appearance().barStyle = config.getNavigationBarStyle()
+        UINavigationBar.appearance().barStyle = CustomConfig.handle.getNavigationBarStyle()
         
         return true
     }
