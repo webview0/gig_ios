@@ -22,18 +22,6 @@ class MapViewController : CustomViewController
         return vc
     }
     
-    class func loadNavigationFromStoryboard() -> UINavigationController?
-    {
-        let STORYBOARD_ID = "MapNav"
-        return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? UINavigationController
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
-    {
-        self.navigationItem.title = ""
-        self.navigationItem.backBarButtonItem?.title = "Done"
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()

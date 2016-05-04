@@ -29,25 +29,47 @@ class LinkRouter
             return
         }
 
-        var vc :UIViewController? = nil
         if ("submenu://contact" == menu.url) {
-            vc = SubmenuViewController.loadFromStoryboard(menu.url)
-        } else {
-            if (CustomConfig.handle.isExternalLink(menu.url)) {
-                if let u = NSURL(string: menu.url) {
-                    LinkRouter.openSafari(u)
-                }
-                return
-            } else {
-                vc = WebViewController.loadFromStoryboard(menu.url)
+            LinkRouter.openSubmenu(fromViewController, name: menu.url)
+            return
+        }
+
+        if (CustomConfig.handle.isExternalLink(menu.url)) {
+            if let nsurl = NSURL(string: menu.url) {
+                LinkRouter.openSafari(nsurl)
             }
+            return
         }
         
-        guard let safeVC = vc else { return }
-        safeVC.title = menu.title
-        fromViewController.navigationController?.pushViewController(safeVC, animated: true)
+        if let vc = WebViewController.loadFromStoryboard(menu.url) {
+            vc.title = menu.title
+            fromViewController.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
+    class func openSubmenu(fromViewController :UIViewController, name :String)
+    {
+        let submenu = CustomConfig.handle.getSubmenu(name)
+        
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        
+        for item in submenu {
+            let action = UIAlertAction(title: item.title, style: .Default) {
+                [weak fromViewController]
+                _ in
+                if let vc = fromViewController {
+                    LinkRouter.go(vc, menu: item)
+                }
+            }
+            alert.addAction(action)
+        }
+        
+        let cancel = UIAlertAction(title: "Dismiss", style: .Cancel) { _ in }
+        alert.addAction(cancel)
+
+        fromViewController.presentViewController(alert, animated: true) { }
+    }
+
     class func openSafari(url :NSURL) -> Bool
     {
         let app = UIApplication.sharedApplication()
@@ -61,8 +83,8 @@ class LinkRouter
     {
         let str = "tel://\(phoneNumber)"
         if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let url = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(url)
+            if let nsurl = NSURL(string: enc) {
+                UIApplication.sharedApplication().openURL(nsurl)
             }
         }
     }
@@ -71,8 +93,8 @@ class LinkRouter
     {
         let str = "mailto:?to=\(to)&subject=\(subject)"
         if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let url = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(url)
+            if let nsurl = NSURL(string: enc) {
+                UIApplication.sharedApplication().openURL(nsurl)
             }
         }
     }

@@ -39,9 +39,9 @@ protocol CustomConfigProtocol
 class CustomConfig
 {
     //#if DALLASJCC_DEBUG || DALLASJCC_RELEASE
-    //static let handle = ConfigDallasJCC()
+    static let handle = ConfigDallasJCC()
     //#else
-    static let handle = ConfigTBAM()
+    //static let handle = ConfigTBAM()
     //#endif
     
     private init() { } //This prevents others from using the default '()' initializer for this class.
@@ -67,8 +67,8 @@ class ConfigDallasJCC : CustomConfigProtocol
     
     func getHomeImageName() -> String
     {
-        return "home_banner_demo"
-        //return "home_banner_dallasjcc"
+        //return "home_banner_demo"
+        return "home_banner_dallasjcc"
     }
     
     func getHomeImageAspect() -> UIViewContentMode

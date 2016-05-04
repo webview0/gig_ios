@@ -29,12 +29,6 @@ class WebViewController : CustomViewController
         return vc
     }
     
-    class func loadNavigationFromStoryboard() -> UINavigationController?
-    {
-        let STORYBOARD_ID = "WebNav"
-        return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? UINavigationController
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -44,20 +38,12 @@ class WebViewController : CustomViewController
         self.webViewObj!.navigationDelegate = self
         self.webViewObj!.backgroundColor = CustomConfig.handle.getBackgroundColor()
         self.webViewObj!.scrollView.backgroundColor = CustomConfig.handle.getBackgroundColor()  // have to set the scrollview background color
+        self.webViewObj!.allowsBackForwardNavigationGestures = true
         self.view = self.webViewObj!
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
         
-        if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
-        
-        if let nsurl = NSURL(string: self.url) {
-            //NSLog("Loading page \(self.url)")
-            self.webViewObj!.loadRequest(NSURLRequest(URL: nsurl))
-            self.webViewObj!.allowsBackForwardNavigationGestures = true
-        } else {
-            //NSLog("Cannot encode URL")
-            // TODO: show error message on page
-        }
+        self.loadURL(self.url)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -70,10 +56,28 @@ class WebViewController : CustomViewController
         self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
         self.navigationController?.navigationBar.translucent         = false
         
-        let btn = UIBarButtonItem(title: "Back", style: .Plain, target: self, action: #selector(WebViewController.pressedBack))
+        let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
+        let btn = UIBarButtonItem(title: title, style: .Plain, target: self, action: #selector(WebViewController.pressedBack))
         self.navigationItem.leftBarButtonItem = btn
     }
     
+    func loadURL(url :String)
+    {
+        if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
+        
+        if let nsurl = NSURL(string: url) {
+            self.webViewObj?.loadRequest(NSURLRequest(URL: nsurl))
+        } else {
+            self.showError("Error: Cannot encode URL")
+        }
+    }
+    
+    func showError(message :String)
+    {
+        self.webViewObj?.stopLoading()
+        self.webViewObj?.loadHTMLString("<html><body><div>\(message)</div></body></html>", baseURL: nil)
+    }
+
     // MARK: - Shake Gesture
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?)

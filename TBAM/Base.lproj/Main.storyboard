@@ -117,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QmD-j2-nvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="1329"/>
+            <point key="canvasLocation" x="1401" y="1523"/>
         </scene>
         <!--Submenu View Controller-->
         <scene sceneID="Rfz-eV-Zl7">
@@ -191,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="da2-z9-eS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="2031"/>
+            <point key="canvasLocation" x="609" y="2331"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="bdX-Gu-7d9">
@@ -227,28 +227,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ydj-TA-zRR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1401" y="2743"/>
-        </scene>
-        <!--Custom Navigation Controller-->
-        <scene sceneID="HZo-58-zbA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QpY-JM-K9N" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WM0-cM-wAd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <connections>
-                            <outlet property="delegate" destination="QpY-JM-K9N" id="CSy-Vw-IFw"/>
-                        </connections>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="bxS-E2-ZpA" kind="relationship" relationship="rootViewController" id="7hP-tv-ctL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Jc7-82-6Pm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="589" y="1329"/>
+            <point key="canvasLocation" x="609" y="1523"/>
         </scene>
         <!--Custom Navigation Controller-->
         <scene sceneID="j6N-tS-LXL">
@@ -262,50 +241,16 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="hAI-or-S4u"/>
+                        <segue destination="bxS-E2-ZpA" kind="show" id="Nsu-6K-EMw"/>
+                        <segue destination="qfw-on-RUf" kind="show" id="4rW-9t-8Ju"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7A-eK-b0m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589" y="631"/>
-        </scene>
-        <!--Custom Navigation Controller-->
-        <scene sceneID="paT-AJ-JFZ">
-            <objects>
-                <navigationController storyboardIdentifier="SubmenuNav" automaticallyAdjustsScrollViewInsets="NO" id="NnZ-PH-Az8" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cSE-DN-JQ5">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Kei-Hg-HUD" kind="relationship" relationship="rootViewController" id="mCC-lq-beI"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7l-QP-rUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="589" y="2031"/>
-        </scene>
-        <!--Custom Navigation Controller-->
-        <scene sceneID="GFI-kZ-LoZ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9no-uz-Eon" customClass="CustomNavigationController" customModule="Dallas_JCC" customModuleProvider="target" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="her-WV-zIT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qfw-on-RUf" kind="relationship" relationship="rootViewController" id="T6d-Ep-6wc"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c3A-0Q-g30" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="589" y="2743"/>
+            <point key="canvasLocation" x="609" y="631"/>
         </scene>
     </scenes>
     <resources>
-        <image name="home_banner" width="1537" height="720"/>
+        <image name="home_banner" width="1024" height="1536"/>
     </resources>
 </document>
