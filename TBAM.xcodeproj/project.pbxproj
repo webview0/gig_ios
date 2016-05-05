@@ -11,6 +11,7 @@
 		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
+		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 		C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
 		C8A95B161C2325DA007AC9AB /* SubmenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B151C2325DA007AC9AB /* SubmenuViewController.swift */; };
 		C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
+		C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,7 @@
 		C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
 		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99201C1BC55D00B08843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		C8A95B131C232070007AC9AB /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		C8A95B151C2325DA007AC9AB /* SubmenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmenuViewController.swift; sourceTree = "<group>"; };
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 		C86E991F1C1BC55D00B08843 /* TBAM */ = {
 			isa = PBXGroup;
 			children = (
+				C8B8230C1CDAAA54001A182C /* Library */,
 				C86E99201C1BC55D00B08843 /* AppDelegate.swift */,
 				C8A95B131C232070007AC9AB /* CustomConfig.swift */,
 				C805071C1CD7F3760026EFC2 /* LinkRouter.swift */,
@@ -165,6 +170,15 @@
 				C86E99421C1BC55D00B08843 /* Info.plist */,
 			);
 			path = TBAMUITests;
+			sourceTree = "<group>";
+		};
+		C8B8230C1CDAAA54001A182C /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */,
+				C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */,
+			);
+			path = Library;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,12 +350,14 @@
 				C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */,
 				C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */,
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
+				C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */,
 				C8A95B161C2325DA007AC9AB /* SubmenuViewController.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
 				C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */,
 				C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */,
 				C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */,
 				C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */,
+				C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */,
 				C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */,
 				C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */,
 			);

@@ -16,8 +16,15 @@ import WebKit
 class WebViewController : CustomViewController
 {
     private var webViewObj :WKWebView?
-    
+
     private var url = ""
+    
+    private let LOADING_MESSAGE = "Loading"
+    private let LOADING_PAUSE   = 10  // amount of time to pause before showing Loading message (in tenths of a second)
+    
+    private var loadingView    :BHLoadingView? = nil
+    private var loadingTimer   :NSTimer?       = nil
+    private var loadingCounter :Int = 0
     
     // MARK: - View Controller
     
@@ -40,10 +47,6 @@ class WebViewController : CustomViewController
         self.webViewObj!.scrollView.backgroundColor = CustomConfig.handle.getBackgroundColor()  // have to set the scrollview background color
         self.webViewObj!.allowsBackForwardNavigationGestures = true
         self.view = self.webViewObj!
-        
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        
-        self.loadURL(self.url)
     }
     
     override func viewWillAppear(animated: Bool)
@@ -57,25 +60,40 @@ class WebViewController : CustomViewController
         self.navigationController?.navigationBar.translucent         = false
         
         let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
-        let btn = UIBarButtonItem(title: title, style: .Plain, target: self, action: #selector(WebViewController.pressedBack))
-        self.navigationItem.leftBarButtonItem = btn
+        let color = CustomConfig.handle.getTextColor()
+        self.navigationItem.leftBarButtonItem = BHBarButtonBack.factory(title, tintColor: color, target: self, action: #selector(WebViewController.pressedBack))
+        
+        self.loadURL(url: self.url)
     }
     
-    func loadURL(url :String)
+    override func viewDidAppear(animated: Bool)
     {
-        if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
-        
+        super.viewDidAppear(animated)
+    }
+
+    func loadURL(url url :String)
+    {
         if let nsurl = NSURL(string: url) {
-            self.webViewObj?.loadRequest(NSURLRequest(URL: nsurl))
+            self.loadURL(request: NSURLRequest(URL: nsurl))
         } else {
             self.showError("Error: Cannot encode URL")
         }
+    }
+
+    func loadURL(request request :NSURLRequest)
+    {
+        if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
+        
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+        self.scheduleLoadingView()
+        self.webViewObj?.loadRequest(request)
     }
     
     func showError(message :String)
     {
         self.webViewObj?.stopLoading()
         self.webViewObj?.loadHTMLString("<html><body><div>\(message)</div></body></html>", baseURL: nil)
+        self.hideLoadingView()
     }
 
     // MARK: - Shake Gesture
@@ -100,6 +118,70 @@ class WebViewController : CustomViewController
         }
         self.navigationController?.popViewControllerAnimated(true)
     }
+    
+    // MARK: - Loading View
+    
+    private func scheduleLoadingView()
+    {
+        if let _ = self.loadingTimer {
+            // if loadingTimer is already set then return
+            return
+        }
+        
+        self.loadingCounter = 0
+        let SELECTOR_TIMER = #selector(WebViewController.timerCounter)
+        if (self.respondsToSelector(SELECTOR_TIMER)) {
+            self.loadingTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: SELECTOR_TIMER, userInfo: nil, repeats: true)
+            //self.loadingTimer.fire()
+        }
+    }
+    
+    func timerCounter()
+    {
+        self.loadingCounter += 1
+        if (self.loadingCounter >= self.LOADING_PAUSE) {
+            self.showLoadingView()
+        }
+    }
+    
+    private func showLoadingView()
+    {
+        guard let timer = self.loadingTimer else {
+            self.hideLoadingView()
+            return
+        }
+        
+        timer.invalidate()
+        self.loadingTimer = nil
+        
+        var rect = self.view.frame
+        rect.origin.x = 0
+        rect.origin.y = 0
+        
+        if let v = self.loadingView {
+            v.updateRect(rect)
+            v.startSpinner()
+        } else {
+            let v = BHLoadingView(frame: rect)
+            self.loadingView = v
+            v.setText(self.LOADING_MESSAGE)
+            let index = self.view.subviews.count + 99
+            self.view.insertSubview(v, atIndex:index)
+            v.startSpinner()
+        }
+    }
+    
+    private func hideLoadingView()
+    {
+        if let timer = self.loadingTimer {
+            timer.invalidate()
+        }
+        self.loadingTimer = nil
+        if let v = self.loadingView {
+            v.stopSpinner()
+        }
+        self.loadingCounter = 0
+    }
 }
 
 // MARK: - WebView Delegates
@@ -109,6 +191,7 @@ extension WebViewController : WKUIDelegate
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
     {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        self.hideLoadingView()
     }
 }
 
@@ -138,7 +221,7 @@ extension WebViewController : WKNavigationDelegate
             flag = ptr.mainFrame
         }
         if (!flag) {
-            webView.loadRequest(navigationAction.request)
+            self.loadURL(request: navigationAction.request)
         }
         return nil
     }

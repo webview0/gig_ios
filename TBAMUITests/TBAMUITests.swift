@@ -30,23 +30,23 @@ class TBAMUITests: XCTestCase {
         let app = XCUIApplication()
         let collectionViewsQuery = app.collectionViews
         
-//        snapshot("01_Home")
-//        
-//        collectionViewsQuery.images["menu_about"].tap()
-//        snapshot("02_About")
-//
-//        app.navigationBars["About"].buttons["Home"].tap()
-//        collectionViewsQuery.images["menu_hours"].tap()
-//        snapshot("03_Hours")
-        
         snapshot("01_Home")
         
-        collectionViewsQuery.images["mainmenu_calendar400x400c"].tap()
-        snapshot("02_Calendar")
+        collectionViewsQuery.images["menu_about"].tap()
+        snapshot("02_About")
 
-        app.navigationBars["Calendar"].buttons["Home"].tap()
-        collectionViewsQuery.images["mainmenu_memberhood400x400c"].tap()
-        snapshot("03_Memberhood")
+        app.navigationBars["About"].buttons["Home"].tap()
+        collectionViewsQuery.images["menu_hours"].tap()
+        snapshot("03_Hours")
+        
+//        snapshot("01_Home")
+//        
+//        collectionViewsQuery.images["mainmenu_calendar400x400c"].tap()
+//        snapshot("02_Calendar")
+//
+//        app.navigationBars["Calendar"].buttons["Home"].tap()
+//        collectionViewsQuery.images["mainmenu_memberhood400x400c"].tap()
+//        snapshot("03_Memberhood")
     }
     
     override func tearDown() {

@@ -26,6 +26,11 @@ Remove the Fix-it button from Xcode
 fastlane ios test
 ```
 Runs all the tests
+### ios snapshot
+```
+fastlane ios snapshot
+```
+Take screenshots
 ### ios beta
 ```
 fastlane ios beta
