@@ -10,7 +10,7 @@ import UIKit
 
 class LinkRouter
 {
-    class func go(fromViewController :UIViewController, menu :HomeMenuItem?)
+    class func go(fromViewController :UIViewController, nearestView :UIView?, menu :HomeMenuItem?)
     {
         guard let menu = menu else { return }
         
@@ -30,13 +30,13 @@ class LinkRouter
         }
 
         if ("submenu://contact" == menu.url) {
-            LinkRouter.openSubmenu(fromViewController, name: menu.url)
+            LinkRouter.openSubmenu(fromViewController, nearestView: nearestView, name: menu.url)
             return
         }
 
         if (CustomConfig.handle.isExternalLink(menu.url)) {
             if let nsurl = NSURL(string: menu.url) {
-                LinkRouter.openSafari(nsurl)
+                LinkRouter.openBrowser(nsurl)
             }
             return
         }
@@ -47,7 +47,7 @@ class LinkRouter
         }
     }
     
-    class func openSubmenu(fromViewController :UIViewController, name :String)
+    class func openSubmenu(fromViewController :UIViewController, nearestView :UIView?, name :String)
     {
         let submenu = CustomConfig.handle.getSubmenu(name)
         
@@ -58,7 +58,7 @@ class LinkRouter
                 [weak fromViewController]
                 _ in
                 if let vc = fromViewController {
-                    LinkRouter.go(vc, menu: item)
+                    LinkRouter.go(vc, nearestView: nearestView, menu: item)
                 }
             }
             alert.addAction(action)
@@ -67,10 +67,22 @@ class LinkRouter
         let cancel = UIAlertAction(title: "Dismiss", style: .Cancel) { _ in }
         alert.addAction(cancel)
 
+        if let popoverController = alert.popoverPresentationController {
+            // make sure we have an actual view to attach to (iPads will crash if they don't have a valid popover view)
+            var nearest = fromViewController.view
+            if let n = nearestView {
+                nearest = n
+            } else if let n = fromViewController.navigationController?.view {
+                nearest = n
+            }
+            popoverController.sourceView = nearest
+            popoverController.sourceRect = nearest.bounds
+        }
+        
         fromViewController.presentViewController(alert, animated: true) { }
     }
 
-    class func openSafari(url :NSURL) -> Bool
+    class func openBrowser(url :NSURL) -> Bool
     {
         let app = UIApplication.sharedApplication()
         if (app.canOpenURL(url)) {
@@ -102,6 +114,7 @@ class LinkRouter
     class func openMap(fromViewController :UIViewController)
     {
         if let vc = MapViewController.loadFromStoryboard() {
+            vc.title = "Map"
             fromViewController.navigationController?.pushViewController(vc, animated: true)
         }
     }

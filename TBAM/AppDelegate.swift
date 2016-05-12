@@ -7,10 +7,10 @@
 //
 
 import UIKit
-//#if TBAM_RELEASE
-//import Fabric
-//import Crashlytics
-//#endif
+#if TBAM_RELEASE || DALLASJCC_RELEASE
+import Fabric
+import Crashlytics
+#endif
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
@@ -19,9 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        //#if TBAM_RELEASE
-        //Fabric.with([Crashlytics.self])
-        //#endif
+        #if TBAM_RELEASE || DALLASJCC_RELEASE
+        Fabric.with([Crashlytics.self])
+        #endif
         
         UINavigationBar.appearance().barStyle = CustomConfig.handle.getNavigationBarStyle()
         

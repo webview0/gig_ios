@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Z7-qz-6Ea">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Z7-qz-6Ea">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-Hu-4Rw">
-                                <rect key="frame" x="0.0" y="108" width="600" height="256"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" identifier="HomeBanner_Height" id="cUh-fU-kCl"/>
                                 </constraints>
@@ -81,7 +81,7 @@
                             <constraint firstItem="MbC-bx-3St" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JRi-F7-H11"/>
                             <constraint firstAttribute="trailing" secondItem="1Kz-CP-nYa" secondAttribute="trailing" identifier="MenuMargin_Trailing" id="Wrw-rl-sIp"/>
                             <constraint firstItem="1Kz-CP-nYa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" identifier="MenuMargin_Leading" id="kvu-FP-6ke"/>
-                            <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="44" id="uHe-SI-EWU"/>
+                            <constraint firstItem="fQQ-Hu-4Rw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="uHe-SI-EWU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1Kz-CP-nYa" secondAttribute="bottom" identifier="MenuMargin_Bottom" id="z90-gX-4SU"/>
                             <constraint firstItem="1Kz-CP-nYa" firstAttribute="top" secondItem="MbC-bx-3St" secondAttribute="bottom" constant="8" identifier="MenuMargin_Top" id="z9K-kf-UIt"/>
                         </constraints>
@@ -92,6 +92,7 @@
                         <outlet property="constraintMenuHeight" destination="jNF-1c-bcn" id="5o4-lY-eZl"/>
                         <outlet property="constraintMenuMarginLeading" destination="kvu-FP-6ke" id="WCW-oz-6FG"/>
                         <outlet property="constraintMenuMarginTrailing" destination="Wrw-rl-sIp" id="h2O-Ie-EiE"/>
+                        <outlet property="constraintWebAlertHeight" destination="2sU-xz-7Su" id="11k-Dw-NEB"/>
                         <outlet property="imgHomeBanner" destination="fQQ-Hu-4Rw" id="eOz-9h-mPN"/>
                         <outlet property="webAlertView" destination="MbC-bx-3St" id="Npd-Em-l0k"/>
                     </connections>

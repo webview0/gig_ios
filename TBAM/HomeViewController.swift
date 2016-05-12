@@ -20,6 +20,7 @@ class HomeViewController : CustomViewController
     @IBOutlet weak var webAlertView: UIView?
     @IBOutlet weak var collectionView: UICollectionView?
 //    @IBOutlet weak var constraintImageHeight: NSLayoutConstraint?
+    @IBOutlet weak var constraintWebAlertHeight: NSLayoutConstraint?
     @IBOutlet weak var constraintMenuMarginLeading: NSLayoutConstraint?
     @IBOutlet weak var constraintMenuMarginTrailing: NSLayoutConstraint?
     @IBOutlet weak var constraintMenuHeight: NSLayoutConstraint?
@@ -52,6 +53,8 @@ class HomeViewController : CustomViewController
         let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
             self.webAlertView?.hidden = false
+            self.constraintWebAlertHeight?.constant = 60
+
             self.webViewObj = WKWebView()
             self.webViewObj!.UIDelegate = self
             self.webViewObj!.navigationDelegate = self
@@ -70,6 +73,7 @@ class HomeViewController : CustomViewController
             self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[child]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
         } else {
             self.webAlertView?.hidden = true
+            self.constraintWebAlertHeight?.constant = 0
         }
         
         if let img = UIImage(named: CustomConfig.handle.getHomeImageName()) {
@@ -135,6 +139,22 @@ class HomeViewController : CustomViewController
         let padding = max(0, (width - sz * numColumns) / 2)
         self.constraintMenuMarginLeading?.constant  = padding
         self.constraintMenuMarginTrailing?.constant = padding
+        
+        // if the aspect ratio of the home banner image is close to a square, then attempt to switch to an alternate image
+        // TODO: need to split the logo from the stripe of images, or use images that match Size Classes -- the current method won't scale
+        if let iv = self.imgHomeBanner {
+            if (iv.contentMode == .ScaleAspectFit) {
+                let RATIO :CGFloat = 1.5
+                let w = CGRectGetWidth(iv.frame)
+                let h = CGRectGetHeight(iv.frame)
+                if (h > 0 && w / h < RATIO) {
+                    let name = CustomConfig.handle.getHomeImageName() + "_12"
+                    if let img = UIImage(named: name) {
+                        self.imgHomeBanner?.image = img
+                    }
+                }
+            }
+        }
     }
     
     func getButtonSize() -> CGFloat
@@ -144,7 +164,7 @@ class HomeViewController : CustomViewController
         let numRows    = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumRows()))
         let numColumns = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumColumns()))
 
-        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame))
+        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.75)
         //let containerHeight = CGRectGetHeight(cv.frame)
 
         let buttonWidth  = containerWidth / numColumns
@@ -194,7 +214,8 @@ extension HomeViewController : UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         guard let item = self.menuForIndexPath(indexPath) else { return }
-        LinkRouter.go(self, menu: item)
+        let nearestView = self.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        LinkRouter.go(self, nearestView: nearestView, menu: item)
     }
 }
 

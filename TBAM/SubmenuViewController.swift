@@ -118,7 +118,8 @@ class SubmenuViewController : CustomViewController, UITableViewDelegate, UITable
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         guard let item = self.getItemAtIndexPath(indexPath) else { return }
-        LinkRouter.go(self, menu: item)
+        let nearestView = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        LinkRouter.go(self, nearestView: nearestView, menu: item)
     }
     
     func getItemAtIndexPath(indexPath :NSIndexPath) -> HomeMenuItem?

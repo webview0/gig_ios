@@ -33,15 +33,16 @@ protocol CustomConfigProtocol
     func getPhoneNumber()             -> String
     func getEmailAddress()            -> String
     func getEmailSubject()            -> String
+    func getTestSubscreens()          -> [(button :String, output :String)]
 }
 
 
 class CustomConfig
 {
     //#if DALLASJCC_DEBUG || DALLASJCC_RELEASE
-    static let handle = ConfigDallasJCC()
+    //static let handle = ConfigDallasJCC()
     //#else
-    //static let handle = ConfigTBAM()
+    static let handle = ConfigTBAM()
     //#endif
     
     private init() { } //This prevents others from using the default '()' initializer for this class.
@@ -167,6 +168,15 @@ class ConfigDallasJCC : CustomConfigProtocol
     func getEmailSubject() -> String
     {
         return "Dallas JCC app feedback"
+    }
+    
+    func getTestSubscreens() -> [(button :String, output :String)]
+    {
+        let menu = self.getHomeMenu()
+        return [
+            (button: menu[0].icon, output: "02_About"),
+            (button: menu[1].icon, output: "03_Hours"),
+        ]
     }
 }
 
@@ -329,5 +339,14 @@ class ConfigTBAM : CustomConfigProtocol
     func getEmailSubject() -> String
     {
         return "Temple Beth Am app feedback"
+    }
+    
+    func getTestSubscreens() -> [(button :String, output :String)]
+    {
+        let menu = self.getHomeMenu()
+        return [
+            (button: menu[0].icon,  output: "02_Calendar"),
+            (button: menu[11].icon, output: "03_Memberhood"),
+        ]
     }
 }

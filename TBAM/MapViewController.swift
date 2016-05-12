@@ -11,6 +11,8 @@ import MapKit
 
 class MapViewController : CustomViewController
 {
+    internal let BUTTON_OPEN_MAPS = 1001
+    
     @IBOutlet weak var mapView: MKMapView?
     
     // MARK: - View Controller
@@ -28,6 +30,8 @@ class MapViewController : CustomViewController
         
         self.view.backgroundColor = CustomConfig.handle.getBackgroundColor()
         
+        self.mapView?.delegate = self
+        
         self.loadLocation()
     }
     
@@ -41,6 +45,16 @@ class MapViewController : CustomViewController
     {
         super.viewDidAppear(animated)
         
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : CustomConfig.handle.getTextColor() ]
+        self.navigationController?.navigationBar.barTintColor        = CustomConfig.handle.getBackgroundColor()
+        self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
+        self.navigationController?.navigationBar.translucent         = false
+        
+        let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
+        let color = CustomConfig.handle.getTextColor()
+        self.navigationItem.leftBarButtonItem = BHBarButtonBack.factory(title, tintColor: color, target: self, action: #selector(MapViewController.pressedBack))
+        
         guard let mv = self.mapView else { return }
         
         for pin in mv.annotations {
@@ -49,27 +63,9 @@ class MapViewController : CustomViewController
         }
     }
     
-    // MARK: - Map
+    // MARK: - Helper Functions
     
-//    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
-//    {
-//        let PIN_IDENTIFIER = "MapPin"
-//        var view :MKPinAnnotationView
-//        if let dq = mapView.dequeueReusableAnnotationViewWithIdentifier(PIN_IDENTIFIER) as? MKPinAnnotationView {
-//            view = dq
-//            view.annotation = annotation
-//        } else {
-//            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: PIN_IDENTIFIER)
-//        }
-//        if #available(iOS 9.0, *) {
-//            view.pinTintColor = UIColor.blueColor()
-//        }
-////            view.leftCalloutAccessoryView  = self.makeLeftButton(annotation.getFavoriteID(), pinType: annotation.type)
-////            view.rightCalloutAccessoryView = self.makeRightButton(annotation.getFavoriteID())
-//        return view
-//    }
-    
-    func loadLocation()
+    internal func loadLocation()
     {
         // use this function to convert the street address to lat-lon coordinates
         //self.lookupAddress(self.getConfig().getPhysicalAddress())
@@ -79,14 +75,13 @@ class MapViewController : CustomViewController
         let annotation = MKPointAnnotation()
         annotation.coordinate = coordinate
         annotation.title = CustomConfig.handle.getTitle()
+        annotation.subtitle = "Tap for Driving Directions"
         self.mapView?.addAnnotation(annotation)
         
         let meters :Double = 100000
         let region = MKCoordinateRegionMakeWithDistance(coordinate, meters, meters)
         self.mapView?.region = region
     }
-    
-    // MARK: - Helper Functions
     
     internal func lookupAddress(address :String)
     {
@@ -103,6 +98,56 @@ class MapViewController : CustomViewController
                     }
                 }
             }
+        }
+    }
+    
+    internal func openInMaps(coordinate :CLLocationCoordinate2D?)
+    {
+        guard let coordinate = coordinate else { return }
+        
+        let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
+        let item = MKMapItem(placemark: placemark)
+        item.name = CustomConfig.handle.getTitle()
+        item.openInMapsWithLaunchOptions([ MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
+    }
+    
+    // MARK: - Actions
+    
+    func pressedBack()
+    {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+}
+
+// MARK: - Map View Delegate
+
+extension MapViewController : MKMapViewDelegate
+{
+    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        let PIN_IDENTIFIER = "MapPin"
+        var view :MKPinAnnotationView
+        if let dq = mapView.dequeueReusableAnnotationViewWithIdentifier(PIN_IDENTIFIER) as? MKPinAnnotationView {
+            view = dq
+            view.annotation = annotation
+        } else {
+            view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: PIN_IDENTIFIER)
+        }
+        //if #available(iOS 9.0, *) {
+        //    view.pinTintColor = UIColor.blueColor()
+        //}
+        
+        view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+        view.rightCalloutAccessoryView!.tag = self.BUTTON_OPEN_MAPS
+        view.canShowCallout = true
+        
+        return view
+    }
+    
+    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
+    {
+        if (self.BUTTON_OPEN_MAPS == control.tag) {
+            self.openInMaps(view.annotation?.coordinate)
         }
     }
 }
