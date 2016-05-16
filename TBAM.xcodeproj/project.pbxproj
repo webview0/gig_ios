@@ -12,6 +12,8 @@
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
 		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
+		C85687951CE9F0B5008393EB /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85687931CE9F0B5008393EB /* Crashlytics.framework */; };
+		C85687961CE9F0B5008393EB /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C85687941CE9F0B5008393EB /* Fabric.framework */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -24,7 +26,6 @@
 		C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99521C1BC86400B08843 /* HomeViewController.swift */; };
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
 		C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
-		C8A95B161C2325DA007AC9AB /* SubmenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B151C2325DA007AC9AB /* SubmenuViewController.swift */; };
 		C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
 		C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
 		C8EB3B371CE3C02200C820FD /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
@@ -56,6 +57,8 @@
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
+		C85687931CE9F0B5008393EB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		C85687941CE9F0B5008393EB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
 		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99201C1BC55D00B08843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		C86E99521C1BC86400B08843 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C86E99541C1BCDC600B08843 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C8A95B131C232070007AC9AB /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
-		C8A95B151C2325DA007AC9AB /* SubmenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmenuViewController.swift; sourceTree = "<group>"; };
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,6 +86,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85687951CE9F0B5008393EB /* Crashlytics.framework in Frameworks */,
+				C85687961CE9F0B5008393EB /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +111,8 @@
 		C82899151C234C97006D7AF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C85687931CE9F0B5008393EB /* Crashlytics.framework */,
+				C85687941CE9F0B5008393EB /* Fabric.framework */,
 			);
 			name = Frameworks;
 			path = TBAM;
@@ -144,7 +150,6 @@
 				C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */,
 				C86E994E1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift */,
 				C86E99541C1BCDC600B08843 /* WebViewController.swift */,
-				C8A95B151C2325DA007AC9AB /* SubmenuViewController.swift */,
 				C828990E1C234089006D7AF1 /* MapViewController.swift */,
 				C8A95B171C232C40007AC9AB /* CustomViewController.swift */,
 				C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */,
@@ -328,7 +333,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == DALLASJCC_Release ] || [ $CONFIGURATION == DALLASJCC_Beta ]; then\n    ./Fabric.framework/run d03d04b0395452b04e90774ea53b935cef405eb7 d767ad446fdd8f7e76fe3da72e9a8a5899070cb3606e3274c4617ef467393407\nfi\n";
+			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ]; then\n    ./Fabric.framework/run dade8d225fe2c3d49bfbf1e33b8e74a0091ca2ae edf7fc773a17e2b098e4479189f997ec57583e54f87c22c49a63ef35f9887a3c\nfi\n";
 		};
 		C82899161C234D25006D7AF1 /* Run Script - Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -355,7 +360,6 @@
 				C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */,
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
 				C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */,
-				C8A95B161C2325DA007AC9AB /* SubmenuViewController.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
 				C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */,
 				C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */,

@@ -69,8 +69,8 @@ class HomeViewController : CustomViewController
             
             let dict = [ "child" : self.webViewObj! ]
             self.webViewObj!.translatesAutoresizingMaskIntoConstraints = false
-            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[child]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
-            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[child]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
         } else {
             self.webAlertView?.hidden = true
             self.constraintWebAlertHeight?.constant = 0
@@ -96,12 +96,6 @@ class HomeViewController : CustomViewController
         super.viewDidAppear(animated)
         self.adjustSubviews()
         self.collectionView?.reloadData()
-    }
-    
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        self.adjustSubviews()
     }
     
     override func updateViewConstraints()
@@ -140,21 +134,7 @@ class HomeViewController : CustomViewController
         self.constraintMenuMarginLeading?.constant  = padding
         self.constraintMenuMarginTrailing?.constant = padding
         
-        // if the aspect ratio of the home banner image is close to a square, then attempt to switch to an alternate image
-        // TODO: need to split the logo from the stripe of images, or use images that match Size Classes -- the current method won't scale
-        if let iv = self.imgHomeBanner {
-            if (iv.contentMode == .ScaleAspectFit) {
-                let RATIO :CGFloat = 1.5
-                let w = CGRectGetWidth(iv.frame)
-                let h = CGRectGetHeight(iv.frame)
-                if (h > 0 && w / h < RATIO) {
-                    let name = CustomConfig.handle.getHomeImageName() + "_12"
-                    if let img = UIImage(named: name) {
-                        self.imgHomeBanner?.image = img
-                    }
-                }
-            }
-        }
+        self.view.layoutIfNeeded()
     }
     
     func getButtonSize() -> CGFloat
@@ -164,7 +144,7 @@ class HomeViewController : CustomViewController
         let numRows    = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumRows()))
         let numColumns = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumColumns()))
 
-        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.75)
+        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.5)
         //let containerHeight = CGRectGetHeight(cv.frame)
 
         let buttonWidth  = containerWidth / numColumns
@@ -177,7 +157,6 @@ class HomeViewController : CustomViewController
         let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
             if let nsurl = NSURL(string: alertURL), let wv = self.webViewObj {
-                //NSLog("Loading alert \(alertURL)")
                 wv.loadRequest(NSURLRequest(URL: nsurl))
             }
         }

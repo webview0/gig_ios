@@ -21,7 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fQQ-Hu-4Rw">
                                 <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" identifier="HomeBanner_Height" id="cUh-fU-kCl"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="999" constant="100" identifier="HomeBanner_Height" id="cUh-fU-kCl"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MbC-bx-3St">

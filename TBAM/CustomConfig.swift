@@ -211,7 +211,7 @@ class ConfigTBAM : CustomConfigProtocol
 {
     func getBackgroundColor() -> UIColor
     {
-        return UIColor(red:0, green:0.22, blue:0.36, alpha:1)  // dark blue
+        return UIColor(red:0.02, green:0.18, blue:0.31, alpha:1)  // dark blue #042F4E
     }
     
     func getStatusBarStyle() -> UIStatusBarStyle
@@ -231,7 +231,7 @@ class ConfigTBAM : CustomConfigProtocol
     
     func getHomeImageAspect() -> UIViewContentMode
     {
-        return .ScaleAspectFit
+        return .ScaleAspectFill
     }
 
     func getTextFont() -> UIFont
@@ -246,7 +246,7 @@ class ConfigTBAM : CustomConfigProtocol
     
     func getAlertURL() -> String
     {
-        return ""
+        return "http://www.tbam.org/index.php?src=directory&view=appWidget&srctype=lister&direct=y"
     }
 
     func getHomeMenuNumRows() -> Int
