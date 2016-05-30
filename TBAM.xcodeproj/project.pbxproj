@@ -19,7 +19,6 @@
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
 		C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C86E99271C1BC55D00B08843 /* Assets.xcassets */; };
 		C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */; };
-		C86E99361C1BC55D00B08843 /* TBAMTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99351C1BC55D00B08843 /* TBAMTests.swift */; };
 		C86E99411C1BC55D00B08843 /* TBAMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99401C1BC55D00B08843 /* TBAMUITests.swift */; };
 		C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E994E1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift */; };
 		C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
@@ -27,11 +26,45 @@
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
 		C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
 		C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
+		C8B176951CFC808E00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
+		C8B176A71CFC80CB00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
+		C8B176A81CFC80CB00861914 /* CustomConfigDevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */; };
+		C8B176A91CFC80CB00861914 /* CustomConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */; };
+		C8B176AA1CFC80CB00861914 /* CustomConfigDallasJCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */; };
+		C8B176AB1CFC80CB00861914 /* CustomConfigTBAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E318401CFA54470006687E /* CustomConfigTBAM.swift */; };
+		C8B176AC1CFC80CB00861914 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C805071C1CD7F3760026EFC2 /* LinkRouter.swift */; };
+		C8B176AE1CFC80CB00861914 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
+		C8B176BE1CFC80CC00861914 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
+		C8B176BF1CFC80CC00861914 /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
+		C8B176C01CFC80CC00861914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
+		C8B176C11CFC80CC00861914 /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
+		C8B176C21CFC80CC00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
+		C8B176C31CFC80CC00861914 /* CustomConfigDevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */; };
+		C8B176C41CFC80CC00861914 /* CustomConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */; };
+		C8B176C51CFC80CC00861914 /* CustomConfigDallasJCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */; };
+		C8B176C61CFC80CC00861914 /* CustomConfigTBAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E318401CFA54470006687E /* CustomConfigTBAM.swift */; };
+		C8B176C71CFC80CC00861914 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C805071C1CD7F3760026EFC2 /* LinkRouter.swift */; };
+		C8B176C81CFC80CC00861914 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99521C1BC86400B08843 /* HomeViewController.swift */; };
+		C8B176C91CFC80CC00861914 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
+		C8B176CA1CFC80CC00861914 /* HomeMenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E994E1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift */; };
+		C8B176CB1CFC80CC00861914 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
+		C8B176CC1CFC80CC00861914 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
+		C8B176CD1CFC80CC00861914 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
+		C8B176CE1CFC80CC00861914 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
+		C8B176D01CFC811100861914 /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176CF1CFC811100861914 /* CustomConfig.swift */; };
+		C8B176D11CFC858000861914 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
+		C8B176D21CFC858200861914 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
+		C8B176D31CFC860D00861914 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
+		C8B176D41CFC860D00861914 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
+		C8B176D51CFC861900861914 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
+		C8B176D61CFC861900861914 /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
+		C8B176D71CFC861900861914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
-		C8EB3B371CE3C02200C820FD /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
-		C8EB3B381CE3C02300C820FD /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
-		C8EB3B3B1CE3C53B00C820FD /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
-		C8EB3B3C1CE3C53B00C820FD /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
+		C8E3183B1CFA537F0006687E /* CustomConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */; };
+		C8E3183D1CFA53BC0006687E /* CustomConfigDevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */; };
+		C8E3183F1CFA542A0006687E /* CustomConfigDallasJCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */; };
+		C8E318411CFA54470006687E /* CustomConfigTBAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E318401CFA54470006687E /* CustomConfigTBAM.swift */; };
+		C8E3184B1CFA54E00006687E /* LinkRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3184A1CFA54E00006687E /* LinkRouterTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +90,11 @@
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
+		C84D9D211CF6732800C5C697 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
+		C84D9D241CF6734700C5C697 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
+		C84D9D261CF6735100C5C697 /* Gymfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gymfile; path = fastlane/Gymfile; sourceTree = SOURCE_ROOT; };
+		C84D9D271CF6735100C5C697 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Matchfile; path = fastlane/Matchfile; sourceTree = SOURCE_ROOT; };
+		C84D9D281CF6735100C5C697 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
 		C85687931CE9F0B5008393EB /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
 		C85687941CE9F0B5008393EB /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
@@ -67,7 +105,6 @@
 		C86E992A1C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-TBAM.storyboard"; sourceTree = "<group>"; };
 		C86E992C1C1BC55D00B08843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C86E99311C1BC55D00B08843 /* TBAMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBAMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C86E99351C1BC55D00B08843 /* TBAMTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBAMTests.swift; sourceTree = "<group>"; };
 		C86E99371C1BC55D00B08843 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C86E993C1C1BC55D00B08843 /* TBAMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TBAMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99401C1BC55D00B08843 /* TBAMUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBAMUITests.swift; sourceTree = "<group>"; };
@@ -78,7 +115,14 @@
 		C86E99541C1BCDC600B08843 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		C8A95B131C232070007AC9AB /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigProtocol.swift; sourceTree = "<group>"; };
+		C8B176CF1CFC811100861914 /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLoadingView.swift; sourceTree = "<group>"; };
+		C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigTest.swift; sourceTree = "<group>"; };
+		C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigDevel.swift; sourceTree = "<group>"; };
+		C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigDallasJCC.swift; sourceTree = "<group>"; };
+		C8E318401CFA54470006687E /* CustomConfigTBAM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigTBAM.swift; sourceTree = "<group>"; };
+		C8E3184A1CFA54E00006687E /* LinkRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkRouterTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +162,23 @@
 			path = TBAM;
 			sourceTree = "<group>";
 		};
+		C84D9D231CF6732C00C5C697 /* Fastlane */ = {
+			isa = PBXGroup;
+			children = (
+				C84D9D241CF6734700C5C697 /* Appfile */,
+				C84D9D211CF6732800C5C697 /* Fastfile */,
+				C84D9D261CF6735100C5C697 /* Gymfile */,
+				C84D9D271CF6735100C5C697 /* Matchfile */,
+				C84D9D281CF6735100C5C697 /* Snapfile */,
+			);
+			name = Fastlane;
+			path = TBAM;
+			sourceTree = "<group>";
+		};
 		C86E99141C1BC55D00B08843 = {
 			isa = PBXGroup;
 			children = (
+				C84D9D231CF6732C00C5C697 /* Fastlane */,
 				C86E991F1C1BC55D00B08843 /* TBAM */,
 				C86E99341C1BC55D00B08843 /* TBAMTests */,
 				C86E993F1C1BC55D00B08843 /* TBAMUITests */,
@@ -145,6 +203,11 @@
 				C8B8230C1CDAAA54001A182C /* Library */,
 				C86E99201C1BC55D00B08843 /* AppDelegate.swift */,
 				C8A95B131C232070007AC9AB /* CustomConfig.swift */,
+				C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */,
+				C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */,
+				C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */,
+				C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */,
+				C8E318401CFA54470006687E /* CustomConfigTBAM.swift */,
 				C805071C1CD7F3760026EFC2 /* LinkRouter.swift */,
 				C86E99521C1BC86400B08843 /* HomeViewController.swift */,
 				C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */,
@@ -165,7 +228,8 @@
 		C86E99341C1BC55D00B08843 /* TBAMTests */ = {
 			isa = PBXGroup;
 			children = (
-				C86E99351C1BC55D00B08843 /* TBAMTests.swift */,
+				C8E3184A1CFA54E00006687E /* LinkRouterTests.swift */,
+				C8B176CF1CFC811100861914 /* CustomConfig.swift */,
 				C86E99371C1BC55D00B08843 /* Info.plist */,
 			);
 			path = TBAMTests;
@@ -359,10 +423,15 @@
 				C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */,
 				C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */,
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
+				C8E3183D1CFA53BC0006687E /* CustomConfigDevel.swift in Sources */,
 				C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
+				C8E318411CFA54470006687E /* CustomConfigTBAM.swift in Sources */,
+				C8B176951CFC808E00861914 /* CustomConfigProtocol.swift in Sources */,
 				C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */,
 				C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */,
+				C8E3183B1CFA537F0006687E /* CustomConfigTest.swift in Sources */,
+				C8E3183F1CFA542A0006687E /* CustomConfigDallasJCC.swift in Sources */,
 				C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */,
 				C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */,
 				C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */,
@@ -375,9 +444,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8EB3B3B1CE3C53B00C820FD /* HomeMenuItem.swift in Sources */,
-				C8EB3B371CE3C02200C820FD /* CustomConfig.swift in Sources */,
-				C86E99361C1BC55D00B08843 /* TBAMTests.swift in Sources */,
+				C8B176D61CFC861900861914 /* BHLoadingView.swift in Sources */,
+				C8B176AC1CFC80CB00861914 /* LinkRouter.swift in Sources */,
+				C8B176D21CFC858200861914 /* WebViewController.swift in Sources */,
+				C8B176A71CFC80CB00861914 /* CustomConfigProtocol.swift in Sources */,
+				C8B176D31CFC860D00861914 /* CustomViewController.swift in Sources */,
+				C8B176D01CFC811100861914 /* CustomConfig.swift in Sources */,
+				C8B176D11CFC858000861914 /* MapViewController.swift in Sources */,
+				C8B176AB1CFC80CB00861914 /* CustomConfigTBAM.swift in Sources */,
+				C8B176D71CFC861900861914 /* AppDelegate.swift in Sources */,
+				C8B176A91CFC80CB00861914 /* CustomConfigTest.swift in Sources */,
+				C8B176AA1CFC80CB00861914 /* CustomConfigDallasJCC.swift in Sources */,
+				C8B176A81CFC80CB00861914 /* CustomConfigDevel.swift in Sources */,
+				C8E3184B1CFA54E00006687E /* LinkRouterTests.swift in Sources */,
+				C8B176AE1CFC80CB00861914 /* HomeMenuItem.swift in Sources */,
+				C8B176D51CFC861900861914 /* BHBarButtonBack.swift in Sources */,
+				C8B176D41CFC860D00861914 /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +467,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8B176C41CFC80CC00861914 /* CustomConfigTest.swift in Sources */,
 				C86E99411C1BC55D00B08843 /* TBAMUITests.swift in Sources */,
+				C8B176BF1CFC80CC00861914 /* BHLoadingView.swift in Sources */,
+				C8B176CA1CFC80CC00861914 /* HomeMenuCollectionViewCell.swift in Sources */,
+				C8B176C11CFC80CC00861914 /* CustomConfig.swift in Sources */,
+				C8B176C51CFC80CC00861914 /* CustomConfigDallasJCC.swift in Sources */,
+				C8B176C31CFC80CC00861914 /* CustomConfigDevel.swift in Sources */,
+				C8B176C71CFC80CC00861914 /* LinkRouter.swift in Sources */,
+				C8B176C61CFC80CC00861914 /* CustomConfigTBAM.swift in Sources */,
+				C8B176CD1CFC80CC00861914 /* CustomViewController.swift in Sources */,
+				C8B176BE1CFC80CC00861914 /* BHBarButtonBack.swift in Sources */,
+				C8B176C01CFC80CC00861914 /* AppDelegate.swift in Sources */,
 				C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */,
-				C8EB3B3C1CE3C53B00C820FD /* HomeMenuItem.swift in Sources */,
-				C8EB3B381CE3C02300C820FD /* CustomConfig.swift in Sources */,
+				C8B176C81CFC80CC00861914 /* HomeViewController.swift in Sources */,
+				C8B176C91CFC80CC00861914 /* HomeMenuItem.swift in Sources */,
+				C8B176C21CFC80CC00861914 /* CustomConfigProtocol.swift in Sources */,
+				C8B176CB1CFC80CC00861914 /* WebViewController.swift in Sources */,
+				C8B176CE1CFC80CC00861914 /* CustomNavigationController.swift in Sources */,
+				C8B176CC1CFC80CC00861914 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

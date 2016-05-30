@@ -34,7 +34,7 @@ class LinkRouter
             return
         }
 
-        if (CustomConfig.handle.isExternalLink(menu.url)) {
+        if (LinkRouter.isExternalLink(menu.url)) {
             if let nsurl = NSURL(string: menu.url) {
                 LinkRouter.openBrowser(nsurl)
             }
@@ -117,5 +117,41 @@ class LinkRouter
             vc.title = "Map"
             fromViewController.navigationController?.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension LinkRouter
+{
+    class func isExternalLink(url :String) -> Bool
+    {
+        // blacklist
+        let externalList = CustomConfig.handle.getExternalLinks()
+        for extURL in externalList {
+            if (url.hasPrefix(extURL)) {
+                return true
+            }
+        }
+        
+        // whitelist
+        let internalList = CustomConfig.handle.getInternalDomains()
+        for domain in internalList {
+            if (url.hasPrefix("http://\(domain)") || url.hasPrefix("https://\(domain)")) {
+                return false
+            }
+        }
+        
+        // all other links will be external
+        return true
+    }
+    
+    class func willUseInternalMediaPlayer(request :NSURLRequest) -> Bool
+    {
+        if let url = request.URL {
+            let str = url.absoluteString.lowercaseString
+            if (str.hasSuffix("mp3")) {
+                return true
+            }
+        }
+        return false
     }
 }

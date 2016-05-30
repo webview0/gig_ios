@@ -84,8 +84,12 @@ class WebViewController : CustomViewController
     {
         if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
         
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        self.scheduleLoadingView()
+        let showLoading = !LinkRouter.willUseInternalMediaPlayer(request)
+        if (showLoading) {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            self.scheduleLoadingView()
+        }
+        
         self.webViewObj?.loadRequest(request)
     }
     
