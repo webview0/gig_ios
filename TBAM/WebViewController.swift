@@ -206,7 +206,7 @@ extension WebViewController : WKNavigationDelegate
     {
         if (navigationAction.navigationType == .LinkActivated) {
             if let url = navigationAction.request.URL {
-                if (CustomConfig.handle.isExternalLink(url.absoluteString)) {
+                if (LinkRouter.isExternalLink(url.absoluteString)) {
                     LinkRouter.openBrowser(url)
                     decisionHandler(WKNavigationActionPolicy.Cancel)
                     return

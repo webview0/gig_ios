@@ -8,12 +8,13 @@
 
 class CustomConfig
 {
-    //#if DALLASJCC_DEBUG || DALLASJCC_RELEASE
-    //static let handle = CustomConfigDallasJCC()
-    //#else
+    #if DALLASJCC_DEBUG || DALLASJCC_RELEASE
+    static let handle = CustomConfigDallasJCC()
+    #elseif TBAM_DEBUG || TBAM_RELEASE
+    static let handle = CustomConfigTBAM()
+    #else
     static let handle = CustomConfigDevel()
-    //static let handle = CustomConfigTBAM()
-    //#endif
+    #endif
     
     private init() { }  //This prevents others from using the default '()' initializer for this class.
 }

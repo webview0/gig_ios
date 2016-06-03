@@ -11,3 +11,6 @@
 # sdk "iphoneos9.0"
 
 output_directory "./fastlane/build"
+
+# "Pass additional arguments to xcodebuild. Be sure to quote the setting names and values.
+#xcargs 'OTHER_SWIFT_FLAGS="\$(inherited) -D TBAM_RELEASE -D BHAPPANALYZER_ANSWERS"'

@@ -34,7 +34,7 @@ import UIKit
 // http://www.google.com
 //
 
-class ConfigTBAM : CustomConfigProtocol
+class CustomConfigTBAM : CustomConfigProtocol
 {
     func getBackgroundColor() -> UIColor
     {

@@ -77,7 +77,7 @@ class CustomConfigDevel : CustomConfigProtocol
         menu.append(HomeMenuItem(title: "News",    icon: "menu_news",    url: URL + "?displaytype=appDisplayType&src=news&srctype=lister"))
         menu.append(HomeMenuItem(title: "Camps",   icon: "menu_camps",   url: URL + "?displaytype=appDisplayType&src=gendocs&ref=Camps_app&category=Main"))
         menu.append(HomeMenuItem(title: "Fitness", icon: "menu_fitness", url: URL + "?displaytype=appDisplayType&src=gendocs&ref=Fitnessapp&category=Main"))
-        menu.append(HomeMenuItem(title: "Blog",    icon: "menu_blog",    url: URL + "?displaytype=appDisplayType&src=blog&srctype=blog_latest"))
+        menu.append(HomeMenuItem(title: "Blog",    icon: "menu_blog",    url: "https://asoft4124.accrisoft.com/betham/?src=membership&srctype=membership_lister_app"))
         menu.append(HomeMenuItem(title: "Photos",  icon: "menu_photos",  url: "https://asoft4124.accrisoft.com/betham/?src=forms&ref=Online_Donation_From_App"))
         
         return menu
@@ -90,7 +90,7 @@ class CustomConfigDevel : CustomConfigProtocol
     
     func getInternalDomains() -> [String]
     {
-        return [ "rigel7.local" ]
+        return [ "rigel7.local", "asoft4124.accrisoft.com/betham" ]
     }
     
     func getExternalLinks() -> [String]
