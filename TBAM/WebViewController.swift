@@ -82,7 +82,7 @@ class WebViewController : CustomViewController
 
     func loadURL(request request :NSURLRequest)
     {
-        if false { "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist" }
+        let TLSv12 = "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist"
         
         let showLoading = !LinkRouter.willUseInternalMediaPlayer(request)
         if (showLoading) {

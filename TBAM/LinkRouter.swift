@@ -10,7 +10,7 @@ import UIKit
 
 class LinkRouter
 {
-    class func go(fromViewController :UIViewController, nearestView :UIView?, menu :HomeMenuItem?)
+    class func go(fromViewController :UIViewController, nearestRect :CGRect, menu :HomeMenuItem?)
     {
         guard let menu = menu else { return }
         
@@ -30,7 +30,7 @@ class LinkRouter
         }
 
         if ("submenu://contact" == menu.url) {
-            LinkRouter.openSubmenu(fromViewController, nearestView: nearestView, name: menu.url)
+            LinkRouter.openSubmenu(fromViewController, nearestRect: nearestRect, name: menu.url)
             return
         }
 
@@ -47,7 +47,7 @@ class LinkRouter
         }
     }
     
-    class func openSubmenu(fromViewController :UIViewController, nearestView :UIView?, name :String)
+    class func openSubmenu(fromViewController :UIViewController, nearestRect :CGRect, name :String)
     {
         let submenu = CustomConfig.handle.getSubmenu(name)
         
@@ -58,7 +58,7 @@ class LinkRouter
                 [weak fromViewController]
                 _ in
                 if let vc = fromViewController {
-                    LinkRouter.go(vc, nearestView: nearestView, menu: item)
+                    LinkRouter.go(vc, nearestRect: nearestRect, menu: item)
                 }
             }
             alert.addAction(action)
@@ -69,14 +69,8 @@ class LinkRouter
 
         if let popoverController = alert.popoverPresentationController {
             // make sure we have an actual view to attach to (iPads will crash if they don't have a valid popover view)
-            var nearest = fromViewController.view
-            if let n = nearestView {
-                nearest = n
-            } else if let n = fromViewController.navigationController?.view {
-                nearest = n
-            }
-            popoverController.sourceView = nearest
-            popoverController.sourceRect = nearest.bounds
+            popoverController.sourceView = fromViewController.view
+            popoverController.sourceRect = nearestRect
         }
         
         fromViewController.presentViewController(alert, animated: true) { }

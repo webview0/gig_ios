@@ -193,8 +193,14 @@ extension HomeViewController : UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
     {
         guard let item = self.menuForIndexPath(indexPath) else { return }
-        let nearestView = self.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
-        LinkRouter.go(self, nearestView: nearestView, menu: item)
+        
+        var nearestRect = CGRectZero
+        if let attributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath) {
+            let cellRect = attributes.frame
+            nearestRect = collectionView.convertRect(cellRect, toView: self.view)
+        }
+        
+        LinkRouter.go(self, nearestRect: nearestRect, menu: item)
     }
 }
 
