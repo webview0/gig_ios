@@ -1,5 +1,5 @@
 # Customise this file, documentation can be found here:
-# https://github.com/fastlane/fastlane/tree/master/docs
+# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
 # can also be listed using the `fastlane actions` command
 
@@ -19,6 +19,7 @@ default_platform :ios
 # Common Lanes:
 #   fastlane certs  # first time only
 #   fastlane ios test
+#   fastlane ios screenshots
 #   fastlane ios beta
 #   fastlane ios appstore
 #
@@ -53,7 +54,7 @@ platform :ios do
 
   desc "Take screenshots"
   lane :screenshots do
-    snapshot(scheme: "TBAM")
+    snapshot(scheme: "TBAM", configuration: "Release")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
@@ -100,7 +101,7 @@ platform :ios do
 end
 
 
-# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/docs/Platforms.md
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
 
 # fastlane reports which actions are used

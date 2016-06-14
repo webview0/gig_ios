@@ -53,6 +53,10 @@ class LinkRouterTests : XCTestCase
         actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
         XCTAssertTrue(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
+        url = "http://rigel7.local/~phillz/unittest/clientuploads/audio/jailbreak.mp3?displayType=app"
+        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        XCTAssertTrue(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
+        
         url = "http://rigel7.local/~phillz/unittest/clientuploads/video/commercial.mp4"
         actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
         XCTAssertFalse(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")

@@ -140,9 +140,8 @@ extension LinkRouter
     
     class func willUseInternalMediaPlayer(request :NSURLRequest) -> Bool
     {
-        if let url = request.URL {
-            let str = url.absoluteString.lowercaseString
-            if (str.hasSuffix("mp3")) {
+        if let ext = request.URL?.pathExtension {
+            if ("mp3" == ext.lowercaseString) {
                 return true
             }
         }
