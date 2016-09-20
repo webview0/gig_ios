@@ -205,8 +205,8 @@ extension WebViewController : WKNavigationDelegate
     func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void)
     {
         if (navigationAction.navigationType == .LinkActivated) {
-            if let url = navigationAction.request.URL {
-                if (LinkRouter.isExternalLink(url.absoluteString)) {
+            if let url = navigationAction.request.URL, let urlString = url.absoluteString {
+                if (LinkRouter.isExternalLink(urlString)) {
                     LinkRouter.openBrowser(url)
                     decisionHandler(WKNavigationActionPolicy.Cancel)
                     return

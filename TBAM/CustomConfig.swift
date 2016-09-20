@@ -12,6 +12,8 @@ class CustomConfig
     static let handle = CustomConfigDallasJCC()
     #elseif TBAM_DEBUG || TBAM_RELEASE
     static let handle = CustomConfigTBAM()
+    #elseif UPTOWN_DEBUG || UPTOWN_RELEASE
+    static let handle = CustomConfigUptown()
     #else
     static let handle = CustomConfigDevel()
     #endif

@@ -8,10 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		C805071D1CD7F3760026EFC2 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C805071C1CD7F3760026EFC2 /* LinkRouter.swift */; };
+		C80EA7DD1D8C763B0028EBB0 /* CustomConfigUptown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */; };
+		C80EA7DE1D8C763B0028EBB0 /* CustomConfigUptown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */; };
 		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
 		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
+		C839AB281D8D71D400FC4698 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C839AB261D8D71D400FC4698 /* Crashlytics.framework */; };
+		C839AB291D8D71D400FC4698 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C839AB271D8D71D400FC4698 /* Fabric.framework */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -22,8 +26,6 @@
 		C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
 		C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99521C1BC86400B08843 /* HomeViewController.swift */; };
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
-		C89879E01D106C85009C2FD3 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89879DF1D106C85009C2FD3 /* Crashlytics.framework */; };
-		C89879E21D106C8B009C2FD3 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89879E11D106C8B009C2FD3 /* Fabric.framework */; };
 		C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
 		C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
 		C8B176951CFC808E00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
@@ -65,6 +67,8 @@
 		C8E3183F1CFA542A0006687E /* CustomConfigDallasJCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */; };
 		C8E318411CFA54470006687E /* CustomConfigTBAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E318401CFA54470006687E /* CustomConfigTBAM.swift */; };
 		C8E3184B1CFA54E00006687E /* LinkRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3184A1CFA54E00006687E /* LinkRouterTests.swift */; };
+		C8F674161D80D6E500A1A00F /* CustomConfigUptown.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */; };
+		C8F674241D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8F674221D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,13 +94,15 @@
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
+		C839AB261D8D71D400FC4698 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		C839AB271D8D71D400FC4698 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		C84D9D211CF6732800C5C697 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		C84D9D241CF6734700C5C697 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
 		C84D9D261CF6735100C5C697 /* Gymfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gymfile; path = fastlane/Gymfile; sourceTree = SOURCE_ROOT; };
 		C84D9D271CF6735100C5C697 /* Matchfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Matchfile; path = fastlane/Matchfile; sourceTree = SOURCE_ROOT; };
 		C84D9D281CF6735100C5C697 /* Snapfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Snapfile; path = fastlane/Snapfile; sourceTree = SOURCE_ROOT; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
-		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TBAM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TBAM.app; path = "TBAM Ω.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99201C1BC55D00B08843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86E99251C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C86E99271C1BC55D00B08843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -111,8 +117,6 @@
 		C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
 		C86E99521C1BC86400B08843 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C86E99541C1BCDC600B08843 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		C89879DF1D106C85009C2FD3 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		C89879E11D106C8B009C2FD3 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = ../Fabric.framework; sourceTree = "<group>"; };
 		C8A95B131C232070007AC9AB /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigProtocol.swift; sourceTree = "<group>"; };
@@ -123,6 +127,8 @@
 		C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigDallasJCC.swift; sourceTree = "<group>"; };
 		C8E318401CFA54470006687E /* CustomConfigTBAM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigTBAM.swift; sourceTree = "<group>"; };
 		C8E3184A1CFA54E00006687E /* LinkRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkRouterTests.swift; sourceTree = "<group>"; };
+		C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigUptown.swift; sourceTree = "<group>"; };
+		C8F674231D80DCA200A1A00F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-Uptown.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C89879E01D106C85009C2FD3 /* Crashlytics.framework in Frameworks */,
-				C89879E21D106C8B009C2FD3 /* Fabric.framework in Frameworks */,
+				C839AB281D8D71D400FC4698 /* Crashlytics.framework in Frameworks */,
+				C839AB291D8D71D400FC4698 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,8 +161,8 @@
 		C82899151C234C97006D7AF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C89879DF1D106C85009C2FD3 /* Crashlytics.framework */,
-				C89879E11D106C8B009C2FD3 /* Fabric.framework */,
+				C839AB261D8D71D400FC4698 /* Crashlytics.framework */,
+				C839AB271D8D71D400FC4698 /* Fabric.framework */,
 			);
 			name = Frameworks;
 			path = TBAM;
@@ -207,6 +213,7 @@
 				C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */,
 				C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */,
 				C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */,
+				C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */,
 				C8E318401CFA54470006687E /* CustomConfigTBAM.swift */,
 				C805071C1CD7F3760026EFC2 /* LinkRouter.swift */,
 				C86E99521C1BC86400B08843 /* HomeViewController.swift */,
@@ -219,6 +226,7 @@
 				C86E99241C1BC55D00B08843 /* Main.storyboard */,
 				C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */,
 				C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */,
+				C8F674221D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard */,
 				C86E99271C1BC55D00B08843 /* Assets.xcassets */,
 				C86E992C1C1BC55D00B08843 /* Info.plist */,
 			);
@@ -319,19 +327,22 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Blue Heron Labs LLC";
 				TargetAttributes = {
 					C86E991C1C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 9ZWL894D73;
+						LastSwiftMigration = 0800;
 					};
 					C86E99301C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = C86E991C1C1BC55D00B08843;
 					};
 					C86E993B1C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 						TestTargetID = C86E991C1C1BC55D00B08843;
 					};
 				};
@@ -364,6 +375,7 @@
 				C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */,
 				C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */,
 				C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */,
+				C8F674241D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard in Resources */,
 				C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,6 +437,7 @@
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
 				C8E3183D1CFA53BC0006687E /* CustomConfigDevel.swift in Sources */,
 				C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */,
+				C8F674161D80D6E500A1A00F /* CustomConfigUptown.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
 				C8E318411CFA54470006687E /* CustomConfigTBAM.swift in Sources */,
 				C8B176951CFC808E00861914 /* CustomConfigProtocol.swift in Sources */,
@@ -451,6 +464,7 @@
 				C8B176D31CFC860D00861914 /* CustomViewController.swift in Sources */,
 				C8B176D01CFC811100861914 /* CustomConfig.swift in Sources */,
 				C8B176D11CFC858000861914 /* MapViewController.swift in Sources */,
+				C80EA7DE1D8C763B0028EBB0 /* CustomConfigUptown.swift in Sources */,
 				C8B176AB1CFC80CB00861914 /* CustomConfigTBAM.swift in Sources */,
 				C8B176D71CFC861900861914 /* AppDelegate.swift in Sources */,
 				C8B176A91CFC80CB00861914 /* CustomConfigTest.swift in Sources */,
@@ -480,6 +494,7 @@
 				C8B176BE1CFC80CC00861914 /* BHBarButtonBack.swift in Sources */,
 				C8B176C01CFC80CC00861914 /* AppDelegate.swift in Sources */,
 				C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */,
+				C80EA7DD1D8C763B0028EBB0 /* CustomConfigUptown.swift in Sources */,
 				C8B176C81CFC80CC00861914 /* HomeViewController.swift in Sources */,
 				C8B176C91CFC80CC00861914 /* HomeMenuItem.swift in Sources */,
 				C8B176C21CFC80CC00861914 /* CustomConfigProtocol.swift in Sources */,
@@ -529,6 +544,14 @@
 			name = "LaunchScreen-TBAM.storyboard";
 			sourceTree = "<group>";
 		};
+		C8F674221D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8F674231D80DCA200A1A00F /* Base */,
+			);
+			name = "LaunchScreen-Uptown.storyboard";
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -545,8 +568,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -565,6 +590,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -591,6 +617,7 @@
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PRODUCT_NAME = "Dallas JCC";
 				PROVISIONING_PROFILE = "b7cb6142-8adb-48c5-827f-d0a4c82b81c0";
+				SWIFT_VERSION = 2.3;
 			};
 			name = DallasJCC_Release;
 		};
@@ -603,6 +630,7 @@
 				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
 			name = DallasJCC_Release;
@@ -614,6 +642,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
@@ -632,8 +661,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -682,8 +713,9 @@
 				OTHER_SWIFT_FLAGS = "-D DALLASJCC_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios.alpha;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Dallas JCC";
+				PRODUCT_NAME = "Dallas JCC Ω";
 				PROVISIONING_PROFILE = "a6761484-b245-4a30-aa14-1a15356028e4";
+				SWIFT_VERSION = 2.3;
 			};
 			name = DallasJCC_Debug;
 		};
@@ -696,6 +728,7 @@
 				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
 			name = DallasJCC_Debug;
@@ -707,6 +740,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
@@ -725,8 +759,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -770,8 +806,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -790,6 +828,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -812,8 +851,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TBAM_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM.alpha;
-				PRODUCT_NAME = TBAM;
+				PRODUCT_NAME = "TBAM Ω";
 				PROVISIONING_PROFILE = "54f62520-d26e-4216-96ec-5685779070fa";
+				SWIFT_VERSION = 2.3;
 			};
 			name = TBAM_Debug;
 		};
@@ -837,6 +877,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM;
 				PRODUCT_NAME = TBAM;
 				PROVISIONING_PROFILE = "de77c153-b38e-41ce-a49a-aa5fd2120d50";
+				SWIFT_VERSION = 2.3;
 			};
 			name = TBAM_Release;
 		};
@@ -849,6 +890,7 @@
 				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
 			name = TBAM_Debug;
@@ -862,6 +904,7 @@
 				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
 			};
 			name = TBAM_Release;
@@ -873,6 +916,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
@@ -885,10 +929,200 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = TBAM;
 				USES_XCTRUNNER = YES;
 			};
 			name = TBAM_Release;
+		};
+		C8F674171D80DB5300A1A00F /* Uptown_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Uptown_Debug;
+		};
+		C8F674181D80DB5300A1A00F /* Uptown_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Uptown-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Uptown Ω";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-Uptown";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UPTOWN_DEBUG -D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.uptownorganization.ios.alpha;
+				PRODUCT_NAME = "Uptown Ω";
+				PROVISIONING_PROFILE = "c1e01dee-9851-4a93-aa7a-6429cf9ad23b";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Uptown_Debug;
+		};
+		C8F674191D80DB5300A1A00F /* Uptown_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = Uptown_Debug;
+		};
+		C8F6741A1D80DB5300A1A00F /* Uptown_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = Uptown_Debug;
+		};
+		C8F6741B1D80DB6000A1A00F /* Uptown_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Uptown_Release;
+		};
+		C8F6741C1D80DB6000A1A00F /* Uptown_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "Uptown-AppIcon";
+				BUNDLE_DISPLAY_NAME = Uptown;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-Uptown";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D UPTOWN_RELEASE -D BHAPPANALYZER_ANSWERS";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.uptownorganization.ios;
+				PRODUCT_NAME = Uptown;
+				PROVISIONING_PROFILE = "6900b065-30fd-463b-8972-5e566749a8cc";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Uptown_Release;
+		};
+		C8F6741D1D80DB6000A1A00F /* Uptown_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = Uptown_Release;
+		};
+		C8F6741E1D80DB6000A1A00F /* Uptown_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = Uptown_Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -897,8 +1131,10 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C86E99431C1BC55D00B08843 /* TBAM_Debug */,
+				C8F674171D80DB5300A1A00F /* Uptown_Debug */,
 				C866A3311CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E99441C1BC55D00B08843 /* TBAM_Release */,
+				C8F6741B1D80DB6000A1A00F /* Uptown_Release */,
 				C866A32D1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -908,8 +1144,10 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C86E99461C1BC55D00B08843 /* TBAM_Debug */,
+				C8F674181D80DB5300A1A00F /* Uptown_Debug */,
 				C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E99471C1BC55D00B08843 /* TBAM_Release */,
+				C8F6741C1D80DB6000A1A00F /* Uptown_Release */,
 				C866A32E1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -919,8 +1157,10 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C86E99491C1BC55D00B08843 /* TBAM_Debug */,
+				C8F674191D80DB5300A1A00F /* Uptown_Debug */,
 				C866A3331CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E994A1C1BC55D00B08843 /* TBAM_Release */,
+				C8F6741D1D80DB6000A1A00F /* Uptown_Release */,
 				C866A32F1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -930,8 +1170,10 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C86E994C1C1BC55D00B08843 /* TBAM_Debug */,
+				C8F6741A1D80DB5300A1A00F /* Uptown_Debug */,
 				C866A3341CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E994D1C1BC55D00B08843 /* TBAM_Release */,
+				C8F6741E1D80DB6000A1A00F /* Uptown_Release */,
 				C866A3301CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
