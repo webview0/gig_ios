@@ -147,4 +147,11 @@ extension LinkRouter
         }
         return false
     }
+    
+    class func addFreedomHeader(request :NSURLRequest) -> NSURLRequest
+    {
+        let mutable = request.mutableCopy()
+        mutable.addValue("1", forHTTPHeaderField: "X-Freedom-Mobile")
+        return mutable as! NSURLRequest
+    }
 }

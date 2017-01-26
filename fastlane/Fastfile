@@ -1,5 +1,7 @@
+# Fastfile
+
 # Customise this file, documentation can be found here:
-# https://github.com/fastlane/fastlane/tree/master/fastlane/docs
+# https://github.com/fastlane/fastlane/tree/master/docs
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
 # can also be listed using the `fastlane actions` command
 
@@ -25,24 +27,25 @@ default_platform :ios
 #
 
 platform :ios do
+  before_all do
+    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
+  end
+
   desc "Match development and production certificates and profiles"
   desc "Do this the first time you set up your project"
+  desc "IF YOU KEEP GETTING CERT ERRORS RUN WITH force:true"
   lane :certs do
-    match(type: "development", app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios.alpha")
-    match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios")
-    puts "---------------------------------------------------------------------"
-    puts "--- Consider running 'fastlane xcode' to remove the Fix-it button ---"
-    puts "--- if you are running fastlane tools only                        ---"
-    puts "---------------------------------------------------------------------"
+    match(type: "development", app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios.alpha")  # , force:true)
+    match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios")        # , force:true)
+    puts "---------------------------------------------------------------------".blue.bold
+    puts "--- Consider running 'fastlane xcode' to remove the Fix-it button ---".blue.bold
+    puts "--- if you are running fastlane tools only                        ---".blue.bold
+    puts "---------------------------------------------------------------------".blue.bold
   end
 
   desc "Remove the Fix-it button from Xcode"
   lane :xcode do
     install_xcode_plugin(url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip")
-  end
-
-  before_all do
-    # ENV["SLACK_URL"] = "https://hooks.slack.com/services/..."
   end
 
   desc "Runs all the tests"
@@ -64,10 +67,10 @@ platform :ios do
         output_name: "Uptown.testflight.ipa",
         xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D UPTOWN_RELEASE -D BHAPPANALYZER_ANSWERS\""
     )
-    puts "-----------------------------------------------------------------".blue.bold
-    puts "--- Upload to TestFlight                                      ---".blue
-    puts "--- # pilot upload --ipa fastlane/build/Uptown.testflight.ipa ---".blue
-    puts "-----------------------------------------------------------------".blue.bold
+    puts "--------------------------------------------------------------------------".blue.bold
+    puts "--- Upload to TestFlight                                               ---".blue
+    puts "--- # fastlane pilot upload --ipa fastlane/build/Uptown.testflight.ipa ---".blue
+    puts "--------------------------------------------------------------------------".blue.bold
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -106,7 +109,7 @@ platform :ios do
 end
 
 
-# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Platforms.md
+# More information about multiple platforms in fastlane: https://github.com/fastlane/fastlane/blob/master/docs/Platforms.md
 # All available actions: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Actions.md
 
 # fastlane reports which actions are used

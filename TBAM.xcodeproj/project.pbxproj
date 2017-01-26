@@ -14,8 +14,6 @@
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
 		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
-		C839AB281D8D71D400FC4698 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C839AB261D8D71D400FC4698 /* Crashlytics.framework */; };
-		C839AB291D8D71D400FC4698 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C839AB271D8D71D400FC4698 /* Fabric.framework */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -26,6 +24,10 @@
 		C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
 		C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99521C1BC86400B08843 /* HomeViewController.swift */; };
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
+		C88F79A01E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */; };
+		C88F79A31E0A1F1000BBC62A /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88F79A11E0A1F1000BBC62A /* Crashlytics.framework */; };
+		C88F79A41E0A1F1000BBC62A /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C88F79A21E0A1F1000BBC62A /* Fabric.framework */; };
+		C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */; };
 		C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
 		C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
 		C8B176951CFC808E00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
@@ -94,8 +96,6 @@
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
-		C839AB261D8D71D400FC4698 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
-		C839AB271D8D71D400FC4698 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 		C84D9D211CF6732800C5C697 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		C84D9D241CF6734700C5C697 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
 		C84D9D261CF6735100C5C697 /* Gymfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gymfile; path = fastlane/Gymfile; sourceTree = SOURCE_ROOT; };
@@ -117,6 +117,10 @@
 		C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
 		C86E99521C1BC86400B08843 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C86E99541C1BCDC600B08843 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigSkunkGuru.swift; sourceTree = "<group>"; };
+		C88F79A11E0A1F1000BBC62A /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		C88F79A21E0A1F1000BBC62A /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
+		C88F79AE1E0A22F600BBC62A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-SkunkGuru.storyboard"; sourceTree = "<group>"; };
 		C8A95B131C232070007AC9AB /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigProtocol.swift; sourceTree = "<group>"; };
@@ -136,8 +140,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C839AB281D8D71D400FC4698 /* Crashlytics.framework in Frameworks */,
-				C839AB291D8D71D400FC4698 /* Fabric.framework in Frameworks */,
+				C88F79A31E0A1F1000BBC62A /* Crashlytics.framework in Frameworks */,
+				C88F79A41E0A1F1000BBC62A /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,8 +165,8 @@
 		C82899151C234C97006D7AF1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C839AB261D8D71D400FC4698 /* Crashlytics.framework */,
-				C839AB271D8D71D400FC4698 /* Fabric.framework */,
+				C88F79A11E0A1F1000BBC62A /* Crashlytics.framework */,
+				C88F79A21E0A1F1000BBC62A /* Fabric.framework */,
 			);
 			name = Frameworks;
 			path = TBAM;
@@ -214,6 +218,7 @@
 				C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */,
 				C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */,
 				C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */,
+				C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */,
 				C8E318401CFA54470006687E /* CustomConfigTBAM.swift */,
 				C805071C1CD7F3760026EFC2 /* LinkRouter.swift */,
 				C86E99521C1BC86400B08843 /* HomeViewController.swift */,
@@ -227,6 +232,7 @@
 				C86E99291C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard */,
 				C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */,
 				C8F674221D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard */,
+				C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */,
 				C86E99271C1BC55D00B08843 /* Assets.xcassets */,
 				C86E992C1C1BC55D00B08843 /* Info.plist */,
 			);
@@ -375,6 +381,7 @@
 				C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */,
 				C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */,
 				C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */,
+				C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */,
 				C8F674241D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard in Resources */,
 				C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */,
 			);
@@ -409,7 +416,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ]; then\n    ./Fabric.framework/run dade8d225fe2c3d49bfbf1e33b8e74a0091ca2ae edf7fc773a17e2b098e4479189f997ec57583e54f87c22c49a63ef35f9887a3c\nfi\n";
+			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    ./Fabric.framework/run dade8d225fe2c3d49bfbf1e33b8e74a0091ca2ae edf7fc773a17e2b098e4479189f997ec57583e54f87c22c49a63ef35f9887a3c\nfi\n";
 		};
 		C82899161C234D25006D7AF1 /* Run Script - Increment Build Number */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -423,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
+			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -432,6 +439,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C88F79A01E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift in Sources */,
 				C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */,
 				C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */,
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
@@ -542,6 +550,14 @@
 				C86E992A1C1BC55D00B08843 /* Base */,
 			);
 			name = "LaunchScreen-TBAM.storyboard";
+			sourceTree = "<group>";
+		};
+		C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C88F79AE1E0A22F600BBC62A /* Base */,
+			);
+			name = "LaunchScreen-SkunkGuru.storyboard";
 			sourceTree = "<group>";
 		};
 		C8F674221D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard */ = {
@@ -935,6 +951,195 @@
 			};
 			name = TBAM_Release;
 		};
+		C88F79A51E0A204A00BBC62A /* SkunkGuru_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = SkunkGuru_Debug;
+		};
+		C88F79A61E0A204A00BBC62A /* SkunkGuru_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "SkunkGuru-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Skunk Guru Ω";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-SkunkGuru";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D SKUNKGURU_DEBUG -D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.skunkguru.ios.alpha;
+				PRODUCT_NAME = "Skunk Guru Ω";
+				PROVISIONING_PROFILE = "f3fcc61e-b943-49a6-909b-4bf83d95cb95";
+				SWIFT_VERSION = 2.3;
+			};
+			name = SkunkGuru_Debug;
+		};
+		C88F79A71E0A204A00BBC62A /* SkunkGuru_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = SkunkGuru_Debug;
+		};
+		C88F79A81E0A204A00BBC62A /* SkunkGuru_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = SkunkGuru_Debug;
+		};
+		C88F79A91E0A205900BBC62A /* SkunkGuru_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = SkunkGuru_Release;
+		};
+		C88F79AA1E0A205900BBC62A /* SkunkGuru_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "SkunkGuru-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Skunk Guru";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-SkunkGuru";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D SKUNKGURU_RELEASE -D BHAPPANALYZER_ANSWERS";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.skunkguru.ios;
+				PRODUCT_NAME = "Skunk Guru";
+				PROVISIONING_PROFILE = "b2fb2707-e07a-4911-8387-5b6bbcdddcdf";
+				SWIFT_VERSION = 2.3;
+			};
+			name = SkunkGuru_Release;
+		};
+		C88F79AB1E0A205900BBC62A /* SkunkGuru_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D TBAM_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TBAM.app/TBAM";
+			};
+			name = SkunkGuru_Release;
+		};
+		C88F79AC1E0A205900BBC62A /* SkunkGuru_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = SkunkGuru_Release;
+		};
 		C8F674171D80DB5300A1A00F /* Uptown_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1132,9 +1337,11 @@
 			buildConfigurations = (
 				C86E99431C1BC55D00B08843 /* TBAM_Debug */,
 				C8F674171D80DB5300A1A00F /* Uptown_Debug */,
+				C88F79A51E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3311CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E99441C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741B1D80DB6000A1A00F /* Uptown_Release */,
+				C88F79A91E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32D1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1145,9 +1352,11 @@
 			buildConfigurations = (
 				C86E99461C1BC55D00B08843 /* TBAM_Debug */,
 				C8F674181D80DB5300A1A00F /* Uptown_Debug */,
+				C88F79A61E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E99471C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741C1D80DB6000A1A00F /* Uptown_Release */,
+				C88F79AA1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32E1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1158,9 +1367,11 @@
 			buildConfigurations = (
 				C86E99491C1BC55D00B08843 /* TBAM_Debug */,
 				C8F674191D80DB5300A1A00F /* Uptown_Debug */,
+				C88F79A71E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3331CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E994A1C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741D1D80DB6000A1A00F /* Uptown_Release */,
+				C88F79AB1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32F1CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1171,9 +1382,11 @@
 			buildConfigurations = (
 				C86E994C1C1BC55D00B08843 /* TBAM_Debug */,
 				C8F6741A1D80DB5300A1A00F /* Uptown_Debug */,
+				C88F79A81E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3341CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C86E994D1C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741E1D80DB6000A1A00F /* Uptown_Release */,
+				C88F79AC1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A3301CB83EB200C47C22 /* DallasJCC_Release */,
 			);
 			defaultConfigurationIsVisible = 0;

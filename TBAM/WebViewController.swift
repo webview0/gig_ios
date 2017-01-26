@@ -90,7 +90,7 @@ class WebViewController : CustomViewController
             self.scheduleLoadingView()
         }
         
-        self.webViewObj?.loadRequest(request)
+        self.webViewObj?.loadRequest(LinkRouter.addFreedomHeader(request))
     }
     
     func showError(message :String)

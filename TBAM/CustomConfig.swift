@@ -15,7 +15,7 @@ class CustomConfig
     #elseif UPTOWN_DEBUG || UPTOWN_RELEASE
     static let handle = CustomConfigUptown()
     #else
-    static let handle = CustomConfigDevel()
+    static let handle = CustomConfigSkunkGuru()
     #endif
     
     private init() { }  //This prevents others from using the default '()' initializer for this class.
