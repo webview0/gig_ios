@@ -12,7 +12,8 @@ class CustomConfigUptown : CustomConfigProtocol
 {
 	func getBackgroundColor() -> UIColor
 	{
-		return UIColor(red: 0.45, green: 0.45, blue: 0.45, alpha: 1)
+        //return UIColor(red: 0.45, green: 0.45, blue: 0.45, alpha: 1)
+        return UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 	}
 	
 	func getStatusBarStyle() -> UIStatusBarStyle
@@ -42,9 +43,14 @@ class CustomConfigUptown : CustomConfigProtocol
 	
 	func getTextColor() -> UIColor
 	{
-		return UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+		return UIColor(red: 0, green: 0, blue: 0, alpha: 1)
 	}
 	
+    func getWebAppURL() -> String
+    {
+        return "http://asoft11139.accrisoft.com/predefined/index.php?src=directory&view=appHome&srctype=appHome_lister"
+    }
+    
 	func getAlertURL() -> String
 	{
 		return ""
@@ -80,9 +86,8 @@ class CustomConfigUptown : CustomConfigProtocol
 	
 	func getInternalDomains() -> [String]
 	{
-        return [ "asoft20128.accrisoft.com/demo26",
-                 "www.asoft20128.accrisoft.com/demo26",
-                 "asoft20128.accrisoft.com/demo26" ]
+        return [ "asoft11139.accrisoft.com/predefined",
+                 "www.asoft11139.accrisoft.com/predefined" ]
 	}
 	
 	func getExternalLinks() -> [String]

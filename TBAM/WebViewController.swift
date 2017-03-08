@@ -53,7 +53,7 @@ class WebViewController : CustomViewController
     {
         super.viewWillAppear(animated)
         
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.setNavigationBarHidden(self.shouldHideNavBar(), animated: false)
         self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : CustomConfig.handle.getTextColor() ]
         self.navigationController?.navigationBar.barTintColor        = CustomConfig.handle.getBackgroundColor()
         self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
@@ -98,6 +98,16 @@ class WebViewController : CustomViewController
         self.webViewObj?.stopLoading()
         self.webViewObj?.loadHTMLString("<html><body><div>\(message)</div></body></html>", baseURL: nil)
         self.hideLoadingView()
+    }
+    
+    func getHistoryCount() -> Int
+    {
+        return self.webViewObj?.backForwardList.backList.count ?? 0
+    }
+
+    func shouldHideNavBar() -> Bool
+    {
+        return (CustomConfig.isFullWebApp() && 0 == self.getHistoryCount())
     }
 
     // MARK: - Shake Gesture
@@ -194,6 +204,8 @@ extension WebViewController : WKUIDelegate
 {
     func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
     {
+        self.navigationController?.setNavigationBarHidden(self.shouldHideNavBar(), animated: true)
+
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         self.hideLoadingView()
     }

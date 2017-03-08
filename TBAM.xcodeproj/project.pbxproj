@@ -14,6 +14,7 @@
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
 		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
+		C83DB4081E5B9AE700DCB6F0 /* Fastfile.Uptown in Resources */ = {isa = PBXBuildFile; fileRef = C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -96,6 +97,7 @@
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
+		C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile.Uptown; path = fastlane/Fastfile.Uptown; sourceTree = SOURCE_ROOT; };
 		C84D9D211CF6732800C5C697 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		C84D9D241CF6734700C5C697 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
 		C84D9D261CF6735100C5C697 /* Gymfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Gymfile; path = fastlane/Gymfile; sourceTree = SOURCE_ROOT; };
@@ -177,6 +179,7 @@
 			children = (
 				C84D9D241CF6734700C5C697 /* Appfile */,
 				C84D9D211CF6732800C5C697 /* Fastfile */,
+				C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */,
 				C84D9D261CF6735100C5C697 /* Gymfile */,
 				C84D9D271CF6735100C5C697 /* Matchfile */,
 				C84D9D281CF6735100C5C697 /* Snapfile */,
@@ -380,6 +383,7 @@
 			files = (
 				C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */,
 				C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */,
+				C83DB4081E5B9AE700DCB6F0 /* Fastfile.Uptown in Resources */,
 				C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */,
 				C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */,
 				C8F674241D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard in Resources */,

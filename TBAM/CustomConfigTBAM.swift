@@ -71,6 +71,11 @@ class CustomConfigTBAM : CustomConfigProtocol
         return UIColor.whiteColor()
     }
     
+    func getWebAppURL() -> String
+    {
+        return ""
+    }
+    
     func getAlertURL() -> String
     {
         return "http://www.tbam.org/index.php?src=directory&view=appWidget&srctype=lister&direct=y"

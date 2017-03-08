@@ -14,9 +14,19 @@ class CustomConfig
     static let handle = CustomConfigTBAM()
     #elseif UPTOWN_DEBUG || UPTOWN_RELEASE
     static let handle = CustomConfigUptown()
-    #else
+    #elseif SKUNKGURU_DEBUG || SKUNKGURU_RELEASE
     static let handle = CustomConfigSkunkGuru()
+    #else
+//    assert(false)
     #endif
     
     private init() { }  //This prevents others from using the default '()' initializer for this class.
+}
+
+extension CustomConfig
+{
+    class func isFullWebApp() -> Bool
+    {
+        return ("" != CustomConfig.handle.getWebAppURL())
+    }
 }

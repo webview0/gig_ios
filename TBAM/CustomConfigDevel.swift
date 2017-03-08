@@ -46,6 +46,11 @@ class CustomConfigDevel : CustomConfigProtocol
         //return UIColor(red:0.98, green:0.33, blue:0.31, alpha:1.00)  // red-orange
     }
     
+    func getWebAppURL() -> String
+    {
+        return ""
+    }
+    
     func getAlertURL() -> String
     {
         return "http://rigel7.local/~phillz/freedom1/index.php?src=directory&view=alert&srctype=detail&refno=1"

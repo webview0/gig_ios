@@ -1,5 +1,5 @@
-#app_identifier      "com.accrisoft.appbuilder.dallasjcc.ios" # The bundle identifier of your app
-app_identifier      "com.accrisoft.appbuilder.uptownorganization.ios" # The bundle identifier of your app
+app_identifier      "com.accrisoft.appbuilder.dallasjcc.ios" # The bundle identifier of your app
+#app_identifier      "com.accrisoft.appbuilder.uptownorganization.ios" # The bundle identifier of your app
 #app_identifier      "com.accrisoft.TBAM"                     # The bundle identifier of your app
 apple_dev_portal_id "developer@blueheronlabs.net"            # Apple Developer Account
 itunes_connect_id   "developer+asoft@blueheronlabs.net"      # iTunes Connect Account

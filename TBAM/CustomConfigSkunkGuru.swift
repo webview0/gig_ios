@@ -43,6 +43,11 @@ class CustomConfigSkunkGuru : CustomConfigProtocol
 		return UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 	}
 	
+    func getWebAppURL() -> String
+    {
+        return ""
+    }
+    
 	func getAlertURL() -> String
 	{
 		return "http://skunk.guru/index.php?src=directory&view=AppAlerts"

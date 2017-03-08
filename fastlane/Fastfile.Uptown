@@ -35,8 +35,8 @@ platform :ios do
   desc "Do this the first time you set up your project"
   desc "IF YOU KEEP GETTING CERT ERRORS RUN WITH force:true"
   lane :certs do
-    match(type: "development", app_identifier: "com.accrisoft.appbuilder.dallasjcc.ios.alpha")  ### , force:true)
-    match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.dallasjcc.ios")        ### , force:true)
+    match(type: "development", app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios.alpha")  # , force:true)
+    match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios")        # , force:true)
     puts "---------------------------------------------------------------------".blue.bold
     puts "--- Consider running 'fastlane xcode' to remove the Fix-it button ---".blue.bold
     puts "--- if you are running fastlane tools only                        ---".blue.bold
@@ -50,27 +50,27 @@ platform :ios do
 
   desc "Runs all the tests"
   lane :test do
-    scan(scheme: "DallasJCC") # Run Tests
+    scan(scheme: "Uptown") # Run Tests
   end
 
   desc "Take screenshots"
   lane :screenshots do
-    snapshot(scheme: "DallasJCC", configuration: "Release")
+    snapshot(scheme: "Uptown", configuration: "Release")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   lane :beta do
     match(type: "appstore") # more information: https://codesigning.guide
-    # scan(scheme: "DallasJCC") # Run Tests
-    gym(scheme: "DallasJCC",    # Build your app
+    # scan(scheme: "Uptown") # Run Tests
+    gym(scheme: "Uptown",    # Build your app
         output_directory: "./fastlane/build",
-        output_name: "DallasJCC.testflight.ipa",
-        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D DALLASJCC_RELEASE -D BHAPPANALYZER_ANSWERS\""
+        output_name: "Uptown.testflight.ipa",
+        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D UPTOWN_RELEASE -D BHAPPANALYZER_ANSWERS\""
     )
-    puts "-----------------------------------------------------------------------------".blue.bold
-    puts "--- Upload to TestFlight                                                  ---".blue
-    puts "--- # fastlane pilot upload --ipa fastlane/build/DallasJCC.testflight.ipa ---".blue
-    puts "-----------------------------------------------------------------------------".blue.bold
+    puts "--------------------------------------------------------------------------".blue.bold
+    puts "--- Upload to TestFlight                                               ---".blue
+    puts "--- # fastlane pilot upload --ipa fastlane/build/Uptown.testflight.ipa ---".blue
+    puts "--------------------------------------------------------------------------".blue.bold
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -79,12 +79,12 @@ platform :ios do
   desc "Deploy a new version to the App Store"
   lane :store do
     match(type: "appstore")
-    # scan(scheme: "DallasJCC") # Run Tests
+    # scan(scheme: "Uptown") # Run Tests
     # snapshot
-    gym(scheme: "DallasJCC",    # Build your app
+    gym(scheme: "Uptown",    # Build your app
         output_directory: "./fastlane/build",
-        output_name: "DallasJCC.appstore.ipa",
-        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D DALLASJCC_RELEASE -D BHAPPANALYZER_ANSWERS\""
+        output_name: "Uptown.appstore.ipa",
+        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D UPTOWN_RELEASE -D BHAPPANALYZER_ANSWERS\""
     )
     # deliver(force: true)
     # frameit

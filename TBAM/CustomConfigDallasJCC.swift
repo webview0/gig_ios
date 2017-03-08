@@ -47,6 +47,11 @@ class CustomConfigDallasJCC : CustomConfigProtocol
         //return UIColor(red:0.98, green:0.33, blue:0.31, alpha:1.00)  // red-orange
     }
     
+    func getWebAppURL() -> String
+    {
+        return "http://jccdallas.org/index.php?src=directory&view=appHome&srctype=appHome_lister"
+    }
+    
     func getAlertURL() -> String
     {
         return "http://www.jccdallas.org/index.php?src=directory&view=appWidget&srctype=lister&direct=y"

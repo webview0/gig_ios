@@ -7,7 +7,7 @@
 //
 
 import UIKit
-#if TBAM_RELEASE || DALLASJCC_RELEASE
+#if DALLASJCC_RELEASE || SKUNKGURU_RELEASE || TBAM_RELEASE || UPTOWN_RELEASE
 import Fabric
 import Crashlytics
 #endif
@@ -19,11 +19,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
     {
-        #if TBAM_RELEASE || DALLASJCC_RELEASE
+        #if DALLASJCC_RELEASE || SKUNKGURU_RELEASE || TBAM_RELEASE || UPTOWN_RELEASE
         Fabric.with([Crashlytics.self])
         #endif
         
         UINavigationBar.appearance().barStyle = CustomConfig.handle.getNavigationBarStyle()
+        
+        if (CustomConfig.isFullWebApp()) {
+            let url = CustomConfig.handle.getWebAppURL()
+            let vc  = WebViewController.loadFromStoryboard(url)
+            self.window?.rootViewController = vc
+            self.window?.makeKeyAndVisible()
+        }
         
         return true
     }

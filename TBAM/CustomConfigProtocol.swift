@@ -20,6 +20,7 @@ protocol CustomConfigProtocol
     func getHomeImageAspect()         -> UIViewContentMode
     func getTextFont()                -> UIFont
     func getTextColor()               -> UIColor
+    func getWebAppURL()               -> String
     func getAlertURL()                -> String
     func getHomeMenuNumRows()         -> Int
     func getHomeMenuNumColumns()      -> Int

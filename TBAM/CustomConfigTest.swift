@@ -45,6 +45,11 @@ class CustomConfigTest : CustomConfigProtocol
         return UIColor.whiteColor()
     }
     
+    func getWebAppURL() -> String
+    {
+        return ""
+    }
+    
     func getAlertURL() -> String
     {
         return ""
