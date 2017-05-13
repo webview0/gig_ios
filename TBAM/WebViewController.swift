@@ -15,23 +15,23 @@ import WebKit
 
 class WebViewController : CustomViewController
 {
-    private var webViewObj :WKWebView?
+    fileprivate var webViewObj :WKWebView?
 
-    private var url = ""
+    fileprivate var url = ""
     
-    private let LOADING_MESSAGE = "Loading"
-    private let LOADING_PAUSE   = 10  // amount of time to pause before showing Loading message (in tenths of a second)
+    fileprivate let LOADING_MESSAGE = "Loading"
+    fileprivate let LOADING_PAUSE   = 10  // amount of time to pause before showing Loading message (in tenths of a second)
     
-    private var loadingView    :BHLoadingView? = nil
-    private var loadingTimer   :NSTimer?       = nil
-    private var loadingCounter :Int = 0
+    fileprivate var loadingView    :BHLoadingView? = nil
+    fileprivate var loadingTimer   :Timer?         = nil
+    fileprivate var loadingCounter :Int            = 0
     
     // MARK: - View Controller
     
-    class func loadFromStoryboard(url :String) -> WebViewController?
+    class func loadFromStoryboard(_ url :String) -> WebViewController?
     {
         let STORYBOARD_ID = "Web"
-        let vc = AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? WebViewController
+        let vc = AppDelegate.storyboard().instantiateViewController(withIdentifier: STORYBOARD_ID) as? WebViewController
         vc?.url = url
         return vc
     }
@@ -41,15 +41,15 @@ class WebViewController : CustomViewController
         super.viewDidLoad()
         
         self.webViewObj = WKWebView()
-        self.webViewObj!.UIDelegate = self
-        self.webViewObj!.navigationDelegate = self
-        self.webViewObj!.backgroundColor = CustomConfig.handle.getBackgroundColor()
-        self.webViewObj!.scrollView.backgroundColor = CustomConfig.handle.getBackgroundColor()  // have to set the scrollview background color
+        self.webViewObj!.uiDelegate                          = self
+        self.webViewObj!.navigationDelegate                  = self
+        self.webViewObj!.backgroundColor                     = CustomConfig.handle.getBackgroundColor()
+        self.webViewObj!.scrollView.backgroundColor          = CustomConfig.handle.getBackgroundColor()  // have to set the scrollview background color
         self.webViewObj!.allowsBackForwardNavigationGestures = true
         self.view = self.webViewObj!
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
@@ -57,7 +57,7 @@ class WebViewController : CustomViewController
         self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : CustomConfig.handle.getTextColor() ]
         self.navigationController?.navigationBar.barTintColor        = CustomConfig.handle.getBackgroundColor()
         self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
-        self.navigationController?.navigationBar.translucent         = false
+        self.navigationController?.navigationBar.isTranslucent       = false
         
         let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
         let color = CustomConfig.handle.getTextColor()
@@ -66,34 +66,34 @@ class WebViewController : CustomViewController
         self.loadURL(url: self.url)
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
     }
 
-    func loadURL(url url :String)
+    func loadURL(url :String)
     {
-        if let nsurl = NSURL(string: url) {
-            self.loadURL(request: NSURLRequest(URL: nsurl))
+        if let nsurl = URL(string: url) {
+            self.loadURL(request: URLRequest(url: nsurl))
         } else {
             self.showError("Error: Cannot encode URL")
         }
     }
 
-    func loadURL(request request :NSURLRequest)
+    func loadURL(request :URLRequest)
     {
         let TLSv12 = "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist"
         
         let showLoading = !LinkRouter.willUseInternalMediaPlayer(request)
         if (showLoading) {
-            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
             self.scheduleLoadingView()
         }
         
-        self.webViewObj?.loadRequest(LinkRouter.addFreedomHeader(request))
+        self.webViewObj?.load(LinkRouter.addFreedomHeader(request))
     }
     
-    func showError(message :String)
+    func showError(_ message :String)
     {
         self.webViewObj?.stopLoading()
         self.webViewObj?.loadHTMLString("<html><body><div>\(message)</div></body></html>", baseURL: nil)
@@ -112,11 +112,11 @@ class WebViewController : CustomViewController
 
     // MARK: - Shake Gesture
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?)
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?)
     {
         // goto Home screen if they shake the device
-        if (motion == .MotionShake) {
-            self.navigationController?.popViewControllerAnimated(true)
+        if (motion == .motionShake) {
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
@@ -130,12 +130,12 @@ class WebViewController : CustomViewController
                 return
             }
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     // MARK: - Loading View
     
-    private func scheduleLoadingView()
+    fileprivate func scheduleLoadingView()
     {
         if let _ = self.loadingTimer {
             // if loadingTimer is already set then return
@@ -144,8 +144,8 @@ class WebViewController : CustomViewController
         
         self.loadingCounter = 0
         let SELECTOR_TIMER = #selector(WebViewController.timerCounter)
-        if (self.respondsToSelector(SELECTOR_TIMER)) {
-            self.loadingTimer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: SELECTOR_TIMER, userInfo: nil, repeats: true)
+        if (self.responds(to: SELECTOR_TIMER)) {
+            self.loadingTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: SELECTOR_TIMER, userInfo: nil, repeats: true)
             //self.loadingTimer.fire()
         }
     }
@@ -158,7 +158,7 @@ class WebViewController : CustomViewController
         }
     }
     
-    private func showLoadingView()
+    fileprivate func showLoadingView()
     {
         guard let timer = self.loadingTimer else {
             self.hideLoadingView()
@@ -180,12 +180,12 @@ class WebViewController : CustomViewController
             self.loadingView = v
             v.setText(self.LOADING_MESSAGE)
             let index = self.view.subviews.count + 99
-            self.view.insertSubview(v, atIndex:index)
+            self.view.insertSubview(v, at: index)
             v.startSpinner()
         }
     }
     
-    private func hideLoadingView()
+    fileprivate func hideLoadingView()
     {
         if let timer = self.loadingTimer {
             timer.invalidate()
@@ -202,11 +202,11 @@ class WebViewController : CustomViewController
 
 extension WebViewController : WKUIDelegate
 {
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
+    func webView(_ webView :WKWebView, didFinish navigation :WKNavigation?)
     {
         self.navigationController?.setNavigationBarHidden(self.shouldHideNavBar(), animated: true)
 
-        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
         self.hideLoadingView()
     }
 }
@@ -214,27 +214,27 @@ extension WebViewController : WKUIDelegate
 extension WebViewController : WKNavigationDelegate
 {
     // called when user taps a link (and also on initial load)
-    func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void)
+    func webView(_ webView :WKWebView, decidePolicyFor navigationAction :WKNavigationAction, decisionHandler :@escaping (WKNavigationActionPolicy) -> Void)
     {
-        if (navigationAction.navigationType == .LinkActivated) {
-            if let url = navigationAction.request.URL, let urlString = url.absoluteString {
-                if (LinkRouter.isExternalLink(urlString)) {
-                    LinkRouter.openBrowser(url)
-                    decisionHandler(WKNavigationActionPolicy.Cancel)
+        if (navigationAction.navigationType == .linkActivated) {
+            if let url = navigationAction.request.url {
+                if (LinkRouter.isExternalLink(url.absoluteString)) {
+                    let _ = LinkRouter.openBrowser(url)
+                    decisionHandler(WKNavigationActionPolicy.cancel)
                     return
                 }
             }
         }
         
-        decisionHandler(WKNavigationActionPolicy.Allow)
+        decisionHandler(WKNavigationActionPolicy.allow)
     }
     
     // handle target="_blank"
-    func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
+    func webView(_ webView :WKWebView, createWebViewWith configuration :WKWebViewConfiguration, for navigationAction :WKNavigationAction, windowFeatures :WKWindowFeatures) -> WKWebView?
     {
         var flag = false
         if let ptr = navigationAction.targetFrame {
-            flag = ptr.mainFrame
+            flag = ptr.isMainFrame
         }
         if (!flag) {
             self.loadURL(request: navigationAction.request)

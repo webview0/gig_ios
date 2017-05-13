@@ -20,7 +20,7 @@ class MapViewController : CustomViewController
     class func loadFromStoryboard() -> MapViewController?
     {
         let STORYBOARD_ID = "Map"
-        let vc = AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? MapViewController
+        let vc = AppDelegate.storyboard().instantiateViewController(withIdentifier: STORYBOARD_ID) as? MapViewController
         return vc
     }
     
@@ -35,13 +35,13 @@ class MapViewController : CustomViewController
         self.loadLocation()
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         
@@ -49,7 +49,7 @@ class MapViewController : CustomViewController
         self.navigationController?.navigationBar.titleTextAttributes = [ NSForegroundColorAttributeName : CustomConfig.handle.getTextColor() ]
         self.navigationController?.navigationBar.barTintColor        = CustomConfig.handle.getBackgroundColor()
         self.navigationController?.navigationBar.tintColor           = CustomConfig.handle.getTextColor()
-        self.navigationController?.navigationBar.translucent         = false
+        self.navigationController?.navigationBar.isTranslucent         = false
         
         let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
         let color = CustomConfig.handle.getTextColor()
@@ -83,7 +83,7 @@ class MapViewController : CustomViewController
         self.mapView?.region = region
     }
     
-    internal func lookupAddress(address :String)
+    internal func lookupAddress(_ address :String)
     {
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(address) {
@@ -101,21 +101,21 @@ class MapViewController : CustomViewController
         }
     }
     
-    internal func openInMaps(coordinate :CLLocationCoordinate2D?)
+    internal func openInMaps(_ coordinate :CLLocationCoordinate2D?)
     {
         guard let coordinate = coordinate else { return }
         
         let placemark = MKPlacemark(coordinate: coordinate, addressDictionary: nil)
         let item = MKMapItem(placemark: placemark)
         item.name = CustomConfig.handle.getTitle()
-        item.openInMapsWithLaunchOptions([ MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
+        item.openInMaps(launchOptions: [ MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving ])
     }
     
     // MARK: - Actions
     
     func pressedBack()
     {
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 
@@ -123,11 +123,11 @@ class MapViewController : CustomViewController
 
 extension MapViewController : MKMapViewDelegate
 {
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
     {
         let PIN_IDENTIFIER = "MapPin"
         var view :MKPinAnnotationView
-        if let dq = mapView.dequeueReusableAnnotationViewWithIdentifier(PIN_IDENTIFIER) as? MKPinAnnotationView {
+        if let dq = mapView.dequeueReusableAnnotationView(withIdentifier: PIN_IDENTIFIER) as? MKPinAnnotationView {
             view = dq
             view.annotation = annotation
         } else {
@@ -137,14 +137,14 @@ extension MapViewController : MKMapViewDelegate
         //    view.pinTintColor = UIColor.blueColor()
         //}
         
-        view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
+        view.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
         view.rightCalloutAccessoryView!.tag = self.BUTTON_OPEN_MAPS
         view.canShowCallout = true
         
         return view
     }
     
-    func mapView(mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl)
     {
         if (self.BUTTON_OPEN_MAPS == control.tag) {
             self.openInMaps(view.annotation?.coordinate)

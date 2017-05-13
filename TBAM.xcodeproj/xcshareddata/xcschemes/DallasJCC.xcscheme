@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C86E991C1C1BC55D00B08843"
-               BuildableName = "TBAM.app"
+               BuildableName = "Charlotte.app"
                BlueprintName = "TBAM"
                ReferencedContainer = "container:TBAM.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C86E991C1C1BC55D00B08843"
-            BuildableName = "TBAM.app"
+            BuildableName = "Charlotte.app"
             BlueprintName = "TBAM"
             ReferencedContainer = "container:TBAM.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C86E991C1C1BC55D00B08843"
-            BuildableName = "TBAM.app"
+            BuildableName = "Charlotte.app"
             BlueprintName = "TBAM"
             ReferencedContainer = "container:TBAM.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C86E991C1C1BC55D00B08843"
-            BuildableName = "TBAM.app"
+            BuildableName = "Charlotte.app"
             BlueprintName = "TBAM"
             ReferencedContainer = "container:TBAM.xcodeproj">
          </BuildableReference>

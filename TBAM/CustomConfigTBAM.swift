@@ -43,12 +43,12 @@ class CustomConfigTBAM : CustomConfigProtocol
     
     func getStatusBarStyle() -> UIStatusBarStyle
     {
-        return .LightContent
+        return .lightContent
     }
     
     func getNavigationBarStyle() -> UIBarStyle
     {
-        return .Black
+        return .black
     }
     
     func getHomeImageName() -> String
@@ -58,17 +58,17 @@ class CustomConfigTBAM : CustomConfigProtocol
     
     func getHomeImageAspect() -> UIViewContentMode
     {
-        return .ScaleAspectFill
+        return .scaleAspectFill
     }
     
     func getTextFont() -> UIFont
     {
-        return UIFont.systemFontOfSize(17)
+        return UIFont.systemFont(ofSize: 17)
     }
     
     func getTextColor() -> UIColor
     {
-        return UIColor.whiteColor()
+        return UIColor.white
     }
     
     func getWebAppURL() -> String
@@ -120,7 +120,7 @@ class CustomConfigTBAM : CustomConfigProtocol
         return menu
     }
     
-    func getSubmenu(name :String) -> [HomeMenuItem]
+    func getSubmenu(_ name :String) -> [HomeMenuItem]
     {
         var menu :[HomeMenuItem] = []
         menu.reserveCapacity(4)

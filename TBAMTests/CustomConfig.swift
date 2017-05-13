@@ -10,5 +10,5 @@ class CustomConfig
 {
     static let handle = CustomConfigTest()
     
-    private init() { }  //This prevents others from using the default '()' initializer for this class.
+    fileprivate init() { }  //This prevents others from using the default '()' initializer for this class.
 }

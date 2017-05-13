@@ -18,18 +18,18 @@ public struct BHDevice
 
     public static func isIPhone() -> Bool
     {
-        return (UIDevice.currentDevice().userInterfaceIdiom == .Phone)
+        return (UIDevice.current.userInterfaceIdiom == .phone)
     }
 }
 
 
 class CustomNavigationController : UINavigationController
 {
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask
     {
         if (BHDevice.isIPhone()) {
-            return .Portrait
+            return .portrait
         }
-        return .All
+        return .all
     }
 }

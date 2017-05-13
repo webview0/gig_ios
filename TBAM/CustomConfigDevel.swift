@@ -12,17 +12,17 @@ class CustomConfigDevel : CustomConfigProtocol
 {
     func getBackgroundColor() -> UIColor
     {
-        return UIColor.blackColor()
+        return UIColor.black
     }
     
     func getStatusBarStyle() -> UIStatusBarStyle
     {
-        return .LightContent
+        return .lightContent
     }
     
     func getNavigationBarStyle() -> UIBarStyle
     {
-        return .Black
+        return .black
     }
     
     func getHomeImageName() -> String
@@ -32,17 +32,17 @@ class CustomConfigDevel : CustomConfigProtocol
     
     func getHomeImageAspect() -> UIViewContentMode
     {
-        return .ScaleAspectFill
+        return .scaleAspectFill
     }
     
     func getTextFont() -> UIFont
     {
-        return UIFont.boldSystemFontOfSize(20)
+        return UIFont.boldSystemFont(ofSize: 20)
     }
     
     func getTextColor() -> UIColor
     {
-        return UIColor.whiteColor()
+        return UIColor.white
         //return UIColor(red:0.98, green:0.33, blue:0.31, alpha:1.00)  // red-orange
     }
     
@@ -88,7 +88,7 @@ class CustomConfigDevel : CustomConfigProtocol
         return menu
     }
     
-    func getSubmenu(name :String) -> [HomeMenuItem]
+    func getSubmenu(_ name :String) -> [HomeMenuItem]
     {
         return []
     }

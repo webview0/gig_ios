@@ -25,7 +25,7 @@ protocol CustomConfigProtocol
     func getHomeMenuNumRows()         -> Int
     func getHomeMenuNumColumns()      -> Int
     func getHomeMenu()                -> [HomeMenuItem]
-    func getSubmenu(name :String)     -> [HomeMenuItem]
+    func getSubmenu(_ name :String)     -> [HomeMenuItem]
     func getInternalDomains()         -> [String]
     func getExternalLinks()           -> [String]
     func getTitle()                   -> String

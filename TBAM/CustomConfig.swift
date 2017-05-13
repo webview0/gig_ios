@@ -10,17 +10,19 @@ class CustomConfig
 {
     #if DALLASJCC_DEBUG || DALLASJCC_RELEASE
     static let handle = CustomConfigDallasJCC()
+    #elseif MOBILEACCRISOFT_DEBUG || MOBILEACCRISOFT_RELEASE
+    static let handle = CustomConfigMobileAccrisoft()
+    #elseif SKUNKGURU_DEBUG || SKUNKGURU_RELEASE
+    static let handle = CustomConfigSkunkGuru()
     #elseif TBAM_DEBUG || TBAM_RELEASE
     static let handle = CustomConfigTBAM()
     #elseif UPTOWN_DEBUG || UPTOWN_RELEASE
     static let handle = CustomConfigUptown()
-    #elseif SKUNKGURU_DEBUG || SKUNKGURU_RELEASE
-    static let handle = CustomConfigSkunkGuru()
     #else
 //    assert(false)
     #endif
     
-    private init() { }  //This prevents others from using the default '()' initializer for this class.
+    fileprivate init() { }  //This prevents others from using the default '()' initializer for this class.
 }
 
 extension CustomConfig

@@ -18,12 +18,12 @@ class CustomConfigUptown : CustomConfigProtocol
 	
 	func getStatusBarStyle() -> UIStatusBarStyle
 	{
-		return .Default
+		return .default
 	}
 	
 	func getNavigationBarStyle() -> UIBarStyle
 	{
-		return .Default
+		return .default
 	}
 	
 	func getHomeImageName() -> String
@@ -33,12 +33,12 @@ class CustomConfigUptown : CustomConfigProtocol
 	
 	func getHomeImageAspect() -> UIViewContentMode
 	{
-		return .ScaleAspectFit
+		return .scaleAspectFit
 	}
 	
 	func getTextFont() -> UIFont
 	{
-		return UIFont.systemFontOfSize(17)
+		return UIFont.systemFont(ofSize: 17)
 	}
 	
 	func getTextColor() -> UIColor
@@ -78,7 +78,7 @@ class CustomConfigUptown : CustomConfigProtocol
 
 	}
 	
-	func getSubmenu(name :String) -> [HomeMenuItem]
+	func getSubmenu(_ name :String) -> [HomeMenuItem]
 	{
 		// fall thru
 		return []
@@ -132,7 +132,7 @@ class CustomConfigUptown : CustomConfigProtocol
 	
 	func getTestSubscreens() -> [(button :String, output :String)]
 	{
-		let menu = self.getHomeMenu()
+		//let menu = self.getHomeMenu()
 		return [
 		]
 	}

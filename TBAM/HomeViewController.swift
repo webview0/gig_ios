@@ -25,21 +25,21 @@ class HomeViewController : CustomViewController
     @IBOutlet weak var constraintMenuMarginTrailing: NSLayoutConstraint?
     @IBOutlet weak var constraintMenuHeight: NSLayoutConstraint?
 
-    private var webViewObj :WKWebView?
-    private var menu :[HomeMenuItem]?
+    fileprivate var webViewObj :WKWebView?
+    fileprivate var menu :[HomeMenuItem]?
     
     // MARK: - View Controller
     
     class func loadFromStoryboard() -> HomeViewController?
     {
         let STORYBOARD_ID = "Home"
-        return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? HomeViewController
+        return AppDelegate.storyboard().instantiateViewController(withIdentifier: STORYBOARD_ID) as? HomeViewController
     }
     
     class func loadNavigationFromStoryboard() -> UINavigationController?
     {
         let STORYBOARD_ID = "HomeNav"
-        return AppDelegate.storyboard().instantiateViewControllerWithIdentifier(STORYBOARD_ID) as? UINavigationController
+        return AppDelegate.storyboard().instantiateViewController(withIdentifier: STORYBOARD_ID) as? UINavigationController
     }
     
     override func viewDidLoad()
@@ -52,27 +52,27 @@ class HomeViewController : CustomViewController
         
         let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
-            self.webAlertView?.hidden = false
+            self.webAlertView?.isHidden = false
             self.constraintWebAlertHeight?.constant = 60
 
             self.webViewObj = WKWebView()
-            self.webViewObj!.UIDelegate = self
+            self.webViewObj!.uiDelegate = self
             self.webViewObj!.navigationDelegate = self
             self.webViewObj!.allowsBackForwardNavigationGestures = false
-            self.webViewObj!.scrollView.scrollEnabled = false
-            self.webViewObj!.scrollView.contentInset = UIEdgeInsetsZero
+            self.webViewObj!.scrollView.isScrollEnabled = false
+            self.webViewObj!.scrollView.contentInset = UIEdgeInsets.zero
             
-            self.webViewObj!.backgroundColor            = UIColor.clearColor()
-            self.webViewObj!.scrollView.backgroundColor = UIColor.clearColor()  // have to set the scrollview background color
-            self.webAlertView?.backgroundColor          = UIColor.clearColor()
+            self.webViewObj!.backgroundColor            = UIColor.clear
+            self.webViewObj!.scrollView.backgroundColor = UIColor.clear  // have to set the scrollview background color
+            self.webAlertView?.backgroundColor          = UIColor.clear
             self.webAlertView?.addSubview(self.webViewObj!)
             
             let dict = [ "child" : self.webViewObj! ]
             self.webViewObj!.translatesAutoresizingMaskIntoConstraints = false
-            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
-            self.webAlertView?.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
+            self.webAlertView?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[child]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: dict))
         } else {
-            self.webAlertView?.hidden = true
+            self.webAlertView?.isHidden = true
             self.constraintWebAlertHeight?.constant = 0
         }
         
@@ -81,17 +81,17 @@ class HomeViewController : CustomViewController
             self.imgHomeBanner?.image = img
         }
 
-        self.collectionView?.backgroundColor = UIColor.clearColor()
+        self.collectionView?.backgroundColor = UIColor.clear
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.fetchAlertContent()
     }
     
-    override func viewDidAppear(animated: Bool)
+    override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
         self.adjustSubviews()
@@ -104,24 +104,24 @@ class HomeViewController : CustomViewController
         self.adjustSubviews()
     }
     
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator)
     {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
+        super.viewWillTransition(to: size, with: coordinator)
         self.adjustSubviews()
         self.fetchAlertContent()
         self.collectionView?.reloadData()
     }
     
-    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator)
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator)
     {
-        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        super.willTransition(to: newCollection, with: coordinator)
         self.adjustSubviews()
         self.collectionView?.reloadData()
     }
     
     func adjustSubviews()
     {
-        let width = CGRectGetWidth(self.view.frame)
+        let width = self.view.frame.width
         //let height = CGRectGetHeight(self.view.frame)
 
         let numRows    = CGFloat(CustomConfig.handle.getHomeMenuNumRows())
@@ -144,7 +144,7 @@ class HomeViewController : CustomViewController
         let numRows    = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumRows()))
         let numColumns = CGFloat(max(1, CustomConfig.handle.getHomeMenuNumColumns()))
 
-        let containerWidth = min(CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame) * 0.5)
+        let containerWidth = min(self.view.frame.width, self.view.frame.height * 0.5)
         //let containerHeight = CGRectGetHeight(cv.frame)
 
         let buttonWidth  = containerWidth / numColumns
@@ -156,8 +156,8 @@ class HomeViewController : CustomViewController
     {
         let alertURL = CustomConfig.handle.getAlertURL()
         if ("" != alertURL) {
-            if let nsurl = NSURL(string: alertURL), let wv = self.webViewObj {
-                wv.loadRequest(NSURLRequest(URL: nsurl))
+            if let nsurl = URL(string: alertURL), let wv = self.webViewObj {
+                wv.load(URLRequest(url: nsurl))
             }
         }
     }
@@ -167,20 +167,20 @@ class HomeViewController : CustomViewController
 
 extension HomeViewController : WKUIDelegate, WKNavigationDelegate
 {
-    func webView(webView: WKWebView, didFinishNavigation navigation: WKNavigation?)
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation?)
     {
         //print("finished loading")
     }
     
     // handle target="_blank"
-    func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView?
     {
         var flag = false
         if let ptr = navigationAction.targetFrame {
-            flag = ptr.mainFrame
+            flag = ptr.isMainFrame
         }
         if (!flag) {
-            webView.loadRequest(navigationAction.request)
+            webView.load(navigationAction.request)
         }
         return nil
     }
@@ -190,14 +190,14 @@ extension HomeViewController : WKUIDelegate, WKNavigationDelegate
 
 extension HomeViewController : UICollectionViewDelegate
 {
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
     {
         guard let item = self.menuForIndexPath(indexPath) else { return }
         
-        var nearestRect = CGRectZero
-        if let attributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath) {
+        var nearestRect = CGRect.zero
+        if let attributes = collectionView.layoutAttributesForItem(at: indexPath) {
             let cellRect = attributes.frame
-            nearestRect = collectionView.convertRect(cellRect, toView: self.view)
+            nearestRect = collectionView.convert(cellRect, to: self.view)
         }
         
         LinkRouter.go(self, nearestRect: nearestRect, menu: item)
@@ -206,7 +206,7 @@ extension HomeViewController : UICollectionViewDelegate
 
 extension HomeViewController : UICollectionViewDataSource
 {
-    private func menuForIndexPath(indexPath :NSIndexPath) -> HomeMenuItem?
+    fileprivate func menuForIndexPath(_ indexPath :IndexPath) -> HomeMenuItem?
     {
         if let mm = self.menu {
             let row = indexPath.row
@@ -217,22 +217,22 @@ extension HomeViewController : UICollectionViewDataSource
         return nil
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int
+    func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return 1
     }
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.menu?.count ?? 0
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         guard let cv = self.collectionView else { return UICollectionViewCell() }
 
         let CELL_IDENTIFIER = "homeMenuCell"
-        let cell = cv.dequeueReusableCellWithReuseIdentifier(CELL_IDENTIFIER, forIndexPath: indexPath)
+        let cell = cv.dequeueReusableCell(withReuseIdentifier: CELL_IDENTIFIER, for: indexPath)
         if let menuCell = cell as? HomeMenuCollectionViewCell, let menuObj = self.menuForIndexPath(indexPath) {
             if let icon = UIImage(named: menuObj.icon) {
                 menuCell.imgIcon?.image = icon
@@ -244,14 +244,14 @@ extension HomeViewController : UICollectionViewDataSource
 
 extension HomeViewController : UICollectionViewDelegateFlowLayout
 {
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
     {
         let sz = self.getButtonSize()
         return CGSize(width: sz, height: sz)
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets
     {
-        return UIEdgeInsetsZero
+        return UIEdgeInsets.zero
     }
 }

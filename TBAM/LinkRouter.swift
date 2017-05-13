@@ -10,7 +10,7 @@ import UIKit
 
 class LinkRouter
 {
-    class func go(fromViewController :UIViewController, nearestRect :CGRect, menu :HomeMenuItem?)
+    class func go(_ fromViewController :UIViewController, nearestRect :CGRect, menu :HomeMenuItem?)
     {
         guard let menu = menu else { return }
         
@@ -35,8 +35,8 @@ class LinkRouter
         }
 
         if (LinkRouter.isExternalLink(menu.url)) {
-            if let nsurl = NSURL(string: menu.url) {
-                LinkRouter.openBrowser(nsurl)
+            if let nsurl = URL(string: menu.url) {
+                let _ = LinkRouter.openBrowser(nsurl)
             }
             return
         }
@@ -47,14 +47,14 @@ class LinkRouter
         }
     }
     
-    class func openSubmenu(fromViewController :UIViewController, nearestRect :CGRect, name :String)
+    class func openSubmenu(_ fromViewController :UIViewController, nearestRect :CGRect, name :String)
     {
         let submenu = CustomConfig.handle.getSubmenu(name)
         
-        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet)
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         for item in submenu {
-            let action = UIAlertAction(title: item.title, style: .Default) {
+            let action = UIAlertAction(title: item.title, style: .default) {
                 [weak fromViewController]
                 _ in
                 if let vc = fromViewController {
@@ -64,7 +64,7 @@ class LinkRouter
             alert.addAction(action)
         }
         
-        let cancel = UIAlertAction(title: "Dismiss", style: .Cancel) { _ in }
+        let cancel = UIAlertAction(title: "Dismiss", style: .cancel) { _ in }
         alert.addAction(cancel)
 
         if let popoverController = alert.popoverPresentationController {
@@ -73,39 +73,39 @@ class LinkRouter
             popoverController.sourceRect = nearestRect
         }
         
-        fromViewController.presentViewController(alert, animated: true) { }
+        fromViewController.present(alert, animated: true) { }
     }
 
-    class func openBrowser(url :NSURL) -> Bool
+    class func openBrowser(_ url :URL) -> Bool
     {
-        let app = UIApplication.sharedApplication()
+        let app = UIApplication.shared
         if (app.canOpenURL(url)) {
             return app.openURL(url)
         }
         return false
     }
     
-    class func openPhone(phoneNumber :String)
+    class func openPhone(_ phoneNumber :String)
     {
         let str = "tel://\(phoneNumber)"
-        if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let nsurl = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(nsurl)
+        if let enc = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+            if let nsurl = URL(string: enc) {
+                UIApplication.shared.openURL(nsurl)
             }
         }
     }
     
-    class func openEmail(to :String, subject :String)
+    class func openEmail(_ to :String, subject :String)
     {
         let str = "mailto:?to=\(to)&subject=\(subject)"
-        if let enc = str.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet()) {
-            if let nsurl = NSURL(string: enc) {
-                UIApplication.sharedApplication().openURL(nsurl)
+        if let enc = str.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+            if let nsurl = URL(string: enc) {
+                UIApplication.shared.openURL(nsurl)
             }
         }
     }
     
-    class func openMap(fromViewController :UIViewController)
+    class func openMap(_ fromViewController :UIViewController)
     {
         if let vc = MapViewController.loadFromStoryboard() {
             vc.title = "Map"
@@ -116,7 +116,7 @@ class LinkRouter
 
 extension LinkRouter
 {
-    class func isExternalLink(url :String) -> Bool
+    class func isExternalLink(_ url :String) -> Bool
     {
         // blacklist
         let externalList = CustomConfig.handle.getExternalLinks()
@@ -138,20 +138,20 @@ extension LinkRouter
         return true
     }
     
-    class func willUseInternalMediaPlayer(request :NSURLRequest) -> Bool
+    class func willUseInternalMediaPlayer(_ request :URLRequest) -> Bool
     {
-        if let ext = request.URL?.pathExtension {
-            if ("mp3" == ext.lowercaseString) {
+        if let ext = request.url?.pathExtension {
+            if ("mp3" == ext.lowercased()) {
                 return true
             }
         }
         return false
     }
     
-    class func addFreedomHeader(request :NSURLRequest) -> NSURLRequest
+    class func addFreedomHeader(_ request :URLRequest) -> URLRequest
     {
-        let mutable = request.mutableCopy()
-        mutable.addValue("1", forHTTPHeaderField: "X-Freedom-Mobile")
-        return mutable as! NSURLRequest
+        let mutable = (request as NSURLRequest).mutableCopy()
+        (mutable as AnyObject).addValue("1", forHTTPHeaderField: "X-Freedom-Mobile")
+        return mutable as! URLRequest
     }
 }

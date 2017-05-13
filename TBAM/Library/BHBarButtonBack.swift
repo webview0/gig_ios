@@ -56,9 +56,9 @@ import UIKit
  */
 class BHBarButtonBack : UIBarButtonItem
 {
-    class func factory(title :String, tintColor :UIColor, target: AnyObject?, action: Selector) -> UIBarButtonItem
+    class func factory(_ title :String, tintColor :UIColor, target: AnyObject?, action: Selector) -> UIBarButtonItem
     {
-        if let img = UIImage(named: "UINavigationBarBackIndicatorDefault")?.imageWithRenderingMode(.AlwaysTemplate) {
+        if let img = UIImage(named: "UINavigationBarBackIndicatorDefault")?.withRenderingMode(.alwaysTemplate) {
             let imageView = UIImageView(image: img)
             imageView.tintColor = tintColor
             
@@ -68,24 +68,24 @@ class BHBarButtonBack : UIBarButtonItem
             backLabel.sizeToFit()
             
             let PADDING :CGFloat = 6
-            let h = max(CGRectGetHeight(imageView.frame), CGRectGetHeight(backLabel.frame))
+            let h = max(imageView.frame.height, backLabel.frame.height)
             
-            backLabel.frame.origin.x = imageView.frame.origin.x + CGRectGetWidth(imageView.frame) + PADDING
-            backLabel.frame.origin.y = (h - CGRectGetHeight(backLabel.frame)) / 2 + 1
+            backLabel.frame.origin.x = imageView.frame.origin.x + imageView.frame.width + PADDING
+            backLabel.frame.origin.y = (h - backLabel.frame.height) / 2 + 1
             
-            let vx = UIView(frame: CGRectMake(0, 0, CGRectGetWidth(backLabel.frame) + CGRectGetWidth(imageView.frame) + PADDING, h))
+            let vx = UIView(frame: CGRect(x: 0, y: 0, width: backLabel.frame.width + imageView.frame.width + PADDING, height: h))
             vx.addSubview(imageView)
             vx.addSubview(backLabel)
             
             let gesture = UITapGestureRecognizer(target: target, action: action)
             vx.addGestureRecognizer(gesture)
-            vx.userInteractionEnabled = true
+            vx.isUserInteractionEnabled = true
             
             return UIBarButtonItem(customView: vx)
         }
         
         // fallback to just show unicode arrow with text
         let unicodeArrow = "\u{25C1}"
-        return UIBarButtonItem(title: "\(unicodeArrow) \(title)", style: .Plain, target: target, action: action)
+        return UIBarButtonItem(title: "\(unicodeArrow) \(title)", style: .plain, target: target, action: action)
     }
 }

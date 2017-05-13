@@ -10,7 +10,7 @@ import UIKit
 
 class CustomViewController : UIViewController
 {
-    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    override var preferredStatusBarStyle : UIStatusBarStyle
     {
         return CustomConfig.handle.getStatusBarStyle()
     }

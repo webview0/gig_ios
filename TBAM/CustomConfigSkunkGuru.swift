@@ -15,12 +15,12 @@ class CustomConfigSkunkGuru : CustomConfigProtocol
 	
 	func getStatusBarStyle() -> UIStatusBarStyle
 	{
-		return .LightContent
+		return .lightContent
 	}
 	
 	func getNavigationBarStyle() -> UIBarStyle
 	{
-		return .Black
+		return .black
 	}
 	
 	func getHomeImageName() -> String
@@ -30,12 +30,12 @@ class CustomConfigSkunkGuru : CustomConfigProtocol
 	
 	func getHomeImageAspect() -> UIViewContentMode
 	{
-		return .ScaleAspectFit
+		return .scaleAspectFit
 	}
 	
 	func getTextFont() -> UIFont
 	{
-		return UIFont.systemFontOfSize(17)
+		return UIFont.systemFont(ofSize: 17)
 	}
 	
 	func getTextColor() -> UIColor
@@ -80,7 +80,7 @@ class CustomConfigSkunkGuru : CustomConfigProtocol
 
 	}
 	
-	func getSubmenu(name :String) -> [HomeMenuItem]
+	func getSubmenu(_ name :String) -> [HomeMenuItem]
 	{
 		
 		// fall thru
@@ -135,7 +135,7 @@ class CustomConfigSkunkGuru : CustomConfigProtocol
 	
 	func getTestSubscreens() -> [(button :String, output :String)]
 	{
-		let menu = self.getHomeMenu()
+		//let menu = self.getHomeMenu()
 		return [
 			
 		]

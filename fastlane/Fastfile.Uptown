@@ -13,7 +13,7 @@
 
 # This is the minimum version number required.
 # Update this, if you use features of a newer version
-fastlane_version "1.81.0"
+# fastlane_version "1.81.0"
 
 default_platform :ios
 
@@ -37,10 +37,6 @@ platform :ios do
   lane :certs do
     match(type: "development", app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios.alpha")  # , force:true)
     match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios")        # , force:true)
-    puts "---------------------------------------------------------------------".blue.bold
-    puts "--- Consider running 'fastlane xcode' to remove the Fix-it button ---".blue.bold
-    puts "--- if you are running fastlane tools only                        ---".blue.bold
-    puts "---------------------------------------------------------------------".blue.bold
   end
 
   desc "Remove the Fix-it button from Xcode"

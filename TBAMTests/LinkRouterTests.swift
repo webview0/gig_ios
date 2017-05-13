@@ -42,27 +42,27 @@ class LinkRouterTests : XCTestCase
     func testInternalMediaPlayer()
     {
         var url = "http://rigel7.local/~phillz/unittest/?src=gendocs&ref=about"
-        var actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        var actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertFalse(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
         url = "http://rigel7.local/~phillz/unittest/jailbreak.mp3"
-        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertTrue(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
         url = "http://rigel7.local/~phillz/unittest/clientuploads/audio/jailbreak.mp3"
-        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertTrue(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
         url = "http://rigel7.local/~phillz/unittest/clientuploads/audio/jailbreak.mp3?displayType=app"
-        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertTrue(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
         url = "http://rigel7.local/~phillz/unittest/clientuploads/video/commercial.mp4"
-        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertFalse(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
         
         url = "http://rigel7.local/~phillz/unittest/clientuploads/docs/help.txt"
-        actual = LinkRouter.willUseInternalMediaPlayer(NSURLRequest(URL: NSURL(string: url)!))
+        actual = LinkRouter.willUseInternalMediaPlayer(URLRequest(url: URL(string: url)!))
         XCTAssertFalse(actual, "LinkRouter.willUseInternalMediaPlayer(\(url)) - Expected false got \(actual)")
     }
 }

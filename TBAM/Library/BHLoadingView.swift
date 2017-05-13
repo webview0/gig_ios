@@ -34,32 +34,32 @@ import UIKit
 // code based on LoadingOverlay view from Xamarin
 // http://developer.xamarin.com/recipes/ios/standard_controls/popovers/display_a_loading_message/
 
-public class BHLoadingView : UIView
+open class BHLoadingView : UIView
 {
-    public var activitySpinner :UIActivityIndicatorView? = nil
-    public var loadingLabel    :UILabel? = nil
+    open var activitySpinner :UIActivityIndicatorView? = nil
+    open var loadingLabel    :UILabel? = nil
     
     // MARK: - Sizes
     
-    private func getSpinnerRect() -> CGRect
+    fileprivate func getSpinnerRect() -> CGRect
     {
-        guard let spinner = self.activitySpinner else { return CGRectZero }
+        guard let spinner = self.activitySpinner else { return CGRect.zero }
         
-        let w = CGRectGetWidth(self.frame)
-        let h = CGRectGetHeight(self.frame)
+        let w = self.frame.width
+        let h = self.frame.height
 
         let centerX = w / 2.0
         let centerY = h / 2.0
 
-        let spinnerWidth  = CGRectGetWidth(spinner.frame)
-        let spinnerHeight = CGRectGetHeight(spinner.frame)
-        return CGRectMake(centerX - (spinnerWidth / 2.0), centerY - spinnerHeight - 20.0, spinnerWidth, spinnerHeight)
+        let spinnerWidth  = spinner.frame.width
+        let spinnerHeight = spinner.frame.height
+        return CGRect(x: centerX - (spinnerWidth / 2.0), y: centerY - spinnerHeight - 20.0, width: spinnerWidth, height: spinnerHeight)
     }
     
-    private func getLabelRect() -> CGRect
+    fileprivate func getLabelRect() -> CGRect
     {
-        let w = CGRectGetWidth(self.frame)
-        let h = CGRectGetHeight(self.frame)
+        let w = self.frame.width
+        let h = self.frame.height
         
         let centerX = w / 2.0
         let centerY = h / 2.0
@@ -67,7 +67,7 @@ public class BHLoadingView : UIView
         let labelWidth  :CGFloat = w - 20
         let labelHeight :CGFloat = 22
         
-        return CGRectMake(centerX - (labelWidth / 2), centerY + 20, labelWidth, labelHeight)
+        return CGRect(x: centerX - (labelWidth / 2), y: centerY + 20, width: labelWidth, height: labelHeight)
     }
     
     // MARK: - View
@@ -75,65 +75,65 @@ public class BHLoadingView : UIView
     override public init(frame: CGRect)
     {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         self.createInitialViews()
     }
     
     required public init?(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         self.createInitialViews()
     }
 
-    private func createInitialViews()
+    fileprivate func createInitialViews()
     {
         let alpha :CGFloat = 0.75
         self.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
         
         // create the activity spinner, center it horizontal and put it 5 points above center x
-        self.activitySpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
+        self.activitySpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.whiteLarge)
         self.activitySpinner!.frame = self.getSpinnerRect()
-        self.activitySpinner!.autoresizingMask = [ .FlexibleWidth, .FlexibleHeight ]
+        self.activitySpinner!.autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
         self.addSubview(self.activitySpinner!)
         
         // create and configure the "Loading Data" label
         self.loadingLabel = UILabel(frame: self.getLabelRect())
-        self.loadingLabel!.backgroundColor = UIColor.clearColor()
-        self.loadingLabel!.textColor = UIColor.whiteColor()
+        self.loadingLabel!.backgroundColor = UIColor.clear
+        self.loadingLabel!.textColor = UIColor.white
         self.loadingLabel!.text = "Updating..."
-        self.loadingLabel!.textAlignment = .Center
-        self.loadingLabel!.autoresizingMask = [ .FlexibleWidth, .FlexibleHeight ]
+        self.loadingLabel!.textAlignment = .center
+        self.loadingLabel!.autoresizingMask = [ .flexibleWidth, .flexibleHeight ]
         self.addSubview(self.loadingLabel!)
     }
     
-    public func adjustLayouts()
+    open func adjustLayouts()
     {
         self.activitySpinner?.frame = self.getSpinnerRect()
         self.loadingLabel?.frame = self.getLabelRect()
     }
     
-    public func updateRect(rect :CGRect)
+    open func updateRect(_ rect :CGRect)
     {
         self.frame = rect
         self.adjustLayouts()
         self.setNeedsDisplay()
     }
     
-    public func setText(text :String)
+    open func setText(_ text :String)
     {
         self.loadingLabel?.text = text
     }
     
-    public func startSpinner()
+    open func startSpinner()
     {
         self.activitySpinner?.startAnimating()
-        self.hidden = false
+        self.isHidden = false
     }
     
-    public func stopSpinner()
+    open func stopSpinner()
     {
-        self.hidden = true
+        self.isHidden = true
         self.activitySpinner?.stopAnimating()
     }
     
