@@ -39,11 +39,6 @@ Match development and production certificates and profiles
 Do this the first time you set up your project
 
 IF YOU KEEP GETTING CERT ERRORS RUN WITH force:true
-### ios xcode
-```
-fastlane ios xcode
-```
-Remove the Fix-it button from Xcode
 ### ios test
 ```
 fastlane ios test

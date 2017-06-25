@@ -31,29 +31,29 @@
 
 import UIKit
 
-/**
- * A UIBarButtonItem for Back button with back arrow.
- * Use this class when you have to control when the user presses the Back button.
- *
- * Download the images here:
- * https://github.com/youknowone/UIKitResources
- *
- * Example Usage:
- *
- * override func viewWillAppear(animated: Bool)
- * {
- *     super.viewWillAppear(animated)
- *
- *     let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
- *     let color = UIColor.greenColor()
- *     self.navigationItem.leftBarButtonItem = BHBarButtonBack.factory(title, tintColor: color, target: self, action: #selector(WebViewController.pressedBack))
- * }
- *
- * func pressedBack()
- * {
- *     self.navigationController?.popViewControllerAnimated(true)
- * }
- */
+///
+/// A UIBarButtonItem for Back button with back arrow.
+/// Use this class when you have to control when the user presses the Back button.
+///
+/// Download the images here:
+/// https://github.com/youknowone/UIKitResources
+///
+/// Example Usage:
+///
+/// override func viewWillAppear(animated: Bool)
+/// {
+///     super.viewWillAppear(animated)
+///
+///     let title = self.navigationItem.backBarButtonItem?.title ?? "Back"
+///     let color = UIColor.greenColor()
+///     self.navigationItem.leftBarButtonItem = BHBarButtonBack.factory(title, tintColor: color, target: self, action: #selector(WebViewController.pressedBack))
+/// }
+///
+/// func pressedBack()
+/// {
+///     self.navigationController?.popViewControllerAnimated(true)
+/// }
+///
 class BHBarButtonBack : UIBarButtonItem
 {
     class func factory(_ title :String, tintColor :UIColor, target: AnyObject?, action: Selector) -> UIBarButtonItem

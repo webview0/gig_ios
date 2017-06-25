@@ -82,6 +82,8 @@ class WebViewController : CustomViewController
 
     func loadURL(request :URLRequest)
     {
+        BHLog.debug { "WebViewController.loadURL: \(String(describing: request.url?.absoluteString))" }
+        
         let TLSv12 = "FIX: have sysadmin enable TLS v1.2, then remove NSAppTransportSecurity from Info.plist"
         
         let showLoading = !LinkRouter.willUseInternalMediaPlayer(request)
@@ -216,6 +218,9 @@ extension WebViewController : WKNavigationDelegate
     // called when user taps a link (and also on initial load)
     func webView(_ webView :WKWebView, decidePolicyFor navigationAction :WKNavigationAction, decisionHandler :@escaping (WKNavigationActionPolicy) -> Void)
     {
+        BHLog.debug { "WebViewController.decidePolicyFor: navigationAction.navigationType: \(navigationAction.navigationType.rawValue))" }
+        BHLog.debug { "WebViewController.decidePolicyFor: url: \(url))" }
+        
         if (navigationAction.navigationType == .linkActivated) {
             if let url = navigationAction.request.url {
                 if (LinkRouter.isExternalLink(url.absoluteString)) {
@@ -229,6 +234,11 @@ extension WebViewController : WKNavigationDelegate
         decisionHandler(WKNavigationActionPolicy.allow)
     }
     
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation?)
+    {
+        BHLog.debug { "WebViewController.didStartProvisionalNavigation" }
+    }
+
     // handle target="_blank"
     func webView(_ webView :WKWebView, createWebViewWith configuration :WKWebViewConfiguration, for navigationAction :WKNavigationAction, windowFeatures :WKWindowFeatures) -> WKWebView?
     {

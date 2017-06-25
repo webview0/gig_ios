@@ -35,42 +35,41 @@ platform :ios do
   desc "Do this the first time you set up your project"
   desc "IF YOU KEEP GETTING CERT ERRORS RUN WITH force:true"
   lane :certs do
-    match(type: "development", app_identifier: "com.accrisoft.appbuilder.mobileaccrisoft.ios.alpha")  ### , force:true)
-    match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.mobileaccrisoft.ios")        ### , force:true)
+    match(type: "development", app_identifier: "com.charlottechamber.CharlotteChamberMemberApp.dev")   ### , force:true)
+    match(type: "appstore",    app_identifier: "com.charlottechamber.CharlotteChamberMemberApp")       ### , force:true)
+    #match(type: "development", app_identifier: "com.accrisoft.appbuilder.mobileaccrisoft.ios.alpha")  ### , force:true)
+    #match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.mobileaccrisoft.ios")        ### , force:true)
     #match(type: "development", app_identifier: "com.accrisoft.appbuilder.skunkguru.ios.alpha")  ### , force:true)
     #match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.skunkguru.ios")        ### , force:true)
     #match(type: "development", app_identifier: "com.accrisoft.TBAM.alpha")  ### , force:true)
     #match(type: "appstore",    app_identifier: "com.accrisoft.TBAM")        ### , force:true)
   end
 
-  desc "Remove the Fix-it button from Xcode"
-  lane :xcode do
-    install_xcode_plugin(url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip")
-  end
-
   desc "Runs all the tests"
   lane :test do
-    scan(scheme: "MobileAccrisoft") # Run Tests
+    scan(scheme: "CharlotteChamber") # Run Tests
   end
 
   desc "Take screenshots"
   lane :screenshots do
-    snapshot(scheme: "MobileAccrisoft", configuration: "Release")
+    snapshot(scheme: "CharlotteChamber", configuration: "Release")
   end
 
   desc "Submit a new Beta Build to Apple TestFlight"
   lane :beta do
     match(type: "appstore") # more information: https://codesigning.guide
-    # scan(scheme: "MobileAccrisoft") # Run Tests
-    gym(scheme: "MobileAccrisoft",    # Build your app
+    # scan(scheme: "CharlotteChamber") # Run Tests
+    gym(scheme: "CharlotteChamber",    # Build your app
+        codesigning_identity: "iPhone Distribution: Greater Charlotte Chamber of Commerce (9Q6JVMR6B9)",
+        export_team_id: "9Q6JVMR6B9",  # Charlotte
         output_directory: "./fastlane/build",
-        output_name: "MobileAccrisoft.testflight.ipa",
-        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D MOBILEACCRISOFT_RELEASE -D BHAPPANALYZER_ANSWERS\""
+        output_name: "CharlotteChamber.testflight.ipa",
+        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D CHARLOTTECHAMBER_RELEASE -D BHAPPANALYZER_ANSWERS\""
     )
-    puts "-----------------------------------------------------------------------------------".blue.bold
-    puts "--- Upload to TestFlight                                                        ---".blue
-    puts "--- # fastlane pilot upload --ipa fastlane/build/MobileAccrisoft.testflight.ipa ---".blue
-    puts "-----------------------------------------------------------------------------------".blue.bold
+    puts "------------------------------------------------------------------------------------".blue.bold
+    puts "--- Upload to TestFlight                                                         ---".blue
+    puts "--- # fastlane pilot upload --ipa fastlane/build/CharlotteChamber.testflight.ipa ---".blue
+    puts "------------------------------------------------------------------------------------".blue.bold
 
     # sh "your_script.sh"
     # You can also use other beta testing services here (run `fastlane actions`)
@@ -79,12 +78,12 @@ platform :ios do
   desc "Deploy a new version to the App Store"
   lane :store do
     match(type: "appstore")
-    # scan(scheme: "MobileAccrisoft") # Run Tests
+    # scan(scheme: "CharlotteChamber") # Run Tests
     # snapshot
-    gym(scheme: "MobileAccrisoft",    # Build your app
+    gym(scheme: "CharlotteChamber",    # Build your app
         output_directory: "./fastlane/build",
-        output_name: "MobileAccrisoft.appstore.ipa",
-        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D MOBILEACCRISOFT_RELEASE -D BHAPPANALYZER_ANSWERS\""
+        output_name: "CharlotteChamber.appstore.ipa",
+        xcargs: "OTHER_SWIFT_FLAGS=\"\\$(inherited) -D CHARLOTTECHAMBER_RELEASE -D BHAPPANALYZER_ANSWERS\""
     )
     # deliver(force: true)
     # frameit

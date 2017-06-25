@@ -1,10 +1,19 @@
-app_identifier      "com.accrisoft.appbuilder.dallasjcc.ios" # The bundle identifier of your app
+# Appfile
+
+app_identifier      "com.charlottechamber.CharlotteChamberMemberApp"
+#app_identifier      "com.accrisoft.appbuilder.dallasjcc.ios" # The bundle identifier of your app
 #app_identifier      "com.accrisoft.appbuilder.uptownorganization.ios" # The bundle identifier of your app
 #app_identifier      "com.accrisoft.TBAM"                     # The bundle identifier of your app
-apple_dev_portal_id "developer@blueheronlabs.net"            # Apple Developer Account
-itunes_connect_id   "developer+asoft@blueheronlabs.net"      # iTunes Connect Account
-team_id             "9ZWL894D73"                             # Developer Portal Team ID -- Accrisoft
-#itc_team_id "9ZWL894D73" # iTunes Connect Team ID -- Accrisoft
+
+# Accrisoft
+#apple_dev_portal_id "developer@blueheronlabs.net"        # Apple Developer Account
+#itunes_connect_id   "developer+asoft@blueheronlabs.net"  # iTunes Connect Account
+#team_id             "9ZWL894D73"                         # Developer Portal Team ID -- Accrisoft
+
+# Charlotte Chamber
+apple_dev_portal_id "Jager2ways@gmail.com"            # Apple Developer Account
+itunes_connect_id   "Jager2ways@gmail.com"            # iTunes Connect Account
+team_id             "9Q6JVMR6B9"                      # Developer Portal Team ID -- Charlotte Chamber
 
 # you can even provide different app identifiers, Apple IDs and team names per lane:
 # More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md

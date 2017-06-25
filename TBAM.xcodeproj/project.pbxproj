@@ -13,7 +13,6 @@
 		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
-		C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
 		C83DB4081E5B9AE700DCB6F0 /* Fastfile.Uptown in Resources */ = {isa = PBXBuildFile; fileRef = C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
@@ -25,6 +24,10 @@
 		C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
 		C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99521C1BC86400B08843 /* HomeViewController.swift */; };
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
+		C88237771EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88237751EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard */; };
+		C882377B1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882377A1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift */; };
+		C882377E1EFEF6A600BB10F4 /* Charlotte, NC.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C882377D1EFEF6A600BB10F4 /* Charlotte, NC.gpx */; };
+		C88237801EFEF76200BB10F4 /* Fastfile.MobileAccrisoft in Resources */ = {isa = PBXBuildFile; fileRef = C882377F1EFEF76200BB10F4 /* Fastfile.MobileAccrisoft */; };
 		C88F79A01E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */; };
 		C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */; };
 		C89498D91EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89498D81EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift */; };
@@ -42,8 +45,6 @@
 		C8B176AB1CFC80CB00861914 /* CustomConfigTBAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E318401CFA54470006687E /* CustomConfigTBAM.swift */; };
 		C8B176AC1CFC80CB00861914 /* LinkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C805071C1CD7F3760026EFC2 /* LinkRouter.swift */; };
 		C8B176AE1CFC80CB00861914 /* HomeMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */; };
-		C8B176BE1CFC80CC00861914 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
-		C8B176BF1CFC80CC00861914 /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
 		C8B176C01CFC80CC00861914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C8B176C11CFC80CC00861914 /* CustomConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B131C232070007AC9AB /* CustomConfig.swift */; };
 		C8B176C21CFC80CC00861914 /* CustomConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */; };
@@ -64,10 +65,10 @@
 		C8B176D21CFC858200861914 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
 		C8B176D31CFC860D00861914 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A95B171C232C40007AC9AB /* CustomViewController.swift */; };
 		C8B176D41CFC860D00861914 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
-		C8B176D51CFC861900861914 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */; };
-		C8B176D61CFC861900861914 /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
 		C8B176D71CFC861900861914 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
-		C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */; };
+		C8E0E3C01EEC729200CC2375 /* BHLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0E3BE1EEC729200CC2375 /* BHLoadingView.swift */; };
+		C8E0E3C91EEC736C00CC2375 /* BHBarButtonBack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0E3C81EEC736C00CC2375 /* BHBarButtonBack.swift */; };
+		C8E0E3D81EEC74BA00CC2375 /* BHLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E0E3D71EEC74BA00CC2375 /* BHLog.swift */; };
 		C8E3183B1CFA537F0006687E /* CustomConfigTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */; };
 		C8E3183D1CFA53BC0006687E /* CustomConfigDevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */; };
 		C8E3183F1CFA542A0006687E /* CustomConfigDallasJCC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */; };
@@ -99,7 +100,6 @@
 		C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		C828990E1C234089006D7AF1 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
-		C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
 		C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile.Uptown; path = fastlane/Fastfile.Uptown; sourceTree = SOURCE_ROOT; };
 		C84D9D211CF6732800C5C697 /* Fastfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile; path = fastlane/Fastfile; sourceTree = SOURCE_ROOT; };
 		C84D9D241CF6734700C5C697 /* Appfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Appfile; path = fastlane/Appfile; sourceTree = SOURCE_ROOT; };
@@ -122,6 +122,10 @@
 		C86E99501C1BC7E500B08843 /* HomeMenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeMenuItem.swift; sourceTree = "<group>"; };
 		C86E99521C1BC86400B08843 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		C86E99541C1BCDC600B08843 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		C88237761EFEF1DB00BB10F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-CharlotteChamber.storyboard"; sourceTree = "<group>"; };
+		C882377A1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigCharlotteChamber.swift; sourceTree = "<group>"; };
+		C882377D1EFEF6A600BB10F4 /* Charlotte, NC.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Charlotte, NC.gpx"; sourceTree = "<group>"; };
+		C882377F1EFEF76200BB10F4 /* Fastfile.MobileAccrisoft */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Fastfile.MobileAccrisoft; path = fastlane/Fastfile.MobileAccrisoft; sourceTree = SOURCE_ROOT; };
 		C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigSkunkGuru.swift; sourceTree = "<group>"; };
 		C88F79AE1E0A22F600BBC62A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-SkunkGuru.storyboard"; sourceTree = "<group>"; };
 		C89498D81EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigMobileAccrisoft.swift; sourceTree = "<group>"; };
@@ -133,7 +137,9 @@
 		C8A95B171C232C40007AC9AB /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigProtocol.swift; sourceTree = "<group>"; };
 		C8B176CF1CFC811100861914 /* CustomConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfig.swift; sourceTree = "<group>"; };
-		C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLoadingView.swift; sourceTree = "<group>"; };
+		C8E0E3BE1EEC729200CC2375 /* BHLoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLoadingView.swift; sourceTree = "<group>"; };
+		C8E0E3C81EEC736C00CC2375 /* BHBarButtonBack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHBarButtonBack.swift; sourceTree = "<group>"; };
+		C8E0E3D71EEC74BA00CC2375 /* BHLog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BHLog.swift; sourceTree = "<group>"; };
 		C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigTest.swift; sourceTree = "<group>"; };
 		C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigDevel.swift; sourceTree = "<group>"; };
 		C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomConfigDallasJCC.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				C84D9D241CF6734700C5C697 /* Appfile */,
 				C84D9D211CF6732800C5C697 /* Fastfile */,
 				C89498E21EC7961F0025E380 /* Fastfile.DallasJCC */,
+				C882377F1EFEF76200BB10F4 /* Fastfile.MobileAccrisoft */,
 				C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */,
 				C84D9D261CF6735100C5C697 /* Gymfile */,
 				C84D9D271CF6735100C5C697 /* Matchfile */,
@@ -199,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				C84D9D231CF6732C00C5C697 /* Fastlane */,
+				C882377C1EFEF6A600BB10F4 /* gpx */,
 				C86E991F1C1BC55D00B08843 /* TBAM */,
 				C86E99341C1BC55D00B08843 /* TBAMTests */,
 				C86E993F1C1BC55D00B08843 /* TBAMUITests */,
@@ -226,6 +234,7 @@
 				C8B176941CFC808E00861914 /* CustomConfigProtocol.swift */,
 				C8E3183C1CFA53BC0006687E /* CustomConfigDevel.swift */,
 				C8E3183A1CFA537F0006687E /* CustomConfigTest.swift */,
+				C882377A1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift */,
 				C8E3183E1CFA542A0006687E /* CustomConfigDallasJCC.swift */,
 				C89498D81EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift */,
 				C8F674151D80D6E500A1A00F /* CustomConfigUptown.swift */,
@@ -240,6 +249,7 @@
 				C8A95B171C232C40007AC9AB /* CustomViewController.swift */,
 				C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */,
 				C86E99241C1BC55D00B08843 /* Main.storyboard */,
+				C88237751EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard */,
 				C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */,
 				C89498E41EC79A2A0025E380 /* LaunchScreen-MobileAccrisoft.storyboard */,
 				C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */,
@@ -271,13 +281,38 @@
 			path = TBAMUITests;
 			sourceTree = "<group>";
 		};
+		C882377C1EFEF6A600BB10F4 /* gpx */ = {
+			isa = PBXGroup;
+			children = (
+				C882377D1EFEF6A600BB10F4 /* Charlotte, NC.gpx */,
+			);
+			path = gpx;
+			sourceTree = "<group>";
+		};
 		C8B8230C1CDAAA54001A182C /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				C839A6AF1CDB811000C83093 /* BHBarButtonBack.swift */,
-				C8B8230D1CDAAA54001A182C /* BHLoadingView.swift */,
+				C8E0E3CA1EEC73B000CC2375 /* BHCore */,
+				C8E0E3BC1EEC729200CC2375 /* BHUI+ios */,
 			);
 			path = Library;
+			sourceTree = "<group>";
+		};
+		C8E0E3BC1EEC729200CC2375 /* BHUI+ios */ = {
+			isa = PBXGroup;
+			children = (
+				C8E0E3C81EEC736C00CC2375 /* BHBarButtonBack.swift */,
+				C8E0E3BE1EEC729200CC2375 /* BHLoadingView.swift */,
+			);
+			path = "BHUI+ios";
+			sourceTree = "<group>";
+		};
+		C8E0E3CA1EEC73B000CC2375 /* BHCore */ = {
+			isa = PBXGroup;
+			children = (
+				C8E0E3D71EEC74BA00CC2375 /* BHLog.swift */,
+			);
+			path = BHCore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,6 +433,9 @@
 				C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */,
 				C89498E31EC7961F0025E380 /* Fastfile.DallasJCC in Resources */,
 				C89498E61EC79A2A0025E380 /* LaunchScreen-MobileAccrisoft.storyboard in Resources */,
+				C88237771EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard in Resources */,
+				C88237801EFEF76200BB10F4 /* Fastfile.MobileAccrisoft in Resources */,
+				C882377E1EFEF6A600BB10F4 /* Charlotte, NC.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,11 +492,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C88F79A01E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift in Sources */,
+				C882377B1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift in Sources */,
 				C86E994F1C1BC74600B08843 /* HomeMenuCollectionViewCell.swift in Sources */,
+				C8E0E3C91EEC736C00CC2375 /* BHBarButtonBack.swift in Sources */,
 				C86E99511C1BC7E500B08843 /* HomeMenuItem.swift in Sources */,
 				C8A95B141C232070007AC9AB /* CustomConfig.swift in Sources */,
 				C8E3183D1CFA53BC0006687E /* CustomConfigDevel.swift in Sources */,
-				C839A6B01CDB811000C83093 /* BHBarButtonBack.swift in Sources */,
+				C8E0E3C01EEC729200CC2375 /* BHLoadingView.swift in Sources */,
+				C8E0E3D81EEC74BA00CC2375 /* BHLog.swift in Sources */,
 				C8F674161D80D6E500A1A00F /* CustomConfigUptown.swift in Sources */,
 				C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */,
 				C8E318411CFA54470006687E /* CustomConfigTBAM.swift in Sources */,
@@ -470,7 +511,6 @@
 				C8E3183F1CFA542A0006687E /* CustomConfigDallasJCC.swift in Sources */,
 				C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */,
 				C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */,
-				C8B8230E1CDAAA54001A182C /* BHLoadingView.swift in Sources */,
 				C86E99531C1BC86400B08843 /* HomeViewController.swift in Sources */,
 				C8A95B181C232C40007AC9AB /* CustomViewController.swift in Sources */,
 			);
@@ -480,7 +520,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8B176D61CFC861900861914 /* BHLoadingView.swift in Sources */,
 				C8B176AC1CFC80CB00861914 /* LinkRouter.swift in Sources */,
 				C8B176D21CFC858200861914 /* WebViewController.swift in Sources */,
 				C8B176A71CFC80CB00861914 /* CustomConfigProtocol.swift in Sources */,
@@ -495,7 +534,6 @@
 				C8B176A81CFC80CB00861914 /* CustomConfigDevel.swift in Sources */,
 				C8E3184B1CFA54E00006687E /* LinkRouterTests.swift in Sources */,
 				C8B176AE1CFC80CB00861914 /* HomeMenuItem.swift in Sources */,
-				C8B176D51CFC861900861914 /* BHBarButtonBack.swift in Sources */,
 				C8B176D41CFC860D00861914 /* CustomNavigationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,7 +544,6 @@
 			files = (
 				C8B176C41CFC80CC00861914 /* CustomConfigTest.swift in Sources */,
 				C86E99411C1BC55D00B08843 /* TBAMUITests.swift in Sources */,
-				C8B176BF1CFC80CC00861914 /* BHLoadingView.swift in Sources */,
 				C8B176CA1CFC80CC00861914 /* HomeMenuCollectionViewCell.swift in Sources */,
 				C8B176C11CFC80CC00861914 /* CustomConfig.swift in Sources */,
 				C8B176C51CFC80CC00861914 /* CustomConfigDallasJCC.swift in Sources */,
@@ -514,7 +551,6 @@
 				C8B176C71CFC80CC00861914 /* LinkRouter.swift in Sources */,
 				C8B176C61CFC80CC00861914 /* CustomConfigTBAM.swift in Sources */,
 				C8B176CD1CFC80CC00861914 /* CustomViewController.swift in Sources */,
-				C8B176BE1CFC80CC00861914 /* BHBarButtonBack.swift in Sources */,
 				C8B176C01CFC80CC00861914 /* AppDelegate.swift in Sources */,
 				C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */,
 				C80EA7DD1D8C763B0028EBB0 /* CustomConfigUptown.swift in Sources */,
@@ -565,6 +601,14 @@
 				C86E992A1C1BC55D00B08843 /* Base */,
 			);
 			name = "LaunchScreen-TBAM.storyboard";
+			sourceTree = "<group>";
+		};
+		C88237751EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C88237761EFEF1DB00BB10F4 /* Base */,
+			);
+			name = "LaunchScreen-CharlotteChamber.storyboard";
 			sourceTree = "<group>";
 		};
 		C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */ = {
@@ -970,6 +1014,197 @@
 			};
 			name = TBAM_Release;
 		};
+		C882376D1EFEF09000BB10F4 /* CharlotteChamber_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = CharlotteChamber_Debug;
+		};
+		C882376E1EFEF09000BB10F4 /* CharlotteChamber_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "CharlotteChamber-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Charlotte Ω";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Greater Charlotte Chamber of Commerce (9Q6JVMR6B9)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-CharlotteChamber";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D CHARLOTTECHAMBER_DEBUG -D DEBUG";
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlottechamber.CharlotteChamberMemberApp.dev;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = "Charlotte Ω";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CharlotteChamber_Debug;
+		};
+		C882376F1EFEF09000BB10F4 /* CharlotteChamber_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CharlotteChamber_Debug;
+		};
+		C88237701EFEF09000BB10F4 /* CharlotteChamber_Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "de77c153-b38e-41ce-a49a-aa5fd2120d50";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = CharlotteChamber_Debug;
+		};
+		C88237711EFEF0A100BB10F4 /* CharlotteChamber_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = CharlotteChamber_Release;
+		};
+		C88237721EFEF0A100BB10F4 /* CharlotteChamber_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "CharlotteChamber-AppIcon";
+				BUNDLE_DISPLAY_NAME = "Charlotte Chamber";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
+				DEVELOPMENT_TEAM = 9Q6JVMR6B9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = TBAM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LAUNCH_SCREEN_STORYBOARD = "LaunchScreen-CharlotteChamber";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D CHARLOTTECHAMBER_RELEASE -D BHAPPANALYZER_ANSWERS";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "";
+				PRODUCT_BUNDLE_IDENTIFIER = com.charlottechamber.CharlotteChamberMemberApp;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
+				PRODUCT_NAME = Charlotte;
+				PROVISIONING_PROFILE = "21c3fa6b-5736-4fff-a2d3-aeffa3cc281e";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CharlotteChamber_Release;
+		};
+		C88237731EFEF0A100BB10F4 /* CharlotteChamber_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D DALLASJCC_TEST";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = CharlotteChamber_Release;
+		};
+		C88237741EFEF0A100BB10F4 /* CharlotteChamber_Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TBAMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.blueheronlabs.TBAMUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "de77c153-b38e-41ce-a49a-aa5fd2120d50";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = TBAM;
+				USES_XCTRUNNER = YES;
+			};
+			name = CharlotteChamber_Release;
+		};
 		C88F79A51E0A204A00BBC62A /* SkunkGuru_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1222,7 +1457,7 @@
 				OTHER_SWIFT_FLAGS = "-D MOBILEACCRISOFT_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.mobileaccrisoft.ios.alpha;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Charlotte Ω";
+				PRODUCT_NAME = "Accrisoft Mobile Ω";
 				PROVISIONING_PROFILE = "ce08500b-7cce-4f3b-8bad-4184e8f1d772";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1315,7 +1550,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.mobileaccrisoft.ios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = Charlotte;
+				PRODUCT_NAME = "Accrisoft Mobile";
 				PROVISIONING_PROFILE = "27a3a22d-d690-4743-83be-0421b3a5a805";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1546,11 +1781,13 @@
 				C88F79A51E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3311CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C89498DA1EC793AE0025E380 /* MobileAccrisoft_Debug */,
+				C882376D1EFEF09000BB10F4 /* CharlotteChamber_Debug */,
 				C86E99441C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741B1D80DB6000A1A00F /* Uptown_Release */,
 				C88F79A91E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32D1CB83EB200C47C22 /* DallasJCC_Release */,
 				C89498DE1EC793C50025E380 /* MobileAccrisoft_Release */,
+				C88237711EFEF0A100BB10F4 /* CharlotteChamber_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = MobileAccrisoft_Release;
@@ -1563,11 +1800,13 @@
 				C88F79A61E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C89498DB1EC793AE0025E380 /* MobileAccrisoft_Debug */,
+				C882376E1EFEF09000BB10F4 /* CharlotteChamber_Debug */,
 				C86E99471C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741C1D80DB6000A1A00F /* Uptown_Release */,
 				C88F79AA1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32E1CB83EB200C47C22 /* DallasJCC_Release */,
 				C89498DF1EC793C50025E380 /* MobileAccrisoft_Release */,
+				C88237721EFEF0A100BB10F4 /* CharlotteChamber_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = MobileAccrisoft_Release;
@@ -1580,11 +1819,13 @@
 				C88F79A71E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3331CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C89498DC1EC793AE0025E380 /* MobileAccrisoft_Debug */,
+				C882376F1EFEF09000BB10F4 /* CharlotteChamber_Debug */,
 				C86E994A1C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741D1D80DB6000A1A00F /* Uptown_Release */,
 				C88F79AB1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A32F1CB83EB200C47C22 /* DallasJCC_Release */,
 				C89498E01EC793C50025E380 /* MobileAccrisoft_Release */,
+				C88237731EFEF0A100BB10F4 /* CharlotteChamber_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = MobileAccrisoft_Release;
@@ -1597,11 +1838,13 @@
 				C88F79A81E0A204A00BBC62A /* SkunkGuru_Debug */,
 				C866A3341CB83ECC00C47C22 /* DallasJCC_Debug */,
 				C89498DD1EC793AE0025E380 /* MobileAccrisoft_Debug */,
+				C88237701EFEF09000BB10F4 /* CharlotteChamber_Debug */,
 				C86E994D1C1BC55D00B08843 /* TBAM_Release */,
 				C8F6741E1D80DB6000A1A00F /* Uptown_Release */,
 				C88F79AC1E0A205900BBC62A /* SkunkGuru_Release */,
 				C866A3301CB83EB200C47C22 /* DallasJCC_Release */,
 				C89498E11EC793C50025E380 /* MobileAccrisoft_Release */,
+				C88237741EFEF0A100BB10F4 /* CharlotteChamber_Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = MobileAccrisoft_Release;

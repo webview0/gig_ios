@@ -39,11 +39,6 @@ platform :ios do
     match(type: "appstore",    app_identifier: "com.accrisoft.appbuilder.uptownorganization.ios")        # , force:true)
   end
 
-  desc "Remove the Fix-it button from Xcode"
-  lane :xcode do
-    install_xcode_plugin(url: "https://github.com/fastlane/FixCode/releases/download/0.4.0/FixCode.xcplugin.zip")
-  end
-
   desc "Runs all the tests"
   lane :test do
     scan(scheme: "Uptown") # Run Tests

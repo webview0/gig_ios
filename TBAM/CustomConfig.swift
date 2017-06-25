@@ -8,7 +8,9 @@
 
 class CustomConfig
 {
-    #if DALLASJCC_DEBUG || DALLASJCC_RELEASE
+    #if CHARLOTTECHAMBER_DEBUG || CHARLOTTECHAMBER_RELEASE
+    static let handle = CustomConfigCharlotteChamber()
+    #elseif DALLASJCC_DEBUG || DALLASJCC_RELEASE
     static let handle = CustomConfigDallasJCC()
     #elseif MOBILEACCRISOFT_DEBUG || MOBILEACCRISOFT_RELEASE
     static let handle = CustomConfigMobileAccrisoft()

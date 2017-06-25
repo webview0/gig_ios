@@ -18,6 +18,8 @@ class LinkRouter
             return
         }
         
+        BHLog.info { "LinkRouter.go: \(menu.url))" }
+
         if ("phone://" == menu.url) {
             LinkRouter.openPhone(CustomConfig.handle.getPhoneNumber())
             return
