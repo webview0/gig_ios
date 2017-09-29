@@ -69,6 +69,7 @@ platform :ios do
     puts "------------------------------------------------------------------------------------".blue.bold
     puts "--- Upload to TestFlight                                                         ---".blue
     puts "--- # fastlane pilot upload --ipa fastlane/build/CharlotteChamber.testflight.ipa ---".blue
+    puts "--- #                       -u Jager2ways@gmail.com                              ---".blue
     puts "------------------------------------------------------------------------------------".blue.bold
 
     # sh "your_script.sh"

@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to your location to show you nearby locations</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
@@ -21,7 +19,7 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>220</string>
+	<string>224</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -47,6 +45,8 @@
 	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2017 Greater Charlotte Chamber of Commerce. All rights reserved.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to your location to show you nearby locations</string>
 	<key>UILaunchStoryboardName</key>
 	<string>$(LAUNCH_SCREEN_STORYBOARD)</string>
 	<key>UIMainStoryboardFile</key>

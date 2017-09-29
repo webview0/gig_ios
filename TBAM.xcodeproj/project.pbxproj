@@ -13,7 +13,6 @@
 		C80FDCB81CBB2C8B000A801D /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C80FDCB71CBB2C8B000A801D /* SnapshotHelper.swift */; };
 		C828990F1C234089006D7AF1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C828990E1C234089006D7AF1 /* MapViewController.swift */; };
 		C82899181C2350FE006D7AF1 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82899171C2350FE006D7AF1 /* CustomNavigationController.swift */; };
-		C83DB4081E5B9AE700DCB6F0 /* Fastfile.Uptown in Resources */ = {isa = PBXBuildFile; fileRef = C83DB4071E5B9AE700DCB6F0 /* Fastfile.Uptown */; };
 		C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C866A3351CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard */; };
 		C86E99211C1BC55D00B08843 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99201C1BC55D00B08843 /* AppDelegate.swift */; };
 		C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C86E99241C1BC55D00B08843 /* Main.storyboard */; };
@@ -26,12 +25,9 @@
 		C86E99551C1BCDC600B08843 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86E99541C1BCDC600B08843 /* WebViewController.swift */; };
 		C88237771EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88237751EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard */; };
 		C882377B1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift in Sources */ = {isa = PBXBuildFile; fileRef = C882377A1EFEF25400BB10F4 /* CustomConfigCharlotteChamber.swift */; };
-		C882377E1EFEF6A600BB10F4 /* Charlotte, NC.gpx in Resources */ = {isa = PBXBuildFile; fileRef = C882377D1EFEF6A600BB10F4 /* Charlotte, NC.gpx */; };
-		C88237801EFEF76200BB10F4 /* Fastfile.MobileAccrisoft in Resources */ = {isa = PBXBuildFile; fileRef = C882377F1EFEF76200BB10F4 /* Fastfile.MobileAccrisoft */; };
 		C88F79A01E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88F799F1E0A1EFF00BBC62A /* CustomConfigSkunkGuru.swift */; };
 		C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C88F79AD1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard */; };
 		C89498D91EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89498D81EC78DB10025E380 /* CustomConfigMobileAccrisoft.swift */; };
-		C89498E31EC7961F0025E380 /* Fastfile.DallasJCC in Resources */ = {isa = PBXBuildFile; fileRef = C89498E21EC7961F0025E380 /* Fastfile.DallasJCC */; };
 		C89498E61EC79A2A0025E380 /* LaunchScreen-MobileAccrisoft.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C89498E41EC79A2A0025E380 /* LaunchScreen-MobileAccrisoft.storyboard */; };
 		C89498E91EC79EE10025E380 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89498E71EC79EE10025E380 /* Crashlytics.framework */; };
 		C89498EA1EC79EE10025E380 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C89498E81EC79EE10025E380 /* Fabric.framework */; };
@@ -426,16 +422,12 @@
 			files = (
 				C86E992B1C1BC55D00B08843 /* LaunchScreen-TBAM.storyboard in Resources */,
 				C86E99281C1BC55D00B08843 /* Assets.xcassets in Resources */,
-				C83DB4081E5B9AE700DCB6F0 /* Fastfile.Uptown in Resources */,
 				C86E99261C1BC55D00B08843 /* Main.storyboard in Resources */,
 				C88F79AF1E0A22F600BBC62A /* LaunchScreen-SkunkGuru.storyboard in Resources */,
 				C8F674241D80DCA200A1A00F /* LaunchScreen-Uptown.storyboard in Resources */,
 				C866A3371CB8598B00C47C22 /* LaunchScreen-DallasJCC.storyboard in Resources */,
-				C89498E31EC7961F0025E380 /* Fastfile.DallasJCC in Resources */,
 				C89498E61EC79A2A0025E380 /* LaunchScreen-MobileAccrisoft.storyboard in Resources */,
 				C88237771EFEF1DB00BB10F4 /* LaunchScreen-CharlotteChamber.storyboard in Resources */,
-				C88237801EFEF76200BB10F4 /* Fastfile.MobileAccrisoft in Resources */,
-				C882377E1EFEF6A600BB10F4 /* Charlotte, NC.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,7 +474,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == MobileAccrisoft_Release ] || [ $CONFIGURATION == MobileAccrisoft_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
+			shellScript = "if [ $CONFIGURATION == CharlotteChamber_Release ] || [ $CONFIGURATION == CharlotteChamber_Beta ] || [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == MobileAccrisoft_Release ] || [ $CONFIGURATION == MobileAccrisoft_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1156,7 +1148,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = "CharlotteChamber-AppIcon";
-				BUNDLE_DISPLAY_NAME = "Charlotte Chamber";
+				BUNDLE_DISPLAY_NAME = "CLT Chamber";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				DEVELOPMENT_TEAM = 9Q6JVMR6B9;
@@ -1172,7 +1164,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlottechamber.CharlotteChamberMemberApp;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = Charlotte;
+				PRODUCT_NAME = "CLT Chamber";
 				PROVISIONING_PROFILE = "21c3fa6b-5736-4fff-a2d3-aeffa3cc281e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
