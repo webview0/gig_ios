@@ -48,7 +48,7 @@
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to your location to show you nearby locations</string>
 	<key>UILaunchStoryboardName</key>
-	<string>$(LAUNCH_SCREEN_STORYBOARD)</string>
+	<string>${LAUNCH_SCREEN_STORYBOARD}</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>

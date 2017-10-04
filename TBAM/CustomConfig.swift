@@ -12,6 +12,8 @@ class CustomConfig
     static let handle = CustomConfigCharlotteChamber()
     #elseif DALLASJCC_DEBUG || DALLASJCC_RELEASE
     static let handle = CustomConfigDallasJCC()
+    #elseif FTLAUDERDALECHAMBER_DEBUG || FTLAUDERDALECHAMBER_RELEASE
+    static let handle = CustomConfigFtLauderdale()
     #elseif MOBILEACCRISOFT_DEBUG || MOBILEACCRISOFT_RELEASE
     static let handle = CustomConfigMobileAccrisoft()
     #elseif SKUNKGURU_DEBUG || SKUNKGURU_RELEASE
