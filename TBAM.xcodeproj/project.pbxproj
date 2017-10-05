@@ -387,7 +387,7 @@
 				TargetAttributes = {
 					C86E991C1C1BC55D00B08843 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 9ZWL894D73;
+						DevelopmentTeam = 9Q6JVMR6B9;
 						LastSwiftMigration = 0830;
 					};
 					C86E99301C1BC55D00B08843 = {
@@ -481,7 +481,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ $CONFIGURATION == CharlotteChamber_Release ] || [ $CONFIGURATION == CharlotteChamber_Beta ] || [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == MobileAccrisoft_Release ] || [ $CONFIGURATION == MobileAccrisoft_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
+			shellScript = "if [ $CONFIGURATION == CharlotteChamber_Release ] || [ $CONFIGURATION == CharlotteChamber_Beta ] || [ $CONFIGURATION == DallasJCC_Release ] || [ $CONFIGURATION == DallasJCC_Beta ] || $CONFIGURATION == FtLauderdale_Release ] || [ $CONFIGURATION == FtLauderdale_Beta ] || $CONFIGURATION == MobileAccrisoft_Release ] || [ $CONFIGURATION == MobileAccrisoft_Beta ] || $CONFIGURATION == SkunkGuru_Release ] || [ $CONFIGURATION == SkunkGuru_Beta ] || [ $CONFIGURATION == TBAM_Release ] || [ $CONFIGURATION == TBAM_Beta ] || [ $CONFIGURATION == Uptown_Release ] || [ $CONFIGURATION == Uptown_Beta ]; then\n    echo \"Bumping build number...\"\n    plist=${PROJECT_DIR}/${INFOPLIST_FILE}\n\n    # increment the build number (ie 115 to 116)\n    buildnum=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${plist}\")\n    if [[ \"${buildnum}\" == \"\" ]]; then\n        echo \"No build number in $plist\"\n        exit 2\n    fi\n\n    buildnum=$(expr $buildnum + 1)\n    /usr/libexec/Plistbuddy -c \"Set CFBundleVersion $buildnum\" \"${plist}\"\n    echo \"Bumped build number to $buildnum\"\nelse\n    echo $CONFIGURATION \" build - Not bumping build number.\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -696,8 +696,9 @@
 		C862377A1F81998A002E708D /* FtLauderdale_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
-				BUNDLE_DISPLAY_NAME = "Ft Lauderdale";
+				APP_ICON_SET_NAME = "FtLauderdale-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				BUNDLE_DISPLAY_NAME = "FTL Chamber";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				DEVELOPMENT_TEAM = 9Q6JVMR6B9;
@@ -713,7 +714,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftlauderdalechamber.CharlotteChamberMemberApp;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Ft Lauderdale";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "21c3fa6b-5736-4fff-a2d3-aeffa3cc281e";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -796,7 +797,8 @@
 		C866A32E1CB83EB200C47C22 /* DallasJCC_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "DallasJCC-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Dallas JCC";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -812,7 +814,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Dallas JCC";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "c75fecec-b409-4a4d-b9ce-1b443947f0a6";
 				SWIFT_VERSION = 3.0;
 			};
@@ -900,7 +902,8 @@
 		C866A3321CB83ECC00C47C22 /* DallasJCC_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "DallasJCC-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Dallas JCC Ω";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
@@ -915,7 +918,7 @@
 				OTHER_SWIFT_FLAGS = "-D DALLASJCC_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.dallasjcc.ios.alpha;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Dallas JCC Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "9bea27ce-41eb-4abe-8be2-283bfae1789d";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1050,7 +1053,8 @@
 		C86E99461C1BC55D00B08843 /* TBAM_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "TBAM-AppIcon-alpha";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "TBAM Ω";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
@@ -1064,7 +1068,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D TBAM_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM.alpha;
-				PRODUCT_NAME = "TBAM Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "3e76ad42-7171-4228-8b35-39ca54166f8b";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1073,7 +1077,8 @@
 		C86E99471C1BC55D00B08843 /* TBAM_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "TBAM-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = TBAM;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -1088,7 +1093,7 @@
 				OTHER_SWIFT_FLAGS = "-D TBAM_RELEASE -D BHAPPANALYZER_ANSWERS";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.TBAM;
-				PRODUCT_NAME = TBAM;
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "64194414-e3f7-43f1-9349-3b091d4b1c74";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1202,8 +1207,9 @@
 		C882376E1EFEF09000BB10F4 /* CharlotteChamber_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
-				BUNDLE_DISPLAY_NAME = "Charlotte Ω";
+				APP_ICON_SET_NAME = "CharlotteChamber-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				BUNDLE_DISPLAY_NAME = "CLT Chamber Ω";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Greater Charlotte Chamber of Commerce (9Q6JVMR6B9)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1217,7 +1223,7 @@
 				OTHER_SWIFT_FLAGS = "-D CHARLOTTECHAMBER_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlottechamber.CharlotteChamberMemberApp.dev;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Charlotte Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1299,7 +1305,8 @@
 		C88237721EFEF0A100BB10F4 /* CharlotteChamber_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "CharlotteChamber-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "CLT Chamber";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -1316,9 +1323,9 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.charlottechamber.CharlotteChamberMemberApp;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "CLT Chamber";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "21c3fa6b-5736-4fff-a2d3-aeffa3cc281e";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.charlottechamber.CharlotteChamberMemberApp";
 				SWIFT_VERSION = 3.0;
 			};
 			name = CharlotteChamber_Release;
@@ -1405,7 +1412,8 @@
 		C88F79A61E0A204A00BBC62A /* SkunkGuru_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "SkunkGuru-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Skunk Guru Ω";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
@@ -1419,7 +1427,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D SKUNKGURU_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.skunkguru.ios.alpha;
-				PRODUCT_NAME = "Skunk Guru Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "152e3117-113a-4044-9c9f-65aa616b7d70";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1501,7 +1509,8 @@
 		C88F79AA1E0A205900BBC62A /* SkunkGuru_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "SkunkGuru-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Skunk Guru";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -1516,7 +1525,7 @@
 				OTHER_SWIFT_FLAGS = "-D SKUNKGURU_RELEASE -D BHAPPANALYZER_ANSWERS";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.skunkguru.ios;
-				PRODUCT_NAME = "Skunk Guru";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "d0fcd893-090f-4733-943d-5cdc64e7adc5";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1604,7 +1613,8 @@
 		C89498DB1EC793AE0025E380 /* MobileAccrisoft_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "MobileAccrisoft-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Mobile Ω";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
@@ -1619,7 +1629,7 @@
 				OTHER_SWIFT_FLAGS = "-D MOBILEACCRISOFT_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.mobileaccrisoft.ios.alpha;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Accrisoft Mobile Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "ce08500b-7cce-4f3b-8bad-4184e8f1d772";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1701,7 +1711,8 @@
 		C89498DF1EC793C50025E380 /* MobileAccrisoft_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "MobileAccrisoft-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = Mobile;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -1718,7 +1729,7 @@
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.mobileaccrisoft.ios;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "Accrisoft Mobile";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "27a3a22d-d690-4743-83be-0421b3a5a805";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -1807,8 +1818,9 @@
 		C8B501641F7E639500EFB1E2 /* FtLauderdaleChamber_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
-				BUNDLE_DISPLAY_NAME = "Ft Lauder Ω";
+				APP_ICON_SET_NAME = "FtLauderdale-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
+				BUNDLE_DISPLAY_NAME = "FTL Chamber Ω";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Greater Charlotte Chamber of Commerce (9Q6JVMR6B9)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1822,7 +1834,7 @@
 				OTHER_SWIFT_FLAGS = "-D FTLAUDERDALECHAMBER_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ftlauderdalechamber.CharlotteChamberMemberApp.dev;
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
-				PRODUCT_NAME = "FtLauder Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -1910,7 +1922,8 @@
 		C8F674181D80DB5300A1A00F /* Uptown_Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "Uptown-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = "Uptown Ω";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
@@ -1924,7 +1937,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-D UPTOWN_DEBUG -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.uptownorganization.ios.alpha;
-				PRODUCT_NAME = "Uptown Ω";
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "91d117cd-bf35-436e-8bcc-26e79c6af260";
 				SWIFT_VERSION = 3.0;
 			};
@@ -2006,7 +2019,8 @@
 		C8F6741C1D80DB6000A1A00F /* Uptown_Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "FtLauderdale-AppIcon";
+				APP_ICON_SET_NAME = "Uptown-AppIcon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(APP_ICON_SET_NAME)";
 				BUNDLE_DISPLAY_NAME = Uptown;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
@@ -2021,7 +2035,7 @@
 				OTHER_SWIFT_FLAGS = "-D UPTOWN_RELEASE -D BHAPPANALYZER_ANSWERS";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accrisoft.appbuilder.uptownorganization.ios;
-				PRODUCT_NAME = Uptown;
+				PRODUCT_NAME = "$(BUNDLE_DISPLAY_NAME)";
 				PROVISIONING_PROFILE = "bcba121a-946f-41a3-8f13-26a1675c5253";
 				SWIFT_VERSION = 3.0;
 			};
