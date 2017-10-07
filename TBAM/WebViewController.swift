@@ -224,8 +224,15 @@ extension WebViewController : WKNavigationDelegate
         if (navigationAction.navigationType == .linkActivated) {
             if let url = navigationAction.request.url {
                 if (LinkRouter.isExternalLink(url.absoluteString)) {
+                    // for external links, use the LinkRouter class
                     let _ = LinkRouter.openBrowser(url)
                     decisionHandler(WKNavigationActionPolicy.cancel)
+                    return
+                } else {
+                    // for internal links, redirect the URL through our own loadURL, not the WKWebView one
+                    // because the WKWebView one will not send our custom request headers in LinkRouter.addFreedomHeader()
+                    decisionHandler(WKNavigationActionPolicy.cancel)
+                    self.loadURL(url: url.absoluteString)
                     return
                 }
             }
