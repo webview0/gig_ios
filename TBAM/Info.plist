@@ -15,11 +15,11 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>2.0</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>226</string>
+	<string>100</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>
@@ -44,7 +44,7 @@
 		<string>TLSv1.0</string>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2017 Greater Charlotte Chamber of Commerce. All rights reserved.</string>
+	<string>Copyright © 2017 Fort Lauderdale Chamber of Commerce. All rights reserved.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This app needs access to your location to show you nearby locations</string>
 	<key>UILaunchStoryboardName</key>

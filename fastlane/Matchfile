@@ -6,14 +6,14 @@ type "development" # The default type, can be: appstore, adhoc or development
 # app_identifier "com.accrisoft.TBAM"
 
 # Accrisoft
-#username "developer@blueheronlabs.net"  # Apple Developer Portal username
-#team_id  "9ZWL894D73"                   # Developer Portal Team ID -- Accrisoft
-#git_url  "https://accrisoft.git.cloudforge.com/ios.git"
+username "developer@blueheronlabs.net"  # Apple Developer Portal username
+team_id  "9ZWL894D73"                   # Developer Portal Team ID -- Accrisoft
+git_url  "https://accrisoft.git.cloudforge.com/ios.git"
 
 # Charlotte Chamber
-username  "Jager2ways@gmail.com"         # iTunes Connect Account
-team_id   "9Q6JVMR6B9"                   # Developer Portal Team ID -- Charlotte Chamber
-git_url   "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/charlottechamber_fastlane_certs"
+#username  "Jager2ways@gmail.com"         # iTunes Connect Account
+#team_id   "9Q6JVMR6B9"                   # Developer Portal Team ID -- Charlotte Chamber
+#git_url   "ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/charlottechamber_fastlane_certs"
 
 # For all available options run `match --help`
 # Remove the # in the beginning of the line to enable the other options
