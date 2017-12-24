@@ -343,7 +343,7 @@ public extension BHLog
                 let key = BHLog.timestamp2string(now)
                 let text = "\(key) \(message)\n"
                 outputStream.open()
-                outputStream.write(text, maxLength: text.characters.count)
+                outputStream.write(text, maxLength: text.count)
                 outputStream.close()
             }
         }
