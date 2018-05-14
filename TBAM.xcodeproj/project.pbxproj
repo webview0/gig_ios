@@ -107,7 +107,7 @@
 		C86237781F819901002E708D /* CustomConfigFtLauderdale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomConfigFtLauderdale.swift; sourceTree = "<group>"; };
 		C862377E1F819C2D002E708D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-FtLauderdale.storyboard"; sourceTree = "<group>"; };
 		C866A3361CB8598B00C47C22 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/LaunchScreen-DallasJCC.storyboard"; sourceTree = "<group>"; };
-		C86E991D1C1BC55D00B08843 /* TBAM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = TBAM.app; path = "TBAM Ω.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C86E991D1C1BC55D00B08843 /* TBAM Ω.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TBAM Ω.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C86E99201C1BC55D00B08843 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C86E99251C1BC55D00B08843 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C86E99271C1BC55D00B08843 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		C86E991E1C1BC55D00B08843 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C86E991D1C1BC55D00B08843 /* TBAM.app */,
+				C86E991D1C1BC55D00B08843 /* TBAM Ω.app */,
 				C86E99311C1BC55D00B08843 /* TBAMTests.xctest */,
 				C86E993C1C1BC55D00B08843 /* TBAMUITests.xctest */,
 			);
@@ -340,7 +340,7 @@
 			);
 			name = TBAM;
 			productName = TBAM;
-			productReference = C86E991D1C1BC55D00B08843 /* TBAM.app */;
+			productReference = C86E991D1C1BC55D00B08843 /* TBAM Ω.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C86E99301C1BC55D00B08843 /* TBAMTests */ = {
@@ -707,8 +707,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				DEVELOPMENT_TEAM = 9ZWL894D73;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -807,6 +808,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				FRAMEWORK_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
@@ -912,8 +918,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1063,8 +1070,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1087,8 +1095,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1217,8 +1226,9 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Greater Charlotte Chamber of Commerce (9Q6JVMR6B9)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1316,8 +1326,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				DEVELOPMENT_TEAM = 9Q6JVMR6B9;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1422,8 +1433,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1519,8 +1531,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1623,8 +1636,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1722,8 +1736,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				DEVELOPMENT_TEAM = 9ZWL894D73;
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1828,8 +1843,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1932,8 +1948,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Phillip Zarfos (9XRM8696V5)";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
 				);
 				INFOPLIST_FILE = TBAM/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2029,6 +2046,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Accrisoft Corporation (9ZWL894D73)";
 				FRAMEWORK_SEARCH_PATHS = (
+					"<Multiple",
+					"values>",
+					"$(SRCROOT)/**",
+				);
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);

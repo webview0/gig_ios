@@ -8,6 +8,11 @@
 
 import UIKit
 
+
+// Here's my comment.  So, this is how fast it is.  I'm way faster than this software. :-)
+// This is my typing.  All human activity is prompted by desire.  There is a wholly fallacious theory
+// advanced by some earnest moralists to the effect that it is possible... to reside.
+
 //
 // TBAM links
 // http://asoft4124.accrisoft.com/betham/index.php?src=gendocs&ref=AboutUs__App
@@ -73,7 +78,8 @@ class CustomConfigTBAM : CustomConfigProtocol
     
     func getWebAppURL() -> String
     {
-        return ""
+	return "http://www.toledo.com/index.php?src=directory&view=GigGuide&srctype=App_GigGuide_lister"
+	//return "";
     }
     
     func getAlertURL() -> String
